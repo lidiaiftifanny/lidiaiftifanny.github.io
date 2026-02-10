@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Perpustakaan Umum Lidia</title>
+<title>Perpustakaan Pribadiku Lidia</title>
 
 <style>
 body {
@@ -15,7 +15,7 @@ body {
 
 /* NAVBAR */
 nav {
-    background: #b08968; /* coksu */
+    background: #b08968;
     padding: 16px 40px;
     display: flex;
     justify-content: space-between;
@@ -36,7 +36,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #fde2e4; /* pink soft */
+    color: #fde2e4;
 }
 
 /* HERO */
@@ -47,11 +47,11 @@ nav a:hover {
 
 .hero h2 {
     font-size: 36px;
-    max-width: 600px;
+    max-width: 650px;
 }
 
 .hero p {
-    max-width: 420px;
+    max-width: 500px;
     font-size: 16px;
 }
 
@@ -76,30 +76,19 @@ nav a:hover {
 
 .card {
     background: #ffffff;
-    width: 230px;
+    width: 240px;
     padding: 26px;
     border-radius: 14px;
     box-shadow: 0 6px 16px rgba(0,0,0,0.1);
 }
 
-/* BERITA BACKGROUND */
+/* BACKGROUND VARIAN */
 .bg-white {
     background: #ffffff;
 }
 
-/* KOLEKSI BACKGROUND */
 .bg-pink {
     background: #fde2e4;
-}
-
-/* STATS */
-.stats {
-    background: #b08968;
-    color: white;
-    padding: 45px;
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
 }
 
 /* FOOTER */
@@ -121,90 +110,71 @@ footer {
     <div>
         <a href="#">Beranda</a>
         <a href="#">Tentang</a>
-        <a href="#">Koleksi</a>
         <a href="#">Layanan</a>
+        <a href="#">Informasi</a>
         <a href="#">Kontak</a>
     </div>
 </nav>
 
-<!-- HERO -->
+<!-- HERO / SLIDER -->
 <div class="hero">
-    <h2>Selamat Datang di Perpustakaan Umum Lidia</h2>
+    <h2>Selamat Datang di Perpustakaan Pribadiku Lidia</h2>
     <p>
-        Tempat belajar, membaca, dan mengembangkan wawasan
-        dengan suasana yang nyaman dan ramah.
+        Perpustakaan Lidia hadir sebagai ruang literasi yang nyaman
+        untuk membaca, belajar, dan memperluas wawasan bagi semua kalangan.
     </p>
 </div>
 
-<!-- AKSES CEPAT -->
+<!-- JAM LAYANAN -->
 <div class="section">
+    <h2>Jam Layanan Perpustakaan</h2>
+    <div class="cards">
+        <div class="card">
+            <h4>Senin – Jumat</h4>
+            <p>08.00 – 16.00 WIB</p>
+        </div>
+        <div class="card">
+            <h4>Sabtu</h4>
+            <p>09.00 – 13.00 WIB</p>
+        </div>
+        <div class="card">
+            <h4>Minggu & Libur</h4>
+            <p>Tutup</p>
+        </div>
+    </div>
+</div>
+
+<!-- AKSES CEPAT -->
+<div class="section bg-white">
     <h2>Akses Cepat</h2>
     <div class="cards">
         <div class="card">
-            <h4>Katalog Online</h4>
-            <p>Cari buku dengan cepat dan mudah.</p>
-        </div>
-        <div class="card">
-            <h4>E-Resources</h4>
-            <p>Jurnal dan artikel digital.</p>
+            <h4>Katalog Online (OPAC)</h4>
+            <p>Telusuri koleksi buku yang tersedia.</p>
         </div>
         <div class="card">
             <h4>Peminjaman</h4>
-            <p>Proses cepat dan praktis.</p>
+            <p>Layanan peminjaman buku secara sederhana.</p>
         </div>
         <div class="card">
             <h4>Bantuan</h4>
-            <p>Panduan layanan perpustakaan.</p>
+            <p>Panduan penggunaan layanan perpustakaan.</p>
         </div>
     </div>
 </div>
 
-<!-- BERITA -->
-<div class="section bg-white">
-    <h2>Berita & Pengumuman</h2>
-    <div class="cards">
-        <div class="card">
-            <h4>Workshop Literasi</h4>
-            <p>Kegiatan literasi untuk mahasiswa.</p>
-        </div>
-        <div class="card">
-            <h4>Koleksi Baru</h4>
-            <p>Penambahan buku terbaru.</p>
-        </div>
-        <div class="card">
-            <h4>Jam Operasional</h4>
-            <p>Buka hingga pukul 20.00 WIB.</p>
-        </div>
-    </div>
-</div>
-
-<!-- KOLEKSI -->
+<!-- UPDATE -->
 <div class="section bg-pink">
-    <h2>Koleksi Unggulan</h2>
+    <h2>Update</h2>
     <div class="cards">
-        <div class="card"><h4>Buku Fiksi</h4></div>
-        <div class="card"><h4>Buku Non-Fiksi</h4></div>
-        <div class="card"><h4>Majalah</h4></div>
-    </div>
-</div>
-
-<!-- STATS -->
-<div class="stats">
-    <div>
-        <h2>0+</h2>
-        <p>Buku di Koleksi</p>
-    </div>
-    <div>
-        <h2>0+</h2>
-        <p>Anggota Aktif</p>
-    </div>
-    <div>
-        <h2>0</h2>
-        <p>Acara Tahunan</p>
-    </div>
-    <div>
-        <h2>24/7</h2>
-        <p>Akses Online</p>
+        <div class="card">
+            <h4>Koleksi Terbaru</h4>
+            <p>Buku-buku terbaru yang baru ditambahkan.</p>
+        </div>
+        <div class="card">
+            <h4>Koleksi Rekomendasi</h4>
+            <p>Pilihan bacaan rekomendasi untuk pengunjung.</p>
+        </div>
     </div>
 </div>
 
