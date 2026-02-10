@@ -9,12 +9,12 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #f4f6f9;
+    background: #fdf6f3;
 }
 
 /* NAVBAR */
 nav {
-    background: #083b6e;
+    background: #8d6e63; /* coklat susu */
     color: white;
     padding: 15px 40px;
     display: flex;
@@ -34,10 +34,14 @@ nav a {
     font-size: 14px;
 }
 
+nav a:hover {
+    text-decoration: underline;
+}
+
 /* HERO */
 .hero {
-    background: linear-gradient(180deg, #1e88e5, #f4c430);
-    color: white;
+    background: linear-gradient(180deg, #f6a5c0, #d7b899); /* pink ke coklat */
+    color: #4e342e;
     padding: 80px 40px;
 }
 
@@ -47,7 +51,8 @@ nav a {
 }
 
 .hero p {
-    max-width: 400px;
+    max-width: 420px;
+    font-size: 16px;
 }
 
 /* SECTION */
@@ -58,7 +63,7 @@ nav a {
 
 .section h2 {
     margin-bottom: 40px;
-    color: #083b6e;
+    color: #8d6e63;
 }
 
 /* CARD */
@@ -73,13 +78,13 @@ nav a {
     background: white;
     padding: 25px;
     width: 220px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 /* STATS */
 .stats {
-    background: #083b6e;
+    background: #8d6e63;
     color: white;
     display: flex;
     justify-content: space-around;
@@ -89,7 +94,7 @@ nav a {
 
 /* FOOTER */
 footer {
-    background: #062e55;
+    background: #6d4c41;
     color: white;
     text-align: center;
     padding: 15px;
@@ -115,7 +120,10 @@ footer {
 <!-- HERO -->
 <div class="hero">
     <h2>Selamat Datang di Perpustakaan Umum Lidia</h2>
-    <p>Tempat belajar dan berkreasi dengan berbagai koleksi buku untuk semua kalangan.</p>
+    <p>
+        Tempat belajar dan berkreasi dengan koleksi buku,
+        jurnal, dan sumber informasi untuk semua kalangan.
+    </p>
 </div>
 
 <!-- AKSES CEPAT -->
@@ -136,7 +144,7 @@ footer {
         </div>
         <div class="card">
             <h4>Bantuan</h4>
-            <p>Panduan pengguna perpustakaan.</p>
+            <p>Panduan penggunaan perpustakaan.</p>
         </div>
     </div>
 </div>
@@ -154,14 +162,14 @@ footer {
             <p>Buku terbaru telah ditambahkan.</p>
         </div>
         <div class="card">
-            <h4>Jam Buka</h4>
-            <p>Perpustakaan buka hingga pukul 20.00.</p>
+            <h4>Jam Operasional</h4>
+            <p>Buka hingga pukul 20.00 WIB.</p>
         </div>
     </div>
 </div>
 
 <!-- KOLEKSI -->
-<div class="section" style="background:#eef5e1;">
+<div class="section" style="background:#fce4ec;">
     <h2>Koleksi Unggulan</h2>
     <div class="cards">
         <div class="card"><h4>Buku Fiksi</h4></div>
