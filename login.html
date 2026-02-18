@@ -1,17 +1,37 @@
 <html>
-  <form action="/Daftar" method="post">
-    <label for="name">First Name:</label>
-    <input type="text" id="name" name="name" required>
+  <head>
+  <title>Formulir Pendaftaran Anggota</title>
+  </head>
 
-    <label for="name">Last Name:</label>
-    <input type="text" id="name" name="name" required>
+  <body>
+    <table>
+     <h2>Formulir Pendaftaran Anggota</h2>
+    <form action="/Daftar" method="post">
+      
+    <tr>
+    <td><label for="name">First Name:</label></td>
+    <td><input type="text" id="name" name="name" required></td>
+    </tr>
+      
+    <tr>
+    <td><label for="name">Last Name:</label></td>
+    <td><input type="text" id="name" name="name" required></td>
+    </tr>
 
-    <label for="email">Email:</label>
-    <input type="text" id="email" name="email" required>
+    <tr>
+    <td><label for="email">Email:</label></td>
+    <d><input type="text" id="email" name="email" required></td>
+    </tr>
 
-    <label for="Handphond">No. Handphone:</label>
-    <input type="text" id="handphone" name="handphone" required>
+    <tr>
+    <td><label for="Handphond">No. Handphone:</label></td>
+    <td><input type="text" id="handphone" name="handphone" required></td>
+    </tr>
 
-    <input type="submit" value="Daftar">
-  
+    <tr>
+    <td><input type="submit" value="Daftar"></td>
+    </tr>
+      
+    </table>
+  </body>
 </html>
