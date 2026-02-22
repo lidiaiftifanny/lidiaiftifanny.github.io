@@ -4,141 +4,48 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lidia Digital Library</title>
-
-<style>
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-/* ===== HEADER ===== */
-header {
-  background: #1b263b;
-  padding: 15px 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: white;
-  position: fixed;
-  width: 100%;
-  top: 0;
-}
-
-header h2 {
-  font-family: Georgia;
-  margin: 0;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  margin-left: 20px;
-  font-weight: 500;
-}
-
-nav a:hover {
-  color: #ffd60a;
-}
-
-/* ===== HERO ===== */
-.hero {
-  background: linear-gradient(to right, #0d1b2a, #1b263b);
-  color: white;
-  padding: 150px 20px 120px;
-  text-align: center;
-}
-
-.hero h1 {
-  font-family: Georgia;
-  font-size: 50px;
-  margin-bottom: 20px;
-}
-
-.hero p {
-  font-size: 20px;
-  color: #dcdcdc;
-}
-
-/* ===== ABOUT ===== */
-.about {
-  padding: 100px 10%;
-  display: flex;
-  align-items: center;
-  gap: 50px;
-  background: #f4f4f4;
-}
-
-.about img {
-  width: 250px;
-  border-radius: 15px;
-}
-
-.about-text {
-  line-height: 1.7;
-}
-
-.about-text h2 {
-  font-family: Georgia;
-}
-
-/* ===== MEDIA ===== */
-.media {
-  padding: 100px 20px;
-  text-align: center;
-  background: #0d1b2a;
-  color: white;
-}
-
-.media h2 {
-  font-family: Georgia;
-  margin-bottom: 30px;
-}
-
-/* ===== FOOTER ===== */
-footer {
-  background: #1b263b;
-  color: white;
-  padding: 30px;
-  text-align: center;
-}
-
-.feedback-link {
-  text-align: right;
-  padding-right: 60px;
-  margin-bottom: 10px;
-}
-</style>
-
 </head>
 
-<body>
+<body style="margin:0; font-family:Segoe UI, sans-serif;">
 
-<header>
-  <h2>Lidia Digital Library</h2>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">Profil</a>
-    <a href="#media">Media</a>
-    <a href="feedback.html">Kontak</a>
-    <a href="login.html"><b>Login</b></a>
-  </nav>
-</header>
+<!-- HEADER -->
+<div style="background-color:#2c3e50; padding:20px 60px; color:white; display:flex; justify-content:space-between; align-items:center;">
+
+  <h2 style="margin:0; font-family:Georgia;">Lidia Digital Library</h2>
+
+  <div>
+    <a href="#home" style="color:white; text-decoration:none; margin-right:20px;">Home</a>
+    <a href="#about" style="color:white; text-decoration:none; margin-right:20px;">Profil</a>
+    <a href="#media" style="color:white; text-decoration:none; margin-right:20px;">Media</a>
+    <a href="feedback.html" style="color:white; text-decoration:none; margin-right:20px;">Kontak</a>
+
+    <!-- LOGIN BUTTON -->
+    <a href="login.html" 
+       style="background-color:#f4d03f; 
+              color:black; 
+              padding:8px 18px; 
+              border-radius:6px; 
+              text-decoration:none;
+              font-weight:bold;">
+       Login
+    </a>
+  </div>
+</div>
 
 <!-- HERO -->
-<section id="home" class="hero">
-  <h1>Welcome to Lidia Digital Library</h1>
-  <p>Hai, selamat datang di website digital saya</p>
-</section>
+<div id="home" style="background-color:#34495e; color:white; text-align:center; padding:100px 20px;">
+  <h1 style="font-family:Georgia; font-size:48px;">Welcome to Lidia Digital Library</h1>
+  <p style="font-size:18px;">Hai, selamat datang di website digital saya</p>
+</div>
 
 <!-- ABOUT -->
-<section id="about" class="about">
-  <img src="Foto Lidia.jpeg">
-  <div class="about-text">
-    <h2>About Me</h2>
+<div id="about" style="padding:80px 10%; background-color:#f2f2f2; display:flex; align-items:center; gap:40px;">
+
+  <img src="Foto Lidia.jpeg" width="250" style="border-radius:15px;">
+
+  <div style="line-height:1.7;">
+    <h2 style="font-family:Georgia;">About Me</h2>
+
     <p>
       Halo Saya Lidia Iftifanny Mahasiswa S-1 Perpustakaan dan 
       Sains Informasi Universitas Sumatera Utara.
@@ -147,33 +54,48 @@ footer {
       Website ini juga menjadi sarana literasi digital dan 
       pengelolaan informasi secara sistematis dan akurat.
     </p>
-    <p>
-      <a href="profil.html">Lihat Curriculum Vitae</a>
-    </p>
+
+    <!-- CV BUTTON -->
+    <a href="profil.html" 
+       style="background-color:#2c3e50; 
+              color:white; 
+              padding:10px 20px; 
+              border-radius:8px; 
+              text-decoration:none;">
+       Lihat Curriculum Vitae
+    </a>
   </div>
-</section>
+
+</div>
 
 <!-- MEDIA -->
-<section id="media" class="media">
-  <h2>Media Penting</h2>
+<div id="media" style="padding:80px 20px; text-align:center; background-color:#2c3e50; color:white;">
+  <h2 style="font-family:Georgia;">Media Penting</h2>
+
   <iframe width="700" height="400"
     src="https://www.youtube.com/embed/a6LQIgzKRoY"
     allowfullscreen>
   </iframe>
-</section>
+</div>
 
 <!-- FOOTER -->
-<footer>
+<div style="background-color:#1c2833; color:white; padding:30px; text-align:center;">
 
-  <div class="feedback-link">
-    <a href="feedback.html" style="color:white;">
-      Feedback Anda <br> Klik Untuk Isi Form
-    </a>
-  </div>
+  <!-- FEEDBACK BUTTON -->
+  <a href="feedback.html"
+     style="background-color:#5d6d7e;
+            color:white;
+            padding:10px 20px;
+            border-radius:8px;
+            text-decoration:none;
+            display:inline-block;
+            margin-bottom:15px;">
+     Feedback Anda <br> Klik Untuk Isi Form
+  </a>
 
   <p>© 2026 | Official Website of Lidia Digital Library</p>
 
-</footer>
+</div>
 
 </body>
 </html>
