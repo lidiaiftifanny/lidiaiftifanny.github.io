@@ -1,17 +1,23 @@
-<html>
+<!DOCTYPE html>
+<html lang="id">
 <head>
-<title>Library of Lidia</title>
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lidia Digital Library</title>
 
 <style>
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
 }
 
-/* HEADER */
+/* ===== HEADER ===== */
 header {
-  background-color: #14213d;
+  background: #1b263b;
   padding: 15px 60px;
   display: flex;
   justify-content: space-between;
@@ -22,136 +28,152 @@ header {
   top: 0;
 }
 
+header h2 {
+  font-family: Georgia;
+  margin: 0;
+}
+
 nav a {
   color: white;
   text-decoration: none;
   margin-left: 20px;
+  font-weight: 500;
 }
 
 nav a:hover {
-  color: #cbd5e1;
+  color: #ffd60a;
 }
 
-/* HERO */
+/* ===== HERO ===== */
 .hero {
-  background-color: #1f2a44;
+  background: linear-gradient(to right, #0d1b2a, #1b263b);
   color: white;
   padding: 150px 20px 120px;
   text-align: center;
 }
 
-/* ABOUT */
+.hero h1 {
+  font-family: Georgia;
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 20px;
+  color: #dcdcdc;
+}
+
+/* ===== ABOUT ===== */
 .about {
   padding: 100px 10%;
   display: flex;
-  gap: 50px;
   align-items: center;
-  background-color: #f5f5f5;
+  gap: 50px;
+  background: #f4f4f4;
 }
 
-/* MEDIA */
+.about img {
+  width: 250px;
+  border-radius: 15px;
+}
+
+.about-text {
+  line-height: 1.7;
+}
+
+.about-text h2 {
+  font-family: Georgia;
+}
+
+/* ===== MEDIA ===== */
 .media {
   padding: 100px 20px;
   text-align: center;
-  background-color: #0f1c2e;
+  background: #0d1b2a;
   color: white;
 }
 
-/* FOOTER */
+.media h2 {
+  font-family: Georgia;
+  margin-bottom: 30px;
+}
+
+/* ===== FOOTER ===== */
 footer {
-  background-color: #d4af37;
+  background: #1b263b;
   color: white;
   padding: 30px;
   text-align: center;
 }
+
+.feedback-link {
+  text-align: right;
+  padding-right: 60px;
+  margin-bottom: 10px;
+}
 </style>
-  
-<body style="margin:0;">
 
-<!-- HEADER -->
-<div style="background-color:#1b263b; padding:25px; color:white;">
-  
-  <h2 style="margin:0; font-family: Georgia; font-size:28px;">
-    Lidia Digital Library
-  </h2>
-  
-  <p align="right" style="margin:0; font-family:Aptos; font-size:16px;">
-    <a href="#index.html" style="color:white;">Home</a> |
-    <a href="#profil.html" style="color:white;">Profil</a> |
-    <a href="#media.html" style="color:white;">Layanan</a>
-    <a href="#" style="color:white;">Informasi</a>
-    <a href="#kontak.html" style="color:white;">Kontak</a>
-    <a href="login.html" style="color:white; font-weight:bold;">Login</a>
-  </p>
+</head>
 
-</div>
+<body>
 
-<!-- WELCOME -->
-<div id="index.html" style="background-color:#0d1b2a; padding:90px; text-align:center; color:white;">
-  
-  <h1 style="font-family: Georgia; font-size:48px; margin-bottom:20px;">
-    Welcome to Lidia Digital Library
-  </h1>
-  
-  <p style="font-family:Aptos; font-size:20px; color:lightgray;">
-    Hai, selamat datang di website digital saya
-  </p>
+<header>
+  <h2>Lidia Digital Library</h2>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">Profil</a>
+    <a href="#media">Media</a>
+    <a href="feedback.html">Kontak</a>
+    <a href="login.html"><b>Login</b></a>
+  </nav>
+</header>
 
-</div>
+<!-- HERO -->
+<section id="home" class="hero">
+  <h1>Welcome to Lidia Digital Library</h1>
+  <p>Hai, selamat datang di website digital saya</p>
+</section>
 
-<!-- ABOUT ME -->
-<div id="profil.html" "style="background-color:#e0e1dd; padding:70px; text-align:center;">
-  
-  <h2 style="font-family: Georgia; font-size:36px; margin-bottom:30px;">
-    About Me
-  </h2>
-  
-  <img src="Foto Lidia.jpeg" width="220" style="margin-bottom:20px;">
-  
-  <p style="font-family:Aptos; font-size:18px; width:70%; margin:auto; line-height:1.6;">
-    Halo Saya Lidia Iftifanny Mahasiswa S-1 Perpustakaan dan 
-    Sains Informasi Universitas Sumatera Utara.
-    Website ini dibuat sebagai media berbagi informasi dan 
-    pengembangan profesional di bidang perpustakaan.
-    Website ini juga menjadi sarana literasi digital dan 
-    pengelolaan informasi secara sistematis dan akurat.
-    Ingin Mengenal Saya Lebih Jauh? Klik Curriculum Vitae di bawah ini
-  </p>
-
-  <p style="margin-top:25px;">
-    <a href="profil.html" style="font-family:Aptos; font-size:18px;">
-      Curriculum Vitae
-    </a>
-  </p>
-
-</div>
+<!-- ABOUT -->
+<section id="about" class="about">
+  <img src="Foto Lidia.jpeg">
+  <div class="about-text">
+    <h2>About Me</h2>
+    <p>
+      Halo Saya Lidia Iftifanny Mahasiswa S-1 Perpustakaan dan 
+      Sains Informasi Universitas Sumatera Utara.
+      Website ini dibuat sebagai media berbagi informasi dan 
+      pengembangan profesional di bidang perpustakaan.
+      Website ini juga menjadi sarana literasi digital dan 
+      pengelolaan informasi secara sistematis dan akurat.
+    </p>
+    <p>
+      <a href="profil.html">Lihat Curriculum Vitae</a>
+    </p>
+  </div>
+</section>
 
 <!-- MEDIA -->
-<div id="media.html" style="background-color:#0d1b2a; padding:70px; text-align:center; color:white;">
-  
-  <h2 style="font-family: Georgia; font-size:36px; margin-bottom:30px;">
-    Media Penting
-  </h2>
-  
+<section id="media" class="media">
+  <h2>Media Penting</h2>
   <iframe width="700" height="400"
-  src="https://www.youtube.com/embed/a6LQIgzKRoY"
-  allowfullscreen>
+    src="https://www.youtube.com/embed/a6LQIgzKRoY"
+    allowfullscreen>
   </iframe>
-
-</div>
+</section>
 
 <!-- FOOTER -->
-<div style="background-color:#1b263b; padding:20px; text-align:center; color:white;">
-  
-  <p align="right" style="margin:0; font-family:Aptos; font-size:16px;">
-  <a href="feedback.html" style="color:white;"> Feedback Anda <br> Klik Untuk Isi Form </a> 
-  </p>
+<footer>
 
-  <p style="font-family:Aptos; font-size:14px; margin:0;">
-    © 2026 | Official Website of Lidia Digital Library
-  </p>
-  
-</div>
+  <div class="feedback-link">
+    <a href="feedback.html" style="color:white;">
+      Feedback Anda <br> Klik Untuk Isi Form
+    </a>
+  </div>
+
+  <p>© 2026 | Official Website of Lidia Digital Library</p>
+
+</footer>
 
 </body>
 </html>
