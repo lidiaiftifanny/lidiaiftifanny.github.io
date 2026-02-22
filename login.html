@@ -1,42 +1,58 @@
 <html>
-  <head>
-  <title>Formulir_Login</title>
-  </head>
+<head>
+<title>Formulir_Login</title>
+</head>
 
-  <body>
-  <h2><b>Login</b></h2>
+<body style="margin:0; font-family:Georgia, serif; background-color:#f4f6f9;">
 
-  <form action="/login" method="post">
-  <table>
+<!-- CONTAINER -->
+<div style="width:400px; margin:80px auto; background-color:white; padding:30px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1);">
 
-  <tr>
-  <td><label for="login_Name">Name:</label></td>
-  <td><input type="text" id="Name" name="Name" required></td>
-  </tr>
+<h2 style="text-align:center; color:#1b3a57;">Login</h2>
+
+<form action="/login" method="post">
+
+<table style="width:100%; line-height:2;">
+
+<tr>
+<td><label for="Name">Name:</label></td>
+<td><input type="text" id="Name" name="Name" required 
+style="width:100%; padding:6px;"></td>
+</tr>
     
-  <tr>
-  <td><label for="login_email">Email:</label></td>
-  <td><input type="email" id="login_email" name="login_email" required></td>
-  </tr>
+<tr>
+<td><label for="login_email">Email:</label></td>
+<td><input type="email" id="login_email" name="login_email" required 
+style="width:100%; padding:6px;"></td>
+</tr>
 
-  <tr>
-  <td><label for="login_password">Password:</label></td>
-  <td><input type="password" id="login_password" name="login_password" required></td>
-  </tr>
+<tr>
+<td><label for="login_password">Password:</label></td>
+<td><input type="password" id="login_password" name="login_password" required 
+style="width:100%; padding:6px;"></td>
+</tr>
 
-  <tr>
-  <td></td>
-  <td><input type="submit" value="Login"></td>
-  </tr>
+<tr>
+<td></td>
+<td>
+<input type="submit" value="Login"
+style="background-color:#1b3a57; color:white; padding:8px 15px; border:none; border-radius:5px; cursor:pointer;">
+</td>
+</tr>
 
-  <tr><td><p>Belum Punya Akun?
-    <a href="signup.html">Daftar di Sini</a>
-  </p>
-  </td>
-  </tr>
-    
-  </table>
-  </form>
-<a href="index.html"></a>
+<tr>
+<td colspan="2" style="text-align:center; padding-top:10px;">
+Belum Punya Akun? 
+<a href="signup.html" style="color:#1b3a57; text-decoration:none; font-weight:bold;">
+Daftar di Sini
+</a>
+</td>
+</tr>
+
+</table>
+</form>
+
+</div>
+
 </body>
 </html>
