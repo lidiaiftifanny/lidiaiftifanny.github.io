@@ -3,97 +3,230 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lidia Digital Library</title>
+<title>Perpustakaan Digital UMKM</title>
+
+<style>
+body{
+    margin:0;
+    font-family:'Segoe UI', sans-serif;
+}
+
+header{
+    background:#1e3a5f;
+    color:white;
+    padding:20px 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+header h2{
+    margin:0;
+    font-family:Georgia;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-weight:500;
+}
+
+.login-btn{
+    background:#f39c12;
+    padding:8px 16px;
+    border-radius:6px;
+    font-weight:bold;
+}
+
+.hero{
+    background:#2e86c1;
+    color:white;
+    text-align:center;
+    padding:100px 20px;
+}
+
+.hero h1{
+    font-family:Georgia;
+    font-size:45px;
+}
+
+.section{
+    padding:70px 10%;
+}
+
+.section h2{
+    font-family:Georgia;
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.card-container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content:center;
+}
+
+.card{
+    background:white;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    padding:20px;
+    width:280px;
+    border-radius:10px;
+    text-align:center;
+}
+
+.dark{
+    background:#f4f6f7;
+}
+
+.video-section{
+    background:#1e3a5f;
+    color:white;
+    text-align:center;
+}
+
+.about{
+    display:flex;
+    align-items:center;
+    gap:40px;
+}
+
+.about img{
+    border-radius:15px;
+}
+
+.button{
+    display:inline-block;
+    background:#1e3a5f;
+    color:white;
+    padding:10px 20px;
+    border-radius:6px;
+    text-decoration:none;
+    margin-top:10px;
+}
+
+footer{
+    background:#0b1c2d;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+</style>
 </head>
-<body style="margin:0; font-family:Segoe UI, sans-serif;">
+
+<body>
 
 <!-- HEADER -->
-<div style="background-color:#2c3e50; padding:20px 60px; color:white; display:flex; justify-content:space-between; align-items:center;">
+<header>
+    <h2>Perpustakaan Digital UMKM</h2>
+    <nav>
+        <a href="#home">Beranda</a>
+        <a href="#profil">Tentang Saya</a>
+        <a href="#umkm">Profil UMKM</a>
+        <a href="#panduan">Panduan</a>
+        <a href="#data">Data</a>
+        <a href="#video">Video</a>
+        <a href="#kontak">Kontak</a>
+        <a href="login.html" class="login-btn">Login</a>
+    </nav>
+</header>
 
-  <h2 style="margin:0; font-family:Georgia;">Lidia Digital Library</h2>
-  <div>
-    <a href="#index.html" style="color:white; text-decoration:none; margin-right:20px;">Home</a>
-    <a href="#profil.html" style="color:white; text-decoration:none; margin-right:20px;">Profil</a>
-    <a href="#media.html" style="color:white; text-decoration:none; margin-right:20px;">Layanan</a>
-    <a href="#home" style="color:white; text-decoration:none; margin-right:20px;">Informasi</a>
-    <a href="#kontak.html" style="color:white; text-decoration:none; margin-right:20px;">Kontak</a>
-
-    <!-- LOGIN BUTTON -->
-    <a href="login.html" 
-       style="background-color:#f4d03f; 
-              color:black; 
-              padding:8px 18px; 
-              border-radius:6px; 
-              text-decoration:none;
-              font-weight:bold;">
-       Login
-    </a>
-  </div>
+<!-- HERO -->
+<div class="hero" id="home">
+    <h1>Pusat Informasi & Pengembangan UMKM</h1>
+    <p>Website literasi ekonomi untuk pelaku usaha dan masyarakat</p>
 </div>
 
-<!-- HOME -->
-<div id="index.html" style="background-color:#34495e; color:white; text-align:center; padding:100px 20px;">
-  <h1 style="font-family:Georgia; font-size:48px;">Welcome to Lidia Digital Library</h1>
-  <p style="font-size:20px;">Hai, selamat datang di website digital saya</p>
+<!-- ABOUT + CV -->
+<div class="section dark" id="profil">
+    <div class="about">
+        <img src="Foto Lidia.jpeg" width="250">
+        <div>
+            <h2>Tentang Pengembang</h2>
+            <p>
+            Halo, saya Lidia Iftifanny mahasiswa S-1 Perpustakaan dan Sains Informasi.
+            Website ini dikembangkan sebagai perpustakaan digital khusus UMKM
+            yang bertujuan menyediakan informasi terstruktur, edukatif,
+            dan praktis bagi pelaku usaha.
+            </p>
+            <a href="profil.html" class="button">Lihat Curriculum Vitae (CV)</a>
+        </div>
+    </div>
 </div>
 
-<!-- ABOUT -->
-<div id="profil.html" style="padding:80px 10%; background-color:#f2f2f2; display:flex; align-items:center; gap:40px;">
-
-  <img src="Foto Lidia.jpeg" width="250" style="border-radius:15px;">
-
-  <div style="line-height:2.0;">
-    <h2 style="font-family:Georgia;">About Me</h2>
-
-    <p>
-      Halo Saya Lidia Iftifanny Mahasiswa S-1 Perpustakaan dan 
-      Sains Informasi Universitas Sumatera Utara.
-      Website ini dibuat sebagai media pengelola informasi secara sistematis dan akurat
-      untuk profesional di bidang perpustakaan. 
-      Untuk mengetahui lebih banyak tentang saya kunjungi CV saya di bawah ini
-    </p>
-
-    <!-- CV BUTTON -->
-    <a href="profil.html" 
-       style="background-color:#2c3e50; 
-              color:white; 
-              padding:10px 20px; 
-              border-radius:8px; 
-              text-decoration:none;">
-       Lihat Curriculum Vitae/CV
-    </a>
-  </div>
-
+<!-- PROFIL UMKM -->
+<div class="section" id="umkm">
+    <h2>Profil UMKM Lokal</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3>UMKM Kuliner</h3>
+            <p>Profil dan dokumentasi usaha makanan dan minuman lokal.</p>
+        </div>
+        <div class="card">
+            <h3>UMKM Kerajinan</h3>
+            <p>Katalog produk kreatif dan usaha handmade daerah.</p>
+        </div>
+        <div class="card">
+            <h3>UMKM Fashion</h3>
+            <p>Data usaha pakaian, batik, dan tekstil lokal.</p>
+        </div>
+    </div>
 </div>
 
-<!-- MEDIA -->
-<div id="media.html" style="padding:80px 20px; text-align:center; background-color:#2c3e50; color:white;">
-  <h2 style="font-family:Georgia;">Media Penting</h2>
+<!-- PANDUAN -->
+<div class="section dark" id="panduan">
+    <h2>Panduan Usaha</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3>Memulai Usaha</h3>
+            <p>Panduan menentukan ide dan menghitung modal awal.</p>
+        </div>
+        <div class="card">
+            <h3>Manajemen Keuangan</h3>
+            <p>Cara mencatat pemasukan dan pengeluaran sederhana.</p>
+        </div>
+        <div class="card">
+            <h3>Strategi Pemasaran</h3>
+            <p>Tips promosi melalui media sosial dan marketplace.</p>
+        </div>
+    </div>
+</div>
 
-  <iframe width="700" height="400"
-    src="https://www.youtube.com/embed/a6LQIgzKRoY"
-    allowfullscreen>
-  </iframe>
+<!-- DATA -->
+<div class="section" id="data">
+    <h2>Data & Statistik UMKM</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3>Jumlah UMKM</h3>
+            <p>Data perkembangan UMKM berdasarkan kategori usaha.</p>
+        </div>
+        <div class="card">
+            <h3>Produk Unggulan</h3>
+            <p>Informasi produk lokal yang memiliki potensi pasar tinggi.</p>
+        </div>
+        <div class="card">
+            <h3>Target Pasar</h3>
+            <p>Segmentasi konsumen dan analisis pasar wilayah.</p>
+        </div>
+    </div>
+</div>
+
+<!-- VIDEO -->
+<div class="section video-section" id="video">
+    <h2>Video Edukasi Pengusaha</h2>
+    <iframe width="700" height="400"
+        src="https://www.youtube.com/embed/a6LQIgzKRoY"
+        allowfullscreen>
+    </iframe>
 </div>
 
 <!-- FOOTER -->
-<div style="background-color:#1c2833; color:white; padding:30px; text-align:center;">
-
-  <!-- FEEDBACK BUTTON -->
-  <a href="feedback.html"
-     style="background-color:#5d6d7e;
-            color:white;
-            padding:10px 20px;
-            border-radius:8px;
-            text-decoration:none;
-            display:inline-block;
-            margin-bottom:15px;">
-     Feedback Anda <br> Klik Untuk Isi Form
-  </a>
-
-  <p>© 2026 | Official Website of Lidia Digital Library</p>
-
-</div>
+<footer id="kontak">
+    <p>© 2026 Perpustakaan Digital UMKM</p>
+    <p>Dikembangkan oleh Lidia Iftifanny</p>
+</footer>
 
 </body>
 </html>
