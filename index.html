@@ -9,19 +9,18 @@
 
 body{
 margin:0;
-font-family:'Segoe UI',sans-serif;
+font-family: 'Segoe UI', sans-serif;
 background:#f4f6f9;
+color:#333;
 }
-
-/* NAVBAR */
 
 header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 40px;
-background:linear-gradient(90deg,#0a3d62,#1e90ff);
+background:#0a3d62;
 color:white;
+padding:15px 40px;
 position:sticky;
 top:0;
 z-index:1000;
@@ -43,48 +42,60 @@ padding:0;
 nav a{
 color:white;
 text-decoration:none;
+font-size:14px;
+}
+
+nav a:hover{
+color:#f1c40f;
 }
 
 .login{
-background:#2ecc71;
-padding:6px 14px;
+background:#1e90ff;
+padding:6px 12px;
 border-radius:6px;
 }
 
 /* HERO */
 
 .hero{
-height:500px;
-background:url("https://images.unsplash.com/photo-1607083206869-4c7672e72a8a") center/cover;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
+background:linear-gradient(135deg,#1e90ff,#0a3d62);
 color:white;
+text-align:center;
+padding:120px 20px;
 }
 
 .hero h1{
-font-size:45px;
+font-size:42px;
 margin-bottom:10px;
 }
 
 .hero p{
 font-size:18px;
-margin-bottom:20px;
+opacity:0.9;
 }
 
-.hero button{
-padding:12px 25px;
-background:#f39c12;
+.search-box{
+margin-top:25px;
+}
+
+.search-box input{
+padding:12px;
+width:260px;
 border:none;
-border-radius:8px;
-color:white;
-font-size:16px;
-cursor:pointer;
+border-radius:6px;
 }
 
-/* CARD SECTION */
+.search-box button{
+padding:12px 20px;
+border:none;
+background:#f1c40f;
+color:black;
+border-radius:6px;
+cursor:pointer;
+font-weight:bold;
+}
+
+/* SECTION */
 
 .section{
 padding:70px 40px;
@@ -92,46 +103,24 @@ text-align:center;
 }
 
 .section h2{
-font-size:28px;
 margin-bottom:40px;
+font-size:28px;
 color:#0a3d62;
-}
-
-.card-box{
-background:white;
-padding:40px;
-border-radius:16px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
-max-width:900px;
-margin:auto;
-}
-
-.card-box p{
-color:#555;
-line-height:1.6;
-}
-
-.btn{
-margin-top:20px;
-padding:10px 22px;
-border:none;
-background:#1e90ff;
-color:white;
-border-radius:8px;
-cursor:pointer;
 }
 
 /* GRID */
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
 gap:25px;
 }
 
+/* CARD */
+
 .card{
 background:white;
-padding:25px;
+padding:30px;
 border-radius:12px;
 box-shadow:0 6px 18px rgba(0,0,0,0.1);
 transition:0.3s;
@@ -141,13 +130,40 @@ transition:0.3s;
 transform:translateY(-8px);
 }
 
-/* UMKM */
+/* STATS */
 
-.umkm{
-background:#eef5ff;
+.stats{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:60px;
+margin-top:20px;
 }
 
-/* COLLAB */
+.stat h3{
+font-size:36px;
+color:#1e90ff;
+margin:0;
+}
+
+/* BUTTON */
+
+.btn{
+margin-top:25px;
+padding:12px 25px;
+background:#1e90ff;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-size:15px;
+}
+
+.btn:hover{
+background:#0a3d62;
+}
+
+/* COLLAB SECTION */
 
 .collab{
 background:linear-gradient(135deg,#0a3d62,#1e90ff);
@@ -157,17 +173,25 @@ padding:80px 20px;
 }
 
 .collab h2{
-font-size:32px;
+font-size:30px;
+margin-bottom:15px;
+}
+
+.collab p{
+font-size:18px;
+max-width:700px;
+margin:auto;
+opacity:0.9;
 }
 
 .collab button{
-margin-top:25px;
+margin-top:30px;
 padding:15px 30px;
-background:#f39c12;
+background:#f1c40f;
 border:none;
-border-radius:10px;
-color:white;
-font-size:17px;
+border-radius:8px;
+font-size:16px;
+font-weight:bold;
 cursor:pointer;
 }
 
@@ -190,6 +214,7 @@ gap:40px;
 text-align:center;
 margin-top:30px;
 font-size:14px;
+opacity:0.8;
 }
 
 /* MOBILE */
@@ -210,9 +235,16 @@ nav ul.show{
 display:block;
 }
 
+.menu-btn{
+display:block;
+cursor:pointer;
+font-size:20px;
+}
+
 }
 
 </style>
+
 </head>
 
 <body>
@@ -223,81 +255,106 @@ display:block;
 
 <nav>
 <ul id="menu">
-<li><a href="#">Beranda</a></li>
-<li><a href="#profil.html">Profil</a></li>
+<li><a href="#home">Beranda</a></li>
+<li><a href="#profil">About</a></li>
 <li><a href="#">Perpustakaan Digital</a></li>
 <li><a href="#">Literasi Bisnis</a></li>
 <li><a href="#">Direktori UMKM</a></li>
 <li><a href="#">Data & Riset</a></li>
 <li><a href="#">Kolaborasi</a></li>
-<li><a href="#kontak.html">Kontak</a></li>
+<li><a href="#kontak">Kontak</a></li>
 <li><a href="#login.html" class="login">Login</a></li>
 </ul>
 </nav>
 
-</header>
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
 
+</header>
 
 <section class="hero">
 
-<h1>PUSLIB UMKM</h1>
+<h1>Pusat Library UMKM</h1>
 
-<p>Pusat Informasi, Literasi Bisnis, dan Kolaborasi Usaha Mikro Kecil Menengah</p>
+<p>Pusat Informasi dan Pengembangan UMKM</p>
 
-<button>Mulai Menjelajahi</button>
-
-</section>
-
-
-<section class="section">
-
-<h2>Profil Perpustakaan</h2>
-
-<div class="card-box">
-
-<p>
-PUSLIB UMKM merupakan platform perpustakaan digital yang menyediakan
-literasi bisnis, informasi usaha, serta ruang kolaborasi bagi pelaku
-Usaha Mikro Kecil dan Menengah untuk berkembang di era digital.
-</p>
-
-<button class="btn">Lihat Selengkapnya</button>
-
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="Cari informasi bisnis...">
+<button onclick="search()">Cari</button>
 </div>
 
 </section>
 
+<section class="section">
 
-<section class="section umkm">
-
-<h2>Layanan PUSLIB UMKM</h2>
+<h2>Fitur Utama</h2>
 
 <div class="grid">
 
 <div class="card">
 <h3>Perpustakaan Digital</h3>
-<p>Akses buku bisnis, manajemen usaha, dan pemasaran digital.</p>
+<p>Akses OPAC, buku digital dan majalah bisnis untuk pengembangan usaha.</p>
 </div>
 
 <div class="card">
-<h3>Literasi Bisnis</h3>
-<p>Artikel dan panduan membangun serta mengembangkan usaha.</p>
-</div>
-
-<div class="card">
-<h3>Direktori UMKM</h3>
-<p>Temukan berbagai UMKM dari berbagai sektor industri.</p>
-</div>
-
-<div class="card">
-<h3>Data & Riset</h3>
-<p>Informasi tren pasar dan penelitian terkait UMKM.</p>
+<h3>Layanan Sirkulasi</h3>
+<p>Transaksi peminjaman, pengembalian, dan reservasi buku.</p>
 </div>
 
 </div>
 
 </section>
 
+<section class="section">
+
+<h2>Statistik PUSLIB</h2>
+
+<div class="stats">
+
+<div class="stat">
+<h3>500+</h3>
+<p>Koleksi Digital</p>
+</div>
+
+<div class="stat">
+<h3>200+</h3>
+<p>Anggota</p>
+</div>
+
+<div class="stat">
+<h3>80+</h3>
+<p>UMKM Bergabung</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>UMKM Pilihan</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Kopi Kampus</h3>
+<p>Usaha kopi mahasiswa dengan konsep kreatif.</p>
+</div>
+
+<div class="card">
+<h3>Snack Rumahan</h3>
+<p>Produk camilan homemade dengan bahan lokal.</p>
+</div>
+
+<div class="card">
+<h3>Fashion Lokal</h3>
+<p>Brand fashion karya mahasiswa.</p>
+</div>
+
+</div>
+
+<button class="btn">Lihat Direktori UMKM</button>
+
+</section>
 
 <section class="section">
 
@@ -306,40 +363,41 @@ Usaha Mikro Kecil dan Menengah untuk berkembang di era digital.
 <div class="grid">
 
 <div class="card">
-<h3>Strategi Digital Marketing UMKM</h3>
-<p>Teknik pemasaran online untuk meningkatkan penjualan.</p>
+<h3>Cara Memulai Usaha</h3>
+<p>Panduan memulai usaha dengan modal kecil.</p>
 </div>
 
 <div class="card">
-<h3>Manajemen Keuangan Usaha</h3>
-<p>Panduan mengelola keuangan bisnis secara efektif.</p>
+<h3>Strategi Branding</h3>
+<p>Membangun identitas bisnis yang kuat.</p>
 </div>
 
 <div class="card">
-<h3>Peluang Bisnis 2026</h3>
-<p>Tren usaha yang berpotensi berkembang.</p>
+<h3>Tren UMKM 2026</h3>
+<p>Peluang bisnis yang sedang berkembang.</p>
 </div>
 
 </div>
 
-<button class="btn">Lihat Artikel Lainnya</button>
+<button class="btn">Lihat Informasi Lainnya</button>
 
 </section>
 
+<!-- AJAKAN KOLABORASI -->
 
 <section class="collab">
 
-<h2>Bergabunglah dengan Komunitas UMKM</h2>
+<h2>Bergabung Bersama PUSLIB UMKM</h2>
 
 <p>
-Promosikan usaha Anda, temukan mitra bisnis,
-dan akses berbagai literasi bisnis melalui PUSLIB UMKM.
+Apakah Anda memiliki usaha atau UMKM?  
+Mari bergabung dalam platform PUSLIB UMKM untuk memperluas jaringan,
+mendapatkan literasi bisnis, dan mempromosikan produk Anda.
 </p>
 
 <button>Daftarkan UMKM Anda</button>
 
 </section>
-
 
 <footer>
 
@@ -347,19 +405,19 @@ dan akses berbagai literasi bisnis melalui PUSLIB UMKM.
 
 <div>
 <h3>PUSLIB UMKM</h3>
-<p>Pusat literasi bisnis dan perpustakaan digital UMKM.</p>
+<p>Pusat literasi bisnis dan perpustakaan digital untuk UMKM.</p>
+</div>
+
+<div>
+<h3>Kontak</h3>
+<p>Email : puslib@umkm.id</p>
+<p>Instagram : @puslib.umkm</p>
 </div>
 
 <div>
 <h3>Jam Operasional</h3>
 <p>Senin - Jumat</p>
 <p>08.00 - 16.00</p>
-</div>
-
-<div>
-<h3>Kontak</h3>
-<p>Medan, Sumatera Utara</p>
-<p>info@puslibumkm.id</p>
 </div>
 
 </div>
@@ -369,6 +427,26 @@ dan akses berbagai literasi bisnis melalui PUSLIB UMKM.
 </p>
 
 </footer>
+
+<script>
+
+function search(){
+let input = document.getElementById("searchInput").value;
+
+if(input === ""){
+alert("Silakan masukkan kata kunci pencarian");
+}
+else{
+alert("Anda mencari: " + input);
+}
+}
+
+function toggleMenu(){
+let menu = document.getElementById("menu");
+menu.classList.toggle("show");
+}
+
+</script>
 
 </body>
 </html>
