@@ -7,12 +7,18 @@
 
 <style>
 
+*{
+box-sizing:border-box;
+}
+
 body{
 margin:0;
-font-family: 'Segoe UI', sans-serif;
-background:#f4f6f9;
+font-family:Segoe UI, sans-serif;
+background:linear-gradient(180deg,#f6f9fc,#eef2f7);
 color:#333;
 }
+
+/* NAVBAR */
 
 header{
 display:flex;
@@ -20,9 +26,10 @@ justify-content:space-between;
 align-items:center;
 background:#0a3d62;
 color:white;
-padding:15px 40px;
+padding:15px 60px;
 position:sticky;
 top:0;
+box-shadow:0 2px 10px rgba(0,0,0,0.2);
 z-index:1000;
 }
 
@@ -43,6 +50,7 @@ nav a{
 color:white;
 text-decoration:none;
 font-size:14px;
+transition:0.3s;
 }
 
 nav a:hover{
@@ -51,8 +59,8 @@ color:#f1c40f;
 
 .login{
 background:#1e90ff;
-padding:6px 12px;
-border-radius:6px;
+padding:6px 14px;
+border-radius:20px;
 }
 
 /* HERO */
@@ -65,7 +73,7 @@ padding:120px 20px;
 }
 
 .hero h1{
-font-size:42px;
+font-size:44px;
 margin-bottom:10px;
 }
 
@@ -82,30 +90,31 @@ margin-top:25px;
 padding:12px;
 width:260px;
 border:none;
-border-radius:6px;
+border-radius:30px;
+outline:none;
 }
 
 .search-box button{
-padding:12px 20px;
+padding:12px 25px;
 border:none;
 background:#f1c40f;
 color:black;
-border-radius:6px;
+border-radius:30px;
 cursor:pointer;
+margin-left:10px;
 font-weight:bold;
 }
 
 /* SECTION */
 
 .section{
-padding:70px 40px;
+padding:70px 10%;
 text-align:center;
 }
 
 .section h2{
 margin-bottom:40px;
 font-size:28px;
-color:#0a3d62;
 }
 
 /* GRID */
@@ -122,12 +131,12 @@ gap:25px;
 background:white;
 padding:30px;
 border-radius:12px;
-box-shadow:0 6px 18px rgba(0,0,0,0.1);
+box-shadow:0 4px 15px rgba(0,0,0,0.1);
 transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-8px);
+transform:translateY(-6px);
 }
 
 /* STATS */
@@ -135,15 +144,18 @@ transform:translateY(-8px);
 .stats{
 display:flex;
 justify-content:center;
+gap:80px;
 flex-wrap:wrap;
-gap:60px;
-margin-top:20px;
 }
 
 .stat h3{
-font-size:36px;
+font-size:34px;
 color:#1e90ff;
 margin:0;
+}
+
+.stat p{
+margin:5px 0;
 }
 
 /* BUTTON */
@@ -154,9 +166,9 @@ padding:12px 25px;
 background:#1e90ff;
 color:white;
 border:none;
-border-radius:8px;
+border-radius:30px;
 cursor:pointer;
-font-size:15px;
+font-size:14px;
 }
 
 .btn:hover{
@@ -168,31 +180,24 @@ background:#0a3d62;
 .collab{
 background:linear-gradient(135deg,#0a3d62,#1e90ff);
 color:white;
-text-align:center;
 padding:80px 20px;
+text-align:center;
 }
 
 .collab h2{
 font-size:30px;
-margin-bottom:15px;
+margin-bottom:10px;
 }
 
 .collab p{
-font-size:18px;
-max-width:700px;
-margin:auto;
+font-size:17px;
 opacity:0.9;
 }
 
-.collab button{
-margin-top:30px;
-padding:15px 30px;
+.collab .btn{
 background:#f1c40f;
-border:none;
-border-radius:8px;
-font-size:16px;
-font-weight:bold;
-cursor:pointer;
+color:black;
+margin-top:20px;
 }
 
 /* FOOTER */
@@ -200,14 +205,13 @@ cursor:pointer;
 footer{
 background:#0a3d62;
 color:white;
-padding:50px 20px;
+padding:50px 10%;
 }
 
 .footer-grid{
-display:flex;
-justify-content:space-around;
-flex-wrap:wrap;
-gap:40px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:30px;
 }
 
 .copyright{
@@ -238,7 +242,6 @@ display:block;
 .menu-btn{
 display:block;
 cursor:pointer;
-font-size:20px;
 }
 
 }
@@ -255,15 +258,15 @@ font-size:20px;
 
 <nav>
 <ul id="menu">
-<li><a href="#home">Beranda</a></li>
-<li><a href="#profil">About</a></li>
+<li><a href="#">Beranda</a></li>
+<li><a href="#">About</a></li>
 <li><a href="#">Perpustakaan Digital</a></li>
 <li><a href="#">Literasi Bisnis</a></li>
 <li><a href="#">Direktori UMKM</a></li>
 <li><a href="#">Data & Riset</a></li>
 <li><a href="#">Kolaborasi</a></li>
-<li><a href="#kontak">Kontak</a></li>
-<li><a href="#login.html" class="login">Login</a></li>
+<li><a href="#">Kontak</a></li>
+<li><a href="#" class="login">Login</a></li>
 </ul>
 </nav>
 
@@ -292,12 +295,12 @@ font-size:20px;
 
 <div class="card">
 <h3>Perpustakaan Digital</h3>
-<p>Akses OPAC, buku digital dan majalah bisnis untuk pengembangan usaha.</p>
+<p>Akses OPAC, buku digital dan majalah bisnis.</p>
 </div>
 
 <div class="card">
 <h3>Layanan Sirkulasi</h3>
-<p>Transaksi peminjaman, pengembalian, dan reservasi buku.</p>
+<p>Peminjaman, pengembalian, dan reservasi buku.</p>
 </div>
 
 </div>
@@ -390,12 +393,11 @@ font-size:20px;
 <h2>Bergabung Bersama PUSLIB UMKM</h2>
 
 <p>
-Apakah Anda memiliki usaha atau UMKM?  
-Mari bergabung dalam platform PUSLIB UMKM untuk memperluas jaringan,
-mendapatkan literasi bisnis, dan mempromosikan produk Anda.
+Promosikan usaha Anda dan dapatkan akses literasi bisnis,
+data riset, serta jaringan kolaborasi UMKM.
 </p>
 
-<button>Daftarkan UMKM Anda</button>
+<button class="btn">Daftarkan UMKM Anda</button>
 
 </section>
 
@@ -431,19 +433,22 @@ mendapatkan literasi bisnis, dan mempromosikan produk Anda.
 <script>
 
 function search(){
-let input = document.getElementById("searchInput").value;
 
-if(input === ""){
+let input=document.getElementById("searchInput").value;
+
+if(input===""){
 alert("Silakan masukkan kata kunci pencarian");
+}else{
+alert("Anda mencari: "+input);
 }
-else{
-alert("Anda mencari: " + input);
-}
+
 }
 
 function toggleMenu(){
-let menu = document.getElementById("menu");
+
+let menu=document.getElementById("menu");
 menu.classList.toggle("show");
+
 }
 
 </script>
