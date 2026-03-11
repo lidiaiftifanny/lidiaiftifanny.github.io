@@ -55,6 +55,54 @@ padding:6px 12px;
 border-radius:6px;
 }
 
+
+/* DROPDOWN MENU */
+
+.dropdown{
+position:relative;
+}
+
+.submenu{
+display:none;
+position:absolute;
+top:35px;
+left:0;
+background:white;
+list-style:none;
+padding:0;
+margin:0;
+min-width:180px;
+border-radius:6px;
+box-shadow:0 5px 15px rgba(0,0,0,0.15);
+overflow:hidden;
+}
+
+.submenu li{
+border-bottom:1px solid #eee;
+}
+
+.submenu li:last-child{
+border-bottom:none;
+}
+
+.submenu a{
+display:block;
+padding:10px 15px;
+color:#333;
+text-decoration:none;
+font-size:14px;
+}
+
+.submenu a:hover{
+background:#f4f6f9;
+}
+
+/* munculkan dropdown saat hover */
+
+.dropdown:hover .submenu{
+display:block;
+}
+  
 /* HERO */
 
 .hero{
@@ -255,8 +303,19 @@ font-size:20px;
 
 <nav>
 <ul id="menu">
+
 <li><a href="#home">Beranda</a></li>
-<li><a href="profil">About</a></li>
+
+<li class="dropdown">
+<a href="#">About ▾</a>
+
+<ul class="submenu">
+<li><a href="tentang-saya.html">Tentang Saya</a></li>
+<li><a href="tentang-perpustakaan.html">Tentang Perpustakaan</a></li>
+</ul>
+
+</li>
+
 <li><a href="#">Perpustakaan Digital</a></li>
 <li><a href="#">Literasi Bisnis</a></li>
 <li><a href="#">Direktori UMKM</a></li>
@@ -264,6 +323,7 @@ font-size:20px;
 <li><a href="#">Kolaborasi</a></li>
 <li><a href="kontak">Kontak</a></li>
 <li><a href="login.html" class="login">Login</a></li>
+
 </ul>
 </nav>
 
