@@ -9,10 +9,12 @@
 
 body{
 margin:0;
-font-family: 'Segoe UI', sans-serif;
+font-family:'Segoe UI',sans-serif;
 background:#f4f6f9;
 color:#333;
 }
+
+/* HEADER */
 
 header{
 display:flex;
@@ -55,17 +57,12 @@ padding:6px 12px;
 border-radius:6px;
 }
 
-
-/* DROPDOWN MENU */
+/* DROPDOWN */
 
 .dropdown{
 position:relative;
 }
 
-.dropdown:hover .submenu{
-display:block;
-}
-  
 .submenu{
 display:none;
 position:absolute;
@@ -78,7 +75,6 @@ margin:0;
 min-width:180px;
 border-radius:6px;
 box-shadow:0 5px 15px rgba(0,0,0,0.15);
-overflow:hidden;
 }
 
 .submenu li{
@@ -94,57 +90,86 @@ display:block;
 padding:10px 15px;
 color:#333;
 text-decoration:none;
-font-size:14px;
 }
 
 .submenu a:hover{
 background:#f4f6f9;
 }
 
-/* munculkan dropdown saat hover */
-
 .dropdown:hover .submenu{
 display:block;
 }
-  
+
 /* HERO */
 
 .hero{
-background:linear-gradient(135deg,#1e90ff,#0a3d62);
-color:white;
+height:450px;
+background-image:url("https://images.unsplash.com/photo-1507842217343-583bb7270b66");
+background-size:cover;
+background-position:center;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
 text-align:center;
-padding:120px 20px;
+color:white;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
 }
 
 .hero h1{
-font-size:42px;
-margin-bottom:10px;
-}
-
-.hero p{
-font-size:18px;
-opacity:0.9;
-}
-
-.search-box{
-margin-top:25px;
+font-size:48px;
+letter-spacing:2px;
+margin-bottom:20px;
 }
 
 .search-box input{
 padding:12px;
-width:260px;
+width:320px;
 border:none;
-border-radius:6px;
+border-radius:4px;
 }
 
 .search-box button{
-padding:12px 20px;
+padding:12px 18px;
 border:none;
-background:#f1c40f;
-color:black;
-border-radius:6px;
+background:#ff4d4d;
+color:white;
 cursor:pointer;
-font-weight:bold;
+}
+
+/* STATISTIK */
+
+.home-stats{
+background:#f6efe8;
+display:flex;
+justify-content:center;
+gap:120px;
+padding:40px 20px;
+text-align:center;
+}
+
+.home-stats h2{
+font-size:32px;
+margin:0;
+}
+
+.home-stats p{
+margin:5px 0 0;
+color:#777;
 }
 
 /* SECTION */
@@ -182,22 +207,6 @@ transition:0.3s;
 transform:translateY(-8px);
 }
 
-/* STATS */
-
-.stats{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:60px;
-margin-top:20px;
-}
-
-.stat h3{
-font-size:36px;
-color:#1e90ff;
-margin:0;
-}
-
 /* BUTTON */
 
 .btn{
@@ -208,14 +217,13 @@ color:white;
 border:none;
 border-radius:8px;
 cursor:pointer;
-font-size:15px;
 }
 
 .btn:hover{
 background:#0a3d62;
 }
 
-/* COLLAB SECTION */
+/* KOLABORASI */
 
 .collab{
 background:linear-gradient(135deg,#0a3d62,#1e90ff);
@@ -224,25 +232,12 @@ text-align:center;
 padding:80px 20px;
 }
 
-.collab h2{
-font-size:30px;
-margin-bottom:15px;
-}
-
-.collab p{
-font-size:18px;
-max-width:700px;
-margin:auto;
-opacity:0.9;
-}
-
 .collab button{
 margin-top:30px;
 padding:15px 30px;
 background:#f1c40f;
 border:none;
 border-radius:8px;
-font-size:16px;
 font-weight:bold;
 cursor:pointer;
 }
@@ -269,34 +264,7 @@ font-size:14px;
 opacity:0.8;
 }
 
-/* MOBILE */
-
-@media(max-width:768px){
-
-nav ul{
-flex-direction:column;
-background:#0a3d62;
-position:absolute;
-top:60px;
-right:0;
-display:none;
-padding:20px;
-}
-
-nav ul.show{
-display:block;
-}
-
-.menu-btn{
-display:block;
-cursor:pointer;
-font-size:20px;
-}
-
-}
-
 </style>
-
 </head>
 
 <body>
@@ -308,7 +276,7 @@ font-size:20px;
 <nav>
 <ul id="menu">
 
-<li><a href="#home">Beranda</a></li>
+<li><a href="#">Beranda</a></li>
 
 <li class="dropdown">
 <a href="#">About ▾</a>
@@ -325,59 +293,85 @@ font-size:20px;
 <li><a href="sirkulasi.html">Layanan Sirkulasi</a></li>
 </ul>
 </li>
-  
+
 <li class="dropdown">
 <a href="#">Literasi Bisnis ▾</a>
 <ul class="submenu">
-<li><a href="panduan.usaha">Panduan Usaha</a></li>
-<li><a href="strategi.bisnis">Strategi Bisnis</a></li>
-<li><a href="Video.edukasi.bisnis">Konten Edukasi</a></li>
+<li><a href="#">Panduan Usaha</a></li>
+<li><a href="#">Strategi Bisnis</a></li>
+<li><a href="#">Konten Edukasi</a></li>
 </ul>
 </li>
-  
+
 <li><a href="#">Direktori UMKM</a></li>
-  
+
 <li class="dropdown">
 <a href="#">Data dan Statistik ▾</a>
 <ul class="submenu">
-<li><a href="statistik.umkm">Statistik UMKM</a></li>
-<li><a href="pemetaan.umkm">Pemetaan UMKM</a></li>
-<li><a href="tren.usaha">Tren Usaha</a></li>
-<li><a href="unduh.laporan">Unduh Laporan</a></li>
+<li><a href="#">Statistik UMKM</a></li>
+<li><a href="#">Pemetaan UMKM</a></li>
+<li><a href="#">Tren Usaha</a></li>
+<li><a href="#">Unduh Laporan</a></li>
 </ul>
 </li>
 
 <li class="dropdown">
 <a href="#">Kolaborasi ▾</a>
 <ul class="submenu">
-<li><a href="daftarkan.usaha">Daftarkan Usaha</a></li>
-<li><a href="informasi.kolaborasi">Informasi Kolaborasi</a></li>
-<li><a href="program.pengembangan">Program Pengembangan</a></li>
+<li><a href="#">Daftarkan Usaha</a></li>
+<li><a href="#">Informasi Kolaborasi</a></li>
+<li><a href="#">Program Pengembangan</a></li>
 </ul>
 </li>
-  
-<li><a href="kontak">Kontak</a></li>
+
+<li><a href="#">Kontak</a></li>
 <li><a href="login.html" class="login">Login</a></li>
 
 </ul>
 </nav>
 
-<div class="menu-btn" onclick="toggleMenu()">☰</div>
-
 </header>
+
+<!-- HERO -->
 
 <section class="hero">
 
-<h1>Pusat Library UMKM</h1>
+<div class="hero-content">
 
-<p>Pusat Informasi dan Pengembangan UMKM</p>
+<h1>Selamat Datang di Pusat Library UMKM (PUSLIB)</h1>
+  <h2>Mari Jelajahi Dunia Usahamu Melalui Buu di PUSLIB</h2>
 
 <div class="search-box">
-<input type="text" id="searchInput" placeholder="Cari informasi bisnis...">
-<button onclick="search()">Cari</button>
+<input type="text" placeholder="Search books...">
+<button>Search</button>
+</div>
+
 </div>
 
 </section>
+
+<!-- STATISTIK -->
+
+<section class="home-stats">
+<h2>Statistik PUSLIB</h2>
+<div>
+<h2>90k+</h2>
+<p>Koleksi DIgital</p>
+</div>
+
+<div>
+<h2>23k+</h2>
+<p>Anggota</p>
+</div>
+
+<div>
+<h2>10k+</h2>
+<p>UMKM Bergabung</p>
+</div>
+
+</section>
+
+<!-- FITUR -->
 
 <section class="section">
 
@@ -387,42 +381,19 @@ font-size:20px;
 
 <div class="card">
 <h3>Perpustakaan Digital</h3>
-<p>Akses OPAC, buku digital dan majalah bisnis untuk pengembangan usaha.</p>
+<p>Akses OPAC dan koleksi buku bisnis.</p>
 </div>
 
 <div class="card">
 <h3>Layanan Sirkulasi</h3>
-<p>Transaksi peminjaman, pengembalian, dan reservasi buku.</p>
+<p>Peminjaman dan pengembalian koleksi.</p>
 </div>
 
 </div>
 
 </section>
 
-<section class="section">
-
-<h2>Statistik PUSLIB</h2>
-
-<div class="stats">
-
-<div class="stat">
-<h3>500+</h3>
-<p>Koleksi Digital</p>
-</div>
-
-<div class="stat">
-<h3>200+</h3>
-<p>Anggota</p>
-</div>
-
-<div class="stat">
-<h3>80+</h3>
-<p>UMKM Bergabung</p>
-</div>
-
-</div>
-
-</section>
+<!-- UMKM -->
 
 <section class="section">
 
@@ -432,17 +403,17 @@ font-size:20px;
 
 <div class="card">
 <h3>Kopi Kampus</h3>
-<p>Usaha kopi mahasiswa dengan konsep kreatif.</p>
+<p>Usaha kopi mahasiswa.</p>
 </div>
 
 <div class="card">
 <h3>Snack Rumahan</h3>
-<p>Produk camilan homemade dengan bahan lokal.</p>
+<p>Camilan homemade.</p>
 </div>
 
 <div class="card">
 <h3>Fashion Lokal</h3>
-<p>Brand fashion karya mahasiswa.</p>
+<p>Brand fashion mahasiswa.</p>
 </div>
 
 </div>
@@ -451,43 +422,14 @@ font-size:20px;
 
 </section>
 
-<section class="section">
-
-<h2>Artikel Bisnis Terbaru</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Cara Memulai Usaha</h3>
-<p>Panduan memulai usaha dengan modal kecil.</p>
-</div>
-
-<div class="card">
-<h3>Strategi Branding</h3>
-<p>Membangun identitas bisnis yang kuat.</p>
-</div>
-
-<div class="card">
-<h3>Tren UMKM 2026</h3>
-<p>Peluang bisnis yang sedang berkembang.</p>
-</div>
-
-</div>
-
-<button class="btn">Lihat Informasi Lainnya</button>
-
-</section>
-
-<!-- AJAKAN KOLABORASI -->
+<!-- KOLABORASI -->
 
 <section class="collab">
 
 <h2>Bergabung Bersama PUSLIB UMKM</h2>
 
 <p>
-Apakah Anda memiliki usaha atau UMKM?  
-Mari bergabung dalam platform PUSLIB UMKM untuk memperluas jaringan,
-mendapatkan literasi bisnis, dan mempromosikan produk Anda.
+Mari bergabung untuk memperluas jaringan usaha dan literasi bisnis.
 </p>
 
 <button>Daftarkan UMKM Anda</button>
@@ -500,7 +442,7 @@ mendapatkan literasi bisnis, dan mempromosikan produk Anda.
 
 <div>
 <h3>PUSLIB UMKM</h3>
-<p>Pusat literasi bisnis dan perpustakaan digital untuk UMKM.</p>
+<p>Pusat literasi bisnis dan perpustakaan digital.</p>
 </div>
 
 <div>
@@ -522,26 +464,6 @@ mendapatkan literasi bisnis, dan mempromosikan produk Anda.
 </p>
 
 </footer>
-
-<script>
-
-function search(){
-let input = document.getElementById("searchInput").value;
-
-if(input === ""){
-alert("Silakan masukkan kata kunci pencarian");
-}
-else{
-alert("Anda mencari: " + input);
-}
-}
-
-function toggleMenu(){
-let menu = document.getElementById("menu");
-menu.classList.toggle("show");
-}
-
-</script>
 
 </body>
 </html>
