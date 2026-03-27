@@ -1,402 +1,135 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PUSLIB UMKM</title>
+<title>Elegant Landing</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Georgia', serif;
 }
 
 body {
-    background: #eef2f5;
+    height:100vh;
+    overflow:hidden;
 }
 
-/* CONTAINER */
-.container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
-}
-
-/* NAVBAR */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: white;
-    padding: 15px 25px;
-    border-radius: 12px;
-    position: sticky;
-    top: 10px;
-    z-index: 1000;
-    transition: 0.3s;
-}
-
-.navbar.scrolled {
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-}
-
-.nav-left {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-
-.nav-left ul {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-}
-
-.nav-left li {
-    position: relative;
-    cursor: pointer;
-}
-
-/* DROPDOWN */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    top: 30px;
-    background: white;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-.nav-left li:hover .dropdown-content {
-    display: block;
-}
-
-.dropdown-content p {
-    padding: 8px 10px;
-}
-
-.dropdown-content p:hover {
-    background: #f1f1f1;
-    border-radius: 6px;
-}
-
-.nav-right {
-    display: flex;
-    gap: 10px;
-}
-
-.search {
-    padding: 8px 12px;
-    border-radius: 20px;
-    border: 1px solid #ccc;
-}
-
-.btn {
-    padding: 8px 15px;
-    border-radius: 20px;
-    border: none;
-    background: #1B2A41;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background: #0a3d62;
-}
-
-/* HERO */
+/* BACKGROUND */
 .hero {
-    margin-top: 20px;
-    height: 350px;
-    border-radius: 20px;
-    overflow: hidden;
-    position: relative;
+    position:relative;
+    width:100%;
+    height:100vh;
+    background: url('https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17') no-repeat center/cover;
 }
 
-.hero img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
+/* OVERLAY GELAP */
 .hero::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.5);
-    top: 0;
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(20,10,5,0.9));
 }
 
-.hero-text {
-    position: absolute;
-    top: 30%;
-    left: 40px;
-    color: white;
-    z-index: 2;
-    animation: fadeUp 1s ease;
+/* GLOW EFFECT */
+.glow {
+    position:absolute;
+    top:20%;
+    left:50%;
+    transform:translateX(-50%);
+    width:400px;
+    height:400px;
+    background: radial-gradient(circle, rgba(255,140,0,0.4), transparent);
+    filter: blur(80px);
+    z-index:1;
 }
 
-.hero-text h1 {
-    font-size: 45px;
+/* CARD */
+.content {
+    position:absolute;
+    bottom:10%;
+    left:50%;
+    transform:translateX(-50%);
+    background:#f5f0eb;
+    padding:40px 60px;
+    border-radius:6px;
+    text-align:center;
+    z-index:2;
+    box-shadow:0 10px 40px rgba(0,0,0,0.5);
 }
 
-/* STATS */
-.stats {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 30px;
-    text-align: center;
+/* TEXT */
+.content h1 {
+    font-size:36px;
+    letter-spacing:2px;
+    margin-bottom:15px;
 }
 
-/* SECTION ANIMATION */
-.section {
-    margin-top: 40px;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 0.8s;
+.content p {
+    font-style:italic;
+    font-size:18px;
+    color:#333;
 }
 
-.section.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* FEATURE */
-.why {
-    display: flex;
-    gap: 20px;
-}
-
-.feature-box {
-    background: #dfe6ed;
-    padding: 15px;
-    border-radius: 12px;
-    transition: 0.3s;
-}
-
-.feature-box:hover {
-    transform: translateY(-5px);
-}
-
-/* CARDS */
-.cards {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.card {
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    width: 30%;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-}
-
-/* CTA */
-.collab {
-    margin-top: 40px;
-    background: linear-gradient(135deg,#0a3d62,#1e90ff);
-    color: white;
-    padding: 40px;
-    border-radius: 15px;
-    text-align: center;
-}
-
-/* FOOTER */
-.footer {
-    margin-top: 40px;
-    background: #1B2A41;
-    color: white;
-    padding: 40px;
-    border-radius: 15px;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-    .nav-left ul {
-        display: none;
-    }
-
-    .cards {
-        flex-direction: column;
-    }
-
-    .card {
-        width: 100%;
-    }
-
-    .why {
-        flex-direction: column;
-    }
+/* LOGO TEXT */
+.logo {
+    position:absolute;
+    top:30px;
+    left:50%;
+    transform:translateX(-50%);
+    color:white;
+    z-index:2;
+    text-align:center;
+    font-size:14px;
+    letter-spacing:2px;
 }
 
 /* ANIMATION */
 @keyframes fadeUp {
-    from {opacity:0; transform:translateY(20px);}
-    to {opacity:1; transform:translateY(0);}
+    from {
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to {
+        opacity:1;
+        transform:translateY(0);
+    }
 }
+
+.content {
+    animation: fadeUp 1.5s ease;
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="container">
-
-<!-- NAVBAR -->
-<div class="navbar" id="navbar">
-    <div class="nav-left">
-        <h2>PUSLIB UMKM</h2>
-        <ul>
-            <li>Beranda</li>
-
-            <li>Perpustakaan
-                <div class="dropdown-content">
-                    <p>OPAC</p>
-                    <p>Sirkulasi</p>
-                </div>
-            </li>
-
-            <li>Literasi
-                <div class="dropdown-content">
-                    <p>Panduan Usaha</p>
-                    <p>Strategi</p>
-                </div>
-            </li>
-
-            <li>UMKM</li>
-            <li>Kontak</li>
-        </ul>
-    </div>
-
-    <div class="nav-right">
-        <input class="search" placeholder="Cari buku...">
-        <button class="btn">Login</button>
-    </div>
-</div>
-
-<!-- HERO -->
 <div class="hero">
-    <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66">
-    <div class="hero-text">
-        <h1>PUSLIB UMKM</h1>
-        <p>Pusat literasi bisnis & perpustakaan digital</p>
-    </div>
-</div>
 
-<!-- STATS -->
-<div class="section">
-    <div class="stats">
-        <div>
-            <h2>90k+</h2>
-            <p>Koleksi</p>
-        </div>
-        <div>
-            <h2>23k+</h2>
-            <p>Anggota</p>
-        </div>
-        <div>
-            <h2>10k+</h2>
-            <p>UMKM</p>
-        </div>
-    </div>
-</div>
-
-<!-- FITUR -->
-<div class="section why">
-    <div>
-        <h2>Fitur Utama</h2>
+    <!-- LOGO -->
+    <div class="logo">
+        <p>EST. 1971</p>
+        <h3>THE ROYAL CHURCH</h3>
     </div>
 
-    <div>
-        <div class="feature-box">Perpustakaan Digital</div>
-        <div class="feature-box">Layanan Sirkulasi</div>
-        <div class="feature-box">Literasi Bisnis</div>
+    <!-- GLOW -->
+    <div class="glow"></div>
+
+    <!-- CONTENT -->
+    <div class="content">
+        <h1>DISCOVER EVENTS</h1>
+        <p>Faith, fellowship, and inspiration</p>
     </div>
-</div>
-
-<!-- UMKM -->
-<div class="section">
-    <h2>UMKM Pilihan</h2>
-    <div class="cards">
-        <div class="card">
-            <h3>Kopi Kampus</h3>
-            <p>Usaha mahasiswa</p>
-        </div>
-        <div class="card">
-            <h3>Snack Rumahan</h3>
-            <p>Camilan homemade</p>
-        </div>
-        <div class="card">
-            <h3>Fashion Lokal</h3>
-            <p>Brand lokal</p>
-        </div>
-    </div>
-</div>
-
-<!-- CTA -->
-<div class="collab">
-    <h2>Bergabung Bersama PUSLIB</h2>
-    <button class="btn">Daftar Sekarang</button>
-</div>
-
-<!-- FOOTER -->
-<div class="footer">
-    <div class="footer-container">
-        <div>
-            <h3>PUSLIB UMKM</h3>
-            <p>Pusat literasi bisnis</p>
-        </div>
-        <div>
-            <h3>Kontak</h3>
-            <p>puslib@umkm.id</p>
-        </div>
-        <div>
-            <h3>Jam</h3>
-            <p>08.00 - 16.00</p>
-        </div>
-    </div>
-</div>
 
 </div>
-
-<script>
-// SCROLL NAVBAR
-window.addEventListener("scroll", function(){
-    let navbar = document.getElementById("navbar");
-    navbar.classList.toggle("scrolled", window.scrollY > 50);
-});
-
-// ANIMASI SECTION
-const sections = document.querySelectorAll(".section");
-
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting){
-            entry.target.classList.add("show");
-        }
-    });
-}, {threshold: 0.2});
-
-sections.forEach(section => {
-    observer.observe(section);
-});
-</script>
 
 </body>
 </html>
