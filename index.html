@@ -1,126 +1,157 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cinematic Landing</title>
+<title>PUSLIB UMKM</title>
 
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: 'Georgia', serif;
+    font-family: 'Segoe UI', sans-serif;
 }
 
-body, html{
-    height:100%;
+body{
+    background:#f2f2f0;
 }
 
-/* BACKGROUND UTAMA */
-.hero{
-    position:relative;
-    width:100%;
-    height:100vh;
-    background: url('rekomen bagrond.jpg') no-repeat center/cover;
+/* NAVBAR */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#0b1f3a;
+    color:white;
+    padding:15px 30px;
 }
 
-/* OVERLAY GELAP */
-.hero::before{
-    content:"";
-    position:absolute;
-    width:100%;
-    height:100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(40,10,5,0.9));
+.logo{
+    width:120px;
 }
 
-/* EFFECT GLOW API */
-.fire-glow{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background: radial-gradient(circle at 50% 30%, rgba(255,120,0,0.4), transparent 60%);
-    mix-blend-mode: screen;
+.title{
+    font-size:20px;
+    font-weight:bold;
 }
 
-/* LOGO ATAS */
-.header{
-    position:absolute;
-    top:40px;
-    width:100%;
+.login-btn{
+    background:white;
+    color:#0b1f3a;
+    border:none;
+    padding:8px 18px;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+/* MAIN 3 KOLOM */
+.main{
+    display:flex;
+    height:calc(100vh - 70px);
+}
+
+/* KIRI */
+.left{
+    width:25%;
+    background:url('https://images.unsplash.com/photo-1556741533-f6acd647d2fb') center/cover;
+}
+
+/* TENGAH */
+.center{
+    width:50%;
+    padding:30px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
     text-align:center;
-    color:#ddd;
-    z-index:2;
-    letter-spacing:2px;
+    overflow-y:auto;
 }
 
-.header h2{
-    font-size:18px;
-}
-
-/* CARD PUTIH (BAGIAN BAWAH) */
-.card{
-    position:absolute;
-    bottom:60px;
-    left:50%;
-    transform:translateX(-50%);
-    width:70%;
-    background:#f4efea;
-    padding:50px;
-    text-align:center;
-    border-radius:4px;
-    z-index:2;
-    box-shadow:0 20px 60px rgba(0,0,0,0.6);
+/* KANAN */
+.right{
+    width:25%;
+    background:url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da') center/cover;
 }
 
 /* TEXT */
-.card h1{
-    font-size:38px;
-    margin-bottom:20px;
-    letter-spacing:2px;
-}
-
-.card p{
-    font-size:20px;
-    font-style:italic;
-    color:#333;
-    line-height:1.6;
-}
-
-/* SMALL TEXT */
-.sub{
+.center h1{
     margin-top:20px;
-    font-size:12px;
-    color:#777;
+    font-size:28px;
 }
 
-/* ANIMASI MASUK */
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(50px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+.center p{
+    margin-top:15px;
+    line-height:1.6;
+    max-width:600px;
 }
 
-.card{
-    animation:fadeUp 1.5s ease;
+/* EVENT */
+.event-container{
+    margin-top:30px;
+    width:100%;
+    overflow:hidden;
+}
+
+.slider{
+    display:flex;
+    transition:0.5s;
+}
+
+.event{
+    min-width:100%;
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+.event img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.event p{
+    padding:15px;
+    text-align:left;
+}
+
+/* BUTTON */
+.btn-group{
+    margin-top:20px;
+    display:flex;
+    gap:20px;
+}
+
+.btn{
+    padding:10px 20px;
+    border:none;
+    border-radius:20px;
+    cursor:pointer;
+    background:#0b1f3a;
+    color:white;
+}
+
+/* SOSIAL */
+.social{
+    margin-top:20px;
+    display:flex;
+    gap:15px;
+}
+
+.social img{
+    width:30px;
+    cursor:pointer;
 }
 
 /* RESPONSIVE */
 @media(max-width:768px){
-    .card{
-        width:90%;
-        padding:30px;
+    .left, .right{
+        display:none;
     }
-
-    .card h1{
-        font-size:24px;
+    .center{
+        width:100%;
     }
 }
 </style>
@@ -128,31 +159,85 @@ body, html{
 
 <body>
 
-<div class="hero">
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="logo">[LOGO]</div>
+    <div class="title">PUSLIB UMKM</div>
+    <button class="login-btn">Login</button>
+</div>
 
-    <!-- OVERLAY API -->
-    <div class="fire-glow"></div>
+<!-- MAIN -->
+<div class="main">
 
-    <!-- HEADER -->
-    <div class="header">
-        <p>EST. 1971 IN NEW YORK</p>
-        <h2>THE ROYAL CHURCH</h2>
-    </div>
+    <!-- KIRI -->
+    <div class="left"></div>
 
-    <!-- CARD UTAMA -->
-    <div class="card">
-        <h1>DISCOVER EVENTS WHERE</h1>
+    <!-- TENGAH -->
+    <div class="center">
+
+        <h1>Selamat datang di perpustakaan UMKM</h1>
+
         <p>
-            faith, fellowship, AND community unite. <br>
-            ALL ARE WELCOME!
+        kami akan melayani kebutuhan Anda terkait layanan informasi perpustakaan maupun layanan kemitraan UMKM sesuai dengan jam kerja layanan mulai pukul 08.00-16.00 WIB dari hari senin sampai Sabtu
         </p>
 
-        <div class="sub">
-            CHURCH AUTHORITY
+        <!-- EVENT -->
+        <div class="event-container">
+            <div class="slider" id="slider">
+
+                <div class="event">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
+                    <p>Event 1: Deskripsi kegiatan perpustakaan dan UMKM yang akan kamu isi nanti...</p>
+                </div>
+
+                <div class="event">
+                    <img src="https://images.unsplash.com/photo-1515169067868-5387ec356754">
+                    <p>Event 2: Deskripsi kegiatan perpustakaan dan UMKM yang akan kamu isi nanti...</p>
+                </div>
+
+                <div class="event">
+                    <img src="https://images.unsplash.com/photo-1503428593586-e225b39bddfe">
+                    <p>Event 3: Deskripsi kegiatan perpustakaan dan UMKM yang akan kamu isi nanti...</p>
+                </div>
+
+            </div>
         </div>
+
+        <!-- BUTTON -->
+        <div class="btn-group">
+            <button class="btn">UMKM</button>
+            <button class="btn">Perpustakaan</button>
+        </div>
+
+        <!-- SOSIAL -->
+        <div class="social">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png">
+            <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733646.png">
+        </div>
+
     </div>
 
+    <!-- KANAN -->
+    <div class="right"></div>
+
 </div>
+
+<script>
+
+/* SLIDER AUTO */
+let index = 0;
+const slider = document.getElementById("slider");
+const total = document.querySelectorAll(".event").length;
+
+setInterval(()=>{
+    index++;
+    if(index >= total) index = 0;
+    slider.style.transform = "translateX(-" + index*100 + "%)";
+}, 3000);
+
+</script>
 
 </body>
 </html>
