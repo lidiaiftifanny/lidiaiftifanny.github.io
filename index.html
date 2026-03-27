@@ -3,10 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Elegant Landing</title>
+<title>Cinematic Landing</title>
 
 <style>
-
 *{
     margin:0;
     padding:0;
@@ -14,99 +13,116 @@
     font-family: 'Georgia', serif;
 }
 
-body {
-    height:100vh;
-    overflow:hidden;
+body, html{
+    height:100%;
 }
 
-/* BACKGROUND */
-.hero {
+/* BACKGROUND UTAMA */
+.hero{
     position:relative;
     width:100%;
     height:100vh;
-    background: url('https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17') no-repeat center/cover;
+    background: url('rekomen bagrond.jpg') no-repeat center/cover;
 }
 
 /* OVERLAY GELAP */
-.hero::after {
+.hero::before{
     content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(40,10,5,0.9));
+}
+
+/* EFFECT GLOW API */
+.fire-glow{
     position:absolute;
     top:0;
     left:0;
     width:100%;
     height:100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(20,10,5,0.9));
+    background: radial-gradient(circle at 50% 30%, rgba(255,120,0,0.4), transparent 60%);
+    mix-blend-mode: screen;
 }
 
-/* GLOW EFFECT */
-.glow {
+/* LOGO ATAS */
+.header{
     position:absolute;
-    top:20%;
-    left:50%;
-    transform:translateX(-50%);
-    width:400px;
-    height:400px;
-    background: radial-gradient(circle, rgba(255,140,0,0.4), transparent);
-    filter: blur(80px);
-    z-index:1;
-}
-
-/* CARD */
-.content {
-    position:absolute;
-    bottom:10%;
-    left:50%;
-    transform:translateX(-50%);
-    background:#f5f0eb;
-    padding:40px 60px;
-    border-radius:6px;
+    top:40px;
+    width:100%;
     text-align:center;
+    color:#ddd;
     z-index:2;
-    box-shadow:0 10px 40px rgba(0,0,0,0.5);
+    letter-spacing:2px;
+}
+
+.header h2{
+    font-size:18px;
+}
+
+/* CARD PUTIH (BAGIAN BAWAH) */
+.card{
+    position:absolute;
+    bottom:60px;
+    left:50%;
+    transform:translateX(-50%);
+    width:70%;
+    background:#f4efea;
+    padding:50px;
+    text-align:center;
+    border-radius:4px;
+    z-index:2;
+    box-shadow:0 20px 60px rgba(0,0,0,0.6);
 }
 
 /* TEXT */
-.content h1 {
-    font-size:36px;
+.card h1{
+    font-size:38px;
+    margin-bottom:20px;
     letter-spacing:2px;
-    margin-bottom:15px;
 }
 
-.content p {
+.card p{
+    font-size:20px;
     font-style:italic;
-    font-size:18px;
     color:#333;
+    line-height:1.6;
 }
 
-/* LOGO TEXT */
-.logo {
-    position:absolute;
-    top:30px;
-    left:50%;
-    transform:translateX(-50%);
-    color:white;
-    z-index:2;
-    text-align:center;
-    font-size:14px;
-    letter-spacing:2px;
+/* SMALL TEXT */
+.sub{
+    margin-top:20px;
+    font-size:12px;
+    color:#777;
 }
 
-/* ANIMATION */
-@keyframes fadeUp {
-    from {
+/* ANIMASI MASUK */
+@keyframes fadeUp{
+    from{
         opacity:0;
-        transform:translateY(40px);
+        transform:translateY(50px);
     }
-    to {
+    to{
         opacity:1;
         transform:translateY(0);
     }
 }
 
-.content {
-    animation: fadeUp 1.5s ease;
+.card{
+    animation:fadeUp 1.5s ease;
 }
 
+/* RESPONSIVE */
+@media(max-width:768px){
+    .card{
+        width:90%;
+        padding:30px;
+    }
+
+    .card h1{
+        font-size:24px;
+    }
+}
 </style>
 </head>
 
@@ -114,19 +130,26 @@ body {
 
 <div class="hero">
 
-    <!-- LOGO -->
-    <div class="logo">
-        <p>EST. 1971</p>
-        <h3>THE ROYAL CHURCH</h3>
+    <!-- OVERLAY API -->
+    <div class="fire-glow"></div>
+
+    <!-- HEADER -->
+    <div class="header">
+        <p>EST. 1971 IN NEW YORK</p>
+        <h2>THE ROYAL CHURCH</h2>
     </div>
 
-    <!-- GLOW -->
-    <div class="glow"></div>
+    <!-- CARD UTAMA -->
+    <div class="card">
+        <h1>DISCOVER EVENTS WHERE</h1>
+        <p>
+            faith, fellowship, AND community unite. <br>
+            ALL ARE WELCOME!
+        </p>
 
-    <!-- CONTENT -->
-    <div class="content">
-        <h1>DISCOVER EVENTS</h1>
-        <p>Faith, fellowship, and inspiration</p>
+        <div class="sub">
+            CHURCH AUTHORITY
+        </div>
     </div>
 
 </div>
