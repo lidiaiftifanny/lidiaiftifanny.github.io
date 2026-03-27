@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wander Travel</title>
+<title>PUSLIB UMKM</title>
 
 <style>
 * {
@@ -15,13 +15,13 @@
 
 body {
     background: #eef2f5;
-    padding: 20px;
 }
 
 /* CONTAINER */
 .container {
     max-width: 1200px;
     margin: auto;
+    padding: 20px;
 }
 
 /* NAVBAR */
@@ -32,6 +32,14 @@ body {
     background: white;
     padding: 15px 25px;
     border-radius: 12px;
+    position: sticky;
+    top: 10px;
+    z-index: 1000;
+    transition: 0.3s;
+}
+
+.navbar.scrolled {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
 .nav-left {
@@ -40,41 +48,70 @@ body {
     gap: 30px;
 }
 
-.nav-left h2 {
-    font-weight: bold;
-}
-
 .nav-left ul {
     display: flex;
     list-style: none;
     gap: 20px;
 }
 
+.nav-left li {
+    position: relative;
+    cursor: pointer;
+}
+
+/* DROPDOWN */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 30px;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.nav-left li:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content p {
+    padding: 8px 10px;
+}
+
+.dropdown-content p:hover {
+    background: #f1f1f1;
+    border-radius: 6px;
+}
+
 .nav-right {
     display: flex;
     gap: 10px;
-    align-items: center;
 }
 
 .search {
     padding: 8px 12px;
     border-radius: 20px;
     border: 1px solid #ccc;
-    width: 220px;
 }
 
 .btn {
     padding: 8px 15px;
     border-radius: 20px;
     border: none;
-    background: #2c3e50;
+    background: #1B2A41;
     color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #0a3d62;
 }
 
 /* HERO */
 .hero {
     margin-top: 20px;
-    height: 300px;
+    height: 350px;
     border-radius: 20px;
     overflow: hidden;
     position: relative;
@@ -86,132 +123,101 @@ body {
     object-fit: cover;
 }
 
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    top: 0;
+}
+
 .hero-text {
     position: absolute;
     top: 30%;
     left: 40px;
     color: white;
+    z-index: 2;
+    animation: fadeUp 1s ease;
 }
 
 .hero-text h1 {
-    font-size: 60px;
-    font-weight: bold;
+    font-size: 45px;
 }
 
-.hero-text p {
-    margin: 10px 0;
-}
-
-.hero-buttons button {
-    padding: 8px 15px;
-    border-radius: 20px;
-    border: none;
-    margin-right: 10px;
-}
-
-/* SECTION */
-.section {
+/* STATS */
+.stats {
+    display: flex;
+    justify-content: space-around;
     margin-top: 30px;
+    text-align: center;
 }
 
-/* WHY SECTION */
+/* SECTION ANIMATION */
+.section {
+    margin-top: 40px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.8s;
+}
+
+.section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* FEATURE */
 .why {
     display: flex;
     gap: 20px;
-}
-
-.why-left {
-    flex: 2;
-}
-
-.why-right {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
 }
 
 .feature-box {
     background: #dfe6ed;
     padding: 15px;
     border-radius: 12px;
+    transition: 0.3s;
 }
 
-/* STATS */
-.stats {
-    display: flex;
-    gap: 40px;
-    margin-top: 20px;
+.feature-box:hover {
+    transform: translateY(-5px);
 }
 
-.stat {
-    text-align: center;
-}
-
-/* DESTINATION */
-.destinations {
-    background: #e6ebf1;
-    padding: 20px;
-    border-radius: 15px;
-    margin-top: 20px;
-}
-
+/* CARDS */
 .cards {
     display: flex;
     gap: 15px;
-    margin-top: 15px;
+    flex-wrap: wrap;
 }
 
 .card {
-    width: 220px;
     background: white;
+    padding: 20px;
     border-radius: 12px;
-    overflow: hidden;
+    width: 30%;
+    transition: 0.3s;
 }
 
-.card img {
-    width: 100%;
-    height: 130px;
-    object-fit: cover;
+.card:hover {
+    transform: translateY(-10px);
 }
 
-.card p {
-    padding: 10px;
-}
-
-/* PACKAGES */
-.packages {
-    display: flex;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.package {
-    flex: 1;
-    border-radius: 15px;
-    overflow: hidden;
+/* CTA */
+.collab {
+    margin-top: 40px;
+    background: linear-gradient(135deg,#0a3d62,#1e90ff);
     color: white;
-    position: relative;
-}
-
-.package img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-}
-
-.package-text {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
 }
 
 /* FOOTER */
 .footer {
     margin-top: 40px;
-    background: #2c3e50;
+    background: #1B2A41;
     color: white;
-    padding: 40px 20px;
+    padding: 40px;
     border-radius: 15px;
 }
 
@@ -219,36 +225,31 @@ body {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 30px;
 }
 
-.footer-col {
-    flex: 1;
-    min-width: 200px;
+/* RESPONSIVE */
+@media(max-width:768px){
+    .nav-left ul {
+        display: none;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .why {
+        flex-direction: column;
+    }
 }
 
-.footer h3 {
-    margin-bottom: 15px;
-}
-
-.footer ul {
-    list-style: none;
-}
-
-.footer ul li {
-    margin-bottom: 8px;
-    cursor: pointer;
-}
-
-.footer ul li:hover {
-    text-decoration: underline;
-}
-
-.footer-bottom {
-    text-align: center;
-    margin-top: 30px;
-    font-size: 14px;
-    opacity: 0.8;
+/* ANIMATION */
+@keyframes fadeUp {
+    from {opacity:0; transform:translateY(20px);}
+    to {opacity:1; transform:translateY(0);}
 }
 </style>
 </head>
@@ -258,158 +259,144 @@ body {
 <div class="container">
 
 <!-- NAVBAR -->
-<div class="navbar">
+<div class="navbar" id="navbar">
     <div class="nav-left">
-        <h2>ADNTR</h2>
+        <h2>PUSLIB UMKM</h2>
         <ul>
-            <li>Home</li>
-            <li>Destinations</li>
-            <li>Packages</li>
-            <li>Blog</li>
-            <li>About</li>
+            <li>Beranda</li>
+
+            <li>Perpustakaan
+                <div class="dropdown-content">
+                    <p>OPAC</p>
+                    <p>Sirkulasi</p>
+                </div>
+            </li>
+
+            <li>Literasi
+                <div class="dropdown-content">
+                    <p>Panduan Usaha</p>
+                    <p>Strategi</p>
+                </div>
+            </li>
+
+            <li>UMKM</li>
+            <li>Kontak</li>
         </ul>
     </div>
 
     <div class="nav-right">
-        <input class="search" placeholder="Search destination">
-        <button class="btn">Book now</button>
+        <input class="search" placeholder="Cari buku...">
+        <button class="btn">Login</button>
     </div>
 </div>
 
 <!-- HERO -->
 <div class="hero">
-    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+    <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66">
     <div class="hero-text">
-        <h1>WANDER</h1>
-        <p>Discover breathtaking destinations across the world</p>
-        <div class="hero-buttons">
-            <button>Plan Your Trip</button>
-            <button>Explore</button>
+        <h1>PUSLIB UMKM</h1>
+        <p>Pusat literasi bisnis & perpustakaan digital</p>
+    </div>
+</div>
+
+<!-- STATS -->
+<div class="section">
+    <div class="stats">
+        <div>
+            <h2>90k+</h2>
+            <p>Koleksi</p>
+        </div>
+        <div>
+            <h2>23k+</h2>
+            <p>Anggota</p>
+        </div>
+        <div>
+            <h2>10k+</h2>
+            <p>UMKM</p>
         </div>
     </div>
 </div>
 
-<!-- WHY -->
+<!-- FITUR -->
 <div class="section why">
-    <div class="why-left">
-        <h2>Why Travelers Choose Wander</h2>
-        <p>Explore destinations with curated tours and expert insights.</p>
-
-        <div class="stats">
-            <div class="stat">
-                <h3>12k</h3>
-                <p>Happy Travelers</p>
-            </div>
-            <div class="stat">
-                <h3>10yrs</h3>
-                <p>Experience</p>
-            </div>
-            <div class="stat">
-                <h3>50+</h3>
-                <p>Destinations</p>
-            </div>
-        </div>
+    <div>
+        <h2>Fitur Utama</h2>
     </div>
 
-    <div class="why-right">
-        <div class="feature-box">Local Expertise</div>
-        <div class="feature-box">All-in-One Booking</div>
-        <div class="feature-box">24/7 Support</div>
+    <div>
+        <div class="feature-box">Perpustakaan Digital</div>
+        <div class="feature-box">Layanan Sirkulasi</div>
+        <div class="feature-box">Literasi Bisnis</div>
     </div>
 </div>
 
-<!-- DESTINATIONS -->
-<div class="destinations">
-    <h3>Top Destinations</h3>
-
+<!-- UMKM -->
+<div class="section">
+    <h2>UMKM Pilihan</h2>
     <div class="cards">
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb">
-            <p>El Nido</p>
+            <h3>Kopi Kampus</h3>
+            <p>Usaha mahasiswa</p>
         </div>
-
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
-            <p>Baguio City</p>
+            <h3>Snack Rumahan</h3>
+            <p>Camilan homemade</p>
         </div>
-
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
-            <p>Siargao</p>
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98">
-            <p>Vigan City</p>
+            <h3>Fashion Lokal</h3>
+            <p>Brand lokal</p>
         </div>
     </div>
 </div>
 
-<!-- PACKAGES -->
-<div class="packages">
-    <div class="package">
-        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
-        <div class="package-text">Island Hopper</div>
-    </div>
-
-    <div class="package">
-        <img src="https://images.unsplash.com/photo-1493244040629-496f6d136cc3">
-        <div class="package-text">Highland Escape</div>
-    </div>
-
-    <div class="package">
-        <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429">
-        <div class="package-text">City Tour</div>
-    </div>
+<!-- CTA -->
+<div class="collab">
+    <h2>Bergabung Bersama PUSLIB</h2>
+    <button class="btn">Daftar Sekarang</button>
 </div>
 
 <!-- FOOTER -->
 <div class="footer">
     <div class="footer-container">
-
-        <div class="footer-col">
-            <h3>WANDER</h3>
-            <p>Discover the world with curated travel experiences and seamless booking.</p>
+        <div>
+            <h3>PUSLIB UMKM</h3>
+            <p>Pusat literasi bisnis</p>
         </div>
-
-        <div class="footer-col">
-            <h3>Explore</h3>
-            <ul>
-                <li>Home</li>
-                <li>Destinations</li>
-                <li>Packages</li>
-                <li>Blog</li>
-            </ul>
+        <div>
+            <h3>Kontak</h3>
+            <p>puslib@umkm.id</p>
         </div>
-
-        <div class="footer-col">
-            <h3>Top Destinations</h3>
-            <ul>
-                <li>El Nido</li>
-                <li>Siargao</li>
-                <li>Baguio</li>
-                <li>Vigan</li>
-            </ul>
+        <div>
+            <h3>Jam</h3>
+            <p>08.00 - 16.00</p>
         </div>
-
-        <div class="footer-col">
-            <h3>Contact</h3>
-            <ul>
-                <li>Email: support@wander.com</li>
-                <li>Phone: +62 812 3456 7890</li>
-                <li>Instagram: @wander.travel</li>
-                <li>Twitter: @wander</li>
-            </ul>
-        </div>
-
-    </div>
-
-    <div class="footer-bottom">
-        © 2026 Wander Travel. All rights reserved.
     </div>
 </div>
 
 </div>
+
+<script>
+// SCROLL NAVBAR
+window.addEventListener("scroll", function(){
+    let navbar = document.getElementById("navbar");
+    navbar.classList.toggle("scrolled", window.scrollY > 50);
+});
+
+// ANIMASI SECTION
+const sections = document.querySelectorAll(".section");
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
+}, {threshold: 0.2});
+
+sections.forEach(section => {
+    observer.observe(section);
+});
+</script>
 
 </body>
 </html>
