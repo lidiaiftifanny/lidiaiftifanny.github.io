@@ -10,7 +10,7 @@
 body{
 margin:0;
 font-family:'Segoe UI',sans-serif;
-background:#f4f6f9;
+background:#e5e7eb; /* abu soft */
 color:#333;
 scroll-behavior:smooth;
 }
@@ -21,7 +21,7 @@ header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:#1B2A41;
+background:#0f172a; /* navy tua */
 color:white;
 padding:15px 40px;
 position:sticky;
@@ -31,12 +31,13 @@ transition:0.3s;
 }
 
 header.scrolled{
-box-shadow:0 6px 20px rgba(0,0,0,0.2);
+box-shadow:0 6px 20px rgba(0,0,0,0.3);
 }
 
 .logo{
 font-size:22px;
 font-weight:bold;
+color:#d6a77a; /* coksu */
 }
 
 nav ul{
@@ -63,7 +64,7 @@ left:0;
 bottom:-5px;
 width:0;
 height:2px;
-background:#f1c40f;
+background:#d6a77a; /* coksu */
 transition:0.3s;
 }
 
@@ -72,13 +73,14 @@ width:100%;
 }
 
 nav a:hover{
-color:#C9A227;
+color:#d6a77a;
 }
 
 .login{
-background:#C9A227;
+background:#d6a77a;
 padding:6px 12px;
 border-radius:6px;
+color:#0f172a;
 }
 
 /* DROPDOWN */
@@ -92,7 +94,7 @@ display:none;
 position:absolute;
 top:100%;
 left:0;
-background:white;
+background:#f9fafb;
 list-style:none;
 padding:0;
 margin:0;
@@ -102,7 +104,7 @@ box-shadow:0 5px 15px rgba(0,0,0,0.15);
 }
 
 .submenu li{
-border-bottom:1px solid #eee;
+border-bottom:1px solid #ddd;
 }
 
 .submenu li:last-child{
@@ -117,7 +119,7 @@ text-decoration:none;
 }
 
 .submenu a:hover{
-background:#f4f6f9;
+background:#e5e7eb;
 }
 
 .dropdown:hover .submenu{
@@ -146,7 +148,7 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:linear-gradient(rgba(0,0,0,0.6),rgba(10,61,98,0.8));
+background:linear-gradient(rgba(15,23,42,0.8),rgba(30,41,59,0.9));
 }
 
 .hero-content{
@@ -155,16 +157,10 @@ z-index:2;
 }
 
 .hero h1{
-font-size:48px;
-letter-spacing:2px;
+font-size:42px;
+letter-spacing:1px;
 margin-bottom:20px;
-animation:float 3s ease-in-out infinite;
-}
-
-@keyframes float{
-0%{transform:translateY(0)}
-50%{transform:translateY(-8px)}
-100%{transform:translateY(0)}
+/* animasi DIHAPUS */
 }
 
 .search-box input{
@@ -177,15 +173,15 @@ border-radius:4px;
 .search-box button{
 padding:12px 18px;
 border:none;
-background:#ff4d4d;
-color:white;
+background:#d6a77a;
+color:#0f172a;
 cursor:pointer;
 }
 
 /* STATISTIK */
 
 .home-stats{
-background:#f6efe8;
+background:#d1d5db; /* abu */
 display:flex;
 justify-content:center;
 gap:120px;
@@ -196,11 +192,12 @@ text-align:center;
 .home-stats h2{
 font-size:32px;
 margin:0;
+color:#0f172a;
 }
 
 .home-stats p{
 margin:5px 0 0;
-color:#777;
+color:#555;
 }
 
 /* SECTION */
@@ -221,7 +218,7 @@ transform:translateY(0);
 .section h2{
 margin-bottom:40px;
 font-size:28px;
-color:#0a3d62;
+color:#0f172a;
 }
 
 /* GRID */
@@ -235,7 +232,7 @@ gap:25px;
 /* CARD */
 
 .card{
-background:white;
+background:#f9fafb;
 padding:30px;
 border-radius:12px;
 box-shadow:0 10px 25px rgba(0,0,0,0.08);
@@ -243,7 +240,7 @@ transition:all 0.3s ease;
 }
 
 .card:hover{
-transform:translateY(-10px) scale(1.02);
+transform:translateY(-8px);
 box-shadow:0 15px 35px rgba(0,0,0,0.15);
 }
 
@@ -252,8 +249,8 @@ box-shadow:0 15px 35px rgba(0,0,0,0.15);
 .btn{
 margin-top:25px;
 padding:12px 25px;
-background:#1e90ff;
-color:white;
+background:#d6a77a;
+color:#0f172a;
 border:none;
 border-radius:8px;
 cursor:pointer;
@@ -261,15 +258,15 @@ transition:0.3s;
 }
 
 .btn:hover{
-background:#1B2A41;
+background:#0f172a;
+color:white;
 transform:translateY(-3px);
-box-shadow:0 8px 18px rgba(0,0,0,0.2);
 }
 
 /* KOLABORASI */
 
 .collab{
-background:linear-gradient(135deg,#0a3d62,#1e90ff);
+background:linear-gradient(135deg,#0f172a,#374151);
 color:white;
 text-align:center;
 padding:80px 20px;
@@ -278,17 +275,18 @@ padding:80px 20px;
 .collab button{
 margin-top:30px;
 padding:15px 30px;
-background:#f1c40f;
+background:#d6a77a;
 border:none;
 border-radius:8px;
 font-weight:bold;
 cursor:pointer;
+color:#0f172a;
 }
 
 /* FOOTER */
 
 footer{
-background:#1B2A41;
+background:#0f172a;
 color:white;
 padding:50px 20px;
 }
@@ -298,6 +296,10 @@ display:flex;
 justify-content:space-around;
 flex-wrap:wrap;
 gap:40px;
+}
+
+.footer-grid h3{
+color:#d6a77a;
 }
 
 .copyright{
@@ -317,58 +319,15 @@ opacity:0.8;
 <div class="logo">PUSLIB UMKM</div>
 
 <nav>
-<ul id="menu">
+<ul>
 
 <li><a href="#">Beranda</a></li>
-
-<li class="dropdown">
-<a href="#">About ▾</a>
-<ul class="submenu">
-<li><a href="profil.html">Tentang Saya</a></li>
-<li><a href="tentang-perpustakaan.html">Tentang Perpustakaan</a></li>
-</ul>
-</li>
-
-<li class="dropdown">
-<a href="#">Perpustakaan Digital ▾</a>
-<ul class="submenu">
-<li><a href="opac.html">OPAC</a></li>
-<li><a href="sirkulasi.html">Layanan Sirkulasi</a></li>
-</ul>
-</li>
-
-<li class="dropdown">
-<a href="#">Literasi Bisnis ▾</a>
-<ul class="submenu">
-<li><a href="#">Panduan Usaha</a></li>
-<li><a href="#">Strategi Bisnis</a></li>
-<li><a href="#">Konten Edukasi</a></li>
-</ul>
-</li>
-
+<li><a href="#">About</a></li>
+<li><a href="#">Perpustakaan Digital</a></li>
+<li><a href="#">Literasi Bisnis</a></li>
 <li><a href="#">Direktori UMKM</a></li>
-
-<li class="dropdown">
-<a href="#">Data dan Statistik ▾</a>
-<ul class="submenu">
-<li><a href="#">Statistik UMKM</a></li>
-<li><a href="#">Pemetaan UMKM</a></li>
-<li><a href="#">Tren Usaha</a></li>
-<li><a href="#">Unduh Laporan</a></li>
-</ul>
-</li>
-
-<li class="dropdown">
-<a href="#">Kolaborasi ▾</a>
-<ul class="submenu">
-<li><a href="#">Daftarkan Usaha</a></li>
-<li><a href="#">Informasi Kolaborasi</a></li>
-<li><a href="#">Program Pengembangan</a></li>
-</ul>
-</li>
-
-<li><a href="kontak.html">Kontak</a></li>
-<li><a href="login.html" class="login">Login</a></li>
+<li><a href="#">Kontak</a></li>
+<li><a href="#" class="login">Login</a></li>
 
 </ul>
 </nav>
@@ -379,8 +338,8 @@ opacity:0.8;
 
 <div class="hero-content">
 
-<h1>Selamat Datang di Pusat Library UMKM (PUSLIB)</h1>
-<h2>Mari Jelajahi Dunia Usahamu Melalui Buku yang Tersedia di PUSLIB</h2>
+<h1>Selamat Datang di PUSLIB UMKM</h1>
+<h2>Mari Jelajahi Dunia Usahamu Melalui Buku</h2>
 
 <div class="search-box">
 <input type="text" placeholder="Search books...">
@@ -430,38 +389,10 @@ opacity:0.8;
 
 </section>
 
-<section class="section">
-
-<h2>UMKM Pilihan</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Kopi Kampus</h3>
-<p>Usaha kopi mahasiswa.</p>
-</div>
-
-<div class="card">
-<h3>Snack Rumahan</h3>
-<p>Camilan homemade.</p>
-</div>
-
-<div class="card">
-<h3>Fashion Lokal</h3>
-<p>Brand fashion mahasiswa.</p>
-</div>
-
-</div>
-
-<button class="btn">Lihat Direktori UMKM</button>
-
-</section>
-
 <section class="collab">
 
 <h2>Bergabung Bersama PUSLIB UMKM</h2>
-
-<p>Mari bergabung untuk memperluas jaringan usaha dan literasi bisnis.</p>
+<p>Perluas jaringan usaha dan literasi bisnis Anda.</p>
 
 <button>Daftarkan UMKM Anda</button>
 
@@ -504,7 +435,7 @@ if(entry.isIntersecting){
 entry.target.classList.add("show");
 }
 });
-},{threshold:0.2});
+});
 
 sections.forEach(section=>{
 observer.observe(section);
@@ -523,4 +454,3 @@ header.classList.remove("scrolled");
 
 </body>
 </html>
-```
