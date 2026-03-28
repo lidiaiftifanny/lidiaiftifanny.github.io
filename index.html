@@ -10,70 +10,40 @@
 body{
 margin:0;
 font-family:'Segoe UI',sans-serif;
-background:#e5e7eb; /* abu soft */
+background:#e5e7eb;
 color:#333;
 scroll-behavior:smooth;
 }
 
 /* HEADER */
-
 header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:#0f172a; /* navy tua */
+background:#0f172a;
 color:white;
 padding:15px 40px;
 position:sticky;
 top:0;
 z-index:1000;
-transition:0.3s;
-}
-
-header.scrolled{
-box-shadow:0 6px 20px rgba(0,0,0,0.3);
 }
 
 .logo{
-font-size:22px;
 font-weight:bold;
-color:#AE8625; /* gold */
+color:#AE8625;
+font-size:20px;
 }
 
 nav ul{
 display:flex;
 list-style:none;
 gap:20px;
-margin:0;
-padding:0;
 }
 
 nav a{
 color:white;
 text-decoration:none;
 font-size:14px;
-position:relative;
-}
-
-/* hover garis */
-
-nav a::after{
-content:"";
-position:absolute;
-left:0;
-bottom:-5px;
-width:0;
-height:2px;
-background:#AE8625; /* gold */
-transition:0.3s;
-}
-
-nav a:hover::after{
-width:100%;
-}
-
-nav a:hover{
-color:#AE8625;
 }
 
 .login{
@@ -83,7 +53,7 @@ border-radius:6px;
 color:#0f172a;
 }
 
-/* DROPDOWN */
+  /* DROPDOWN */
 
 .dropdown{
 position:relative;
@@ -94,7 +64,7 @@ display:none;
 position:absolute;
 top:100%;
 left:0;
-background:#f9fafb;
+background:white;
 list-style:none;
 padding:0;
 margin:0;
@@ -104,7 +74,7 @@ box-shadow:0 5px 15px rgba(0,0,0,0.15);
 }
 
 .submenu li{
-border-bottom:1px solid #ddd;
+border-bottom:1px solid #eee;
 }
 
 .submenu li:last-child{
@@ -119,7 +89,7 @@ text-decoration:none;
 }
 
 .submenu a:hover{
-background:#e5e7eb;
+background:#f4f6f9;
 }
 
 .dropdown:hover .submenu{
@@ -127,28 +97,23 @@ display:block;
 }
 
 /* HERO */
-
 .hero{
 height:500px;
-background-image:url("https://images.unsplash.com/photo-1507842217343-583bb7270b66");
-background-size:cover;
-background-position:center;
-position:relative;
+background:url("https://images.unsplash.com/photo-1507842217343-583bb7270b66") center/cover;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
 color:white;
+position:relative;
 }
 
 .hero::after{
 content:"";
 position:absolute;
-top:0;
-left:0;
 width:100%;
 height:100%;
-background:linear-gradient(rgba(15,23,42,0.8),rgba(30,41,59,0.9));
+background:rgba(15,23,42,0.7);
 }
 
 .hero-content{
@@ -157,36 +122,31 @@ z-index:2;
 }
 
 .hero h1{
-font-size:42px;
-letter-spacing:1px;
-margin-bottom:20px;
+font-size:40px;
+margin-bottom:15px;
 }
 
-.search-box input{
-padding:12px;
-width:320px;
-border:none;
-border-radius:4px;
+.hero p{
+max-width:600px;
+margin:auto;
 }
 
-.search-box button{
-padding:12px 18px;
-border:none;
-background:#AE8625;
-color:#0f172a;
-cursor:pointer;
-}
-
-/* ANIMASI SCROLL */
+/* ANIMASI */
 .fade-up{
 opacity:0;
 transform:translateY(40px);
-transition:all 0.8s ease;
+transition:0.8s;
 }
 
 .fade-up.show{
 opacity:1;
 transform:translateY(0);
+}
+
+/* SECTION UMUM */
+.section{
+padding:70px 40px;
+text-align:center;
 }
 
 /* STATISTIK */
@@ -195,43 +155,33 @@ display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:25px;
 padding:60px 40px;
-background:#e5e7eb;
 }
 
 .stat-card{
 background:white;
 padding:30px;
 border-radius:12px;
-text-align:center;
 box-shadow:0 10px 25px rgba(0,0,0,0.08);
-transition:0.3s;
-}
-
-.stat-card:hover{
-transform:translateY(-8px);
 }
 
 .stat-card img{
 width:50px;
-margin-bottom:15px;
+margin-bottom:10px;
 }
 
-.stat-card h2{
-color:#0f172a;
-margin:10px 0;
+/* FITUR */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+margin-top:30px;
 }
 
-/* FITUR DENGAN GAMBAR */
 .feature-card{
 background:white;
 border-radius:12px;
 overflow:hidden;
 box-shadow:0 10px 25px rgba(0,0,0,0.08);
-transition:0.3s;
-}
-
-.feature-card:hover{
-transform:translateY(-10px);
 }
 
 .feature-card img{
@@ -244,69 +194,23 @@ object-fit:cover;
 padding:20px;
 }
 
-/* GRID FITUR */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-}
-
-/* CARD */
-
-.card{
-background:#f9fafb;
-padding:30px;
-border-radius:12px;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
-transition:all 0.3s ease;
-}
-
-.card:hover{
-transform:translateY(-8px);
-box-shadow:0 15px 35px rgba(0,0,0,0.15);
-}
-
-/* BUTTON */
-
-.btn{
-margin-top:25px;
-padding:12px 25px;
-background:#AE8625;
-color:#0f172a;
-border:none;
-border-radius:8px;
-cursor:pointer;
-transition:0.3s;
-}
-
-.btn:hover{
-background:#0f172a;
-color:white;
-transform:translateY(-3px);
-}
-
-/* KOLABORASI */
-
+/* KOLAB */
 .collab{
-background:linear-gradient(135deg,#0f172a,#374151);
+background:#0f172a;
 color:white;
 text-align:center;
 padding:80px 20px;
 }
 
 .collab button{
-margin-top:30px;
-padding:15px 30px;
+margin-top:20px;
+padding:12px 25px;
 background:#AE8625;
 border:none;
 border-radius:8px;
-font-weight:bold;
-cursor:pointer;
-color:#0f172a;
 }
 
 /* FOOTER */
-
 footer{
 background:#0f172a;
 color:white;
@@ -317,30 +221,21 @@ padding:50px 20px;
 display:flex;
 justify-content:space-around;
 flex-wrap:wrap;
-gap:40px;
-}
-
-.footer-grid h3{
-color:#AE8625;
+gap:30px;
 }
 
 .copyright{
 text-align:center;
-margin-top:30px;
-font-size:14px;
-opacity:0.8;
+margin-top:20px;
 }
 
-  
 </style>
 </head>
 
 <body>
 
 <header>
-
 <div class="logo">PUSLIB UMKM</div>
-
 <nav>
 <ul id="menu">
 
@@ -397,12 +292,18 @@ opacity:0.8;
 
 </ul>
 </nav>
+</header>
 
+<!-- HERO -->
+<section class="hero">
+<div class="hero-content">
+<h1>Selamat Datang di PUSLIB UMKM</h1>
+<p>Melayani kebutuhan informasi perpustakaan dan pengembangan UMKM secara digital.</p>
+</div>
 </section>
 
 <!-- STATISTIK -->
 <section class="home-stats fade-up">
-
 <div class="stat-card">
 <img src="https://cdn-icons-png.flaticon.com/512/29/29302.png">
 <h2>90k+</h2>
@@ -420,12 +321,10 @@ opacity:0.8;
 <h2>10k+</h2>
 <p>UMKM Bergabung</p>
 </div>
-
 </section>
 
 <!-- FITUR -->
 <section class="section fade-up">
-
 <h2>Fitur Utama</h2>
 
 <div class="grid">
@@ -434,7 +333,7 @@ opacity:0.8;
 <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f">
 <div class="content">
 <h3>Perpustakaan Digital</h3>
-<p>Akses OPAC dan koleksi buku bisnis secara online kapan saja.</p>
+<p>Akses buku dan informasi bisnis kapan saja.</p>
 </div>
 </div>
 
@@ -442,55 +341,50 @@ opacity:0.8;
 <img src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b">
 <div class="content">
 <h3>UMKM</h3>
-<p>Eksplor dunia UMKM melalui layanan khusus untuk pengusaha mikro.</p>
+<p>Dukung dan kembangkan usaha Anda.</p>
 </div>
 </div>
 
 </div>
-
 </section>
 
-<!-- KOLABORASI -->
+<!-- KOLAB -->
 <section class="collab fade-up">
-
-<h2>Bergabung Bersama PUSLIB UMKM</h2>
-<p>Perluas jaringan usaha dan literasi bisnis Anda.</p>
-
-<button>Daftarkan UMKM Anda</button>
-
+<h2>Bergabung Bersama Kami</h2>
+<p>Perluas jaringan UMKM Anda sekarang.</p>
+<button>Daftar Sekarang</button>
 </section>
 
 <!-- FOOTER -->
 <footer class="fade-up">
-
 <div class="footer-grid">
 
 <div>
 <h3>PUSLIB UMKM</h3>
-<p>Pusat literasi bisnis dan perpustakaan digital.</p>
+<p>Pusat literasi bisnis digital.</p>
 </div>
 
 <div>
 <h3>Kontak</h3>
-<p>Email : puslib@umkm.id</p>
-<p>Instagram : @puslib.umkm</p>
+<p>Email: puslib@umkm.id</p>
+<p>Instagram: @puslib.umkm</p>
 </div>
 
 <div>
 <h3>Jam Operasional</h3>
-<p>Senin - Jumat</p>
+<p>Senin - Sabtu</p>
 <p>08.00 - 16.00</p>
 </div>
 
 </div>
 
 <p class="copyright">© 2026 PUSLIB UMKM</p>
-
 </footer>
 
 <script>
 
-const sections = document.querySelectorAll(".section");
+// animasi scroll
+const allSections = document.querySelectorAll(".fade-up");
 
 const observer = new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
@@ -500,17 +394,8 @@ entry.target.classList.add("show");
 });
 });
 
-sections.forEach(section=>{
-observer.observe(section);
-});
-
-window.addEventListener("scroll",function(){
-const header=document.querySelector("header");
-if(window.scrollY>50){
-header.classList.add("scrolled");
-}else{
-header.classList.remove("scrolled");
-}
+allSections.forEach(el=>{
+observer.observe(el);
 });
 
 </script>
