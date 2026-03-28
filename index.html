@@ -37,7 +37,7 @@ box-shadow:0 6px 20px rgba(0,0,0,0.3);
 .logo{
 font-size:22px;
 font-weight:bold;
-color:#d6a77a; /* coksu */
+color:#AE8625; /* gold */
 }
 
 nav ul{
@@ -64,7 +64,7 @@ left:0;
 bottom:-5px;
 width:0;
 height:2px;
-background:#d6a77a; /* coksu */
+background:#AE8625; /* gold */
 transition:0.3s;
 }
 
@@ -73,11 +73,11 @@ width:100%;
 }
 
 nav a:hover{
-color:#d6a77a;
+color:#AE8625;
 }
 
 .login{
-background:#d6a77a;
+background:#AE8625;
 padding:6px 12px;
 border-radius:6px;
 color:#0f172a;
@@ -160,7 +160,6 @@ z-index:2;
 font-size:42px;
 letter-spacing:1px;
 margin-bottom:20px;
-/* animasi DIHAPUS */
 }
 
 .search-box input{
@@ -173,59 +172,82 @@ border-radius:4px;
 .search-box button{
 padding:12px 18px;
 border:none;
-background:#d6a77a;
+background:#AE8625;
 color:#0f172a;
 cursor:pointer;
 }
 
-/* STATISTIK */
-
-.home-stats{
-background:#d1d5db; /* abu */
-display:flex;
-justify-content:center;
-gap:120px;
-padding:40px 20px;
-text-align:center;
-}
-
-.home-stats h2{
-font-size:32px;
-margin:0;
-color:#0f172a;
-}
-
-.home-stats p{
-margin:5px 0 0;
-color:#555;
-}
-
-/* SECTION */
-
-.section{
-padding:70px 40px;
-text-align:center;
+/* ANIMASI SCROLL */
+.fade-up{
 opacity:0;
 transform:translateY(40px);
 transition:all 0.8s ease;
 }
 
-.section.show{
+.fade-up.show{
 opacity:1;
 transform:translateY(0);
 }
 
-.section h2{
-margin-bottom:40px;
-font-size:28px;
-color:#0f172a;
+/* STATISTIK */
+.home-stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+padding:60px 40px;
+background:#e5e7eb;
 }
 
-/* GRID */
+.stat-card{
+background:white;
+padding:30px;
+border-radius:12px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+transition:0.3s;
+}
 
+.stat-card:hover{
+transform:translateY(-8px);
+}
+
+.stat-card img{
+width:50px;
+margin-bottom:15px;
+}
+
+.stat-card h2{
+color:#0f172a;
+margin:10px 0;
+}
+
+/* FITUR DENGAN GAMBAR */
+.feature-card{
+background:white;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.feature-card:hover{
+transform:translateY(-10px);
+}
+
+.feature-card img{
+width:100%;
+height:160px;
+object-fit:cover;
+}
+
+.feature-card .content{
+padding:20px;
+}
+
+/* GRID FITUR */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:25px;
 }
 
@@ -249,7 +271,7 @@ box-shadow:0 15px 35px rgba(0,0,0,0.15);
 .btn{
 margin-top:25px;
 padding:12px 25px;
-background:#d6a77a;
+background:#AE8625;
 color:#0f172a;
 border:none;
 border-radius:8px;
@@ -275,7 +297,7 @@ padding:80px 20px;
 .collab button{
 margin-top:30px;
 padding:15px 30px;
-background:#d6a77a;
+background:#AE8625;
 border:none;
 border-radius:8px;
 font-weight:bold;
@@ -299,7 +321,7 @@ gap:40px;
 }
 
 .footer-grid h3{
-color:#d6a77a;
+color:#AE8625;
 }
 
 .copyright{
@@ -309,6 +331,7 @@ font-size:14px;
 opacity:0.8;
 }
 
+  
 </style>
 </head>
 
@@ -375,64 +398,60 @@ opacity:0.8;
 </ul>
 </nav>
 
-</header>
-
-<section class="hero">
-
-<div class="hero-content">
-
-<h1>Selamat Datang di PUSLIB UMKM</h1>
-<h2>Mari Jelajahi Dunia Usahamu Melalui Buku</h2>
-
-<div class="search-box">
-<input type="text" placeholder="Search books...">
-<button>Search</button>
-</div>
-
-</div>
-
 </section>
 
-<section class="home-stats">
+<!-- STATISTIK -->
+<section class="home-stats fade-up">
 
-<div>
+<div class="stat-card">
+<img src="https://cdn-icons-png.flaticon.com/512/29/29302.png">
 <h2>90k+</h2>
 <p>Koleksi Digital</p>
 </div>
 
-<div>
+<div class="stat-card">
+<img src="https://cdn-icons-png.flaticon.com/512/847/847969.png">
 <h2>23k+</h2>
 <p>Anggota</p>
 </div>
 
-<div>
+<div class="stat-card">
+<img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
 <h2>10k+</h2>
 <p>UMKM Bergabung</p>
 </div>
 
 </section>
 
-<section class="section">
+<!-- FITUR -->
+<section class="section fade-up">
 
 <h2>Fitur Utama</h2>
 
 <div class="grid">
 
-<div class="card">
+<div class="feature-card">
+<img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f">
+<div class="content">
 <h3>Perpustakaan Digital</h3>
-<p>Akses OPAC dan koleksi buku bisnis.</p>
+<p>Akses OPAC dan koleksi buku bisnis secara online kapan saja.</p>
+</div>
 </div>
 
-<div class="card">
-<h3>Layanan Sirkulasi</h3>
-<p>Peminjaman dan pengembalian koleksi.</p>
+<div class="feature-card">
+<img src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b">
+<div class="content">
+<h3>UMKM</h3>
+<p>Eksplor dunia UMKM melalui layanan khusus untuk pengusaha mikro.</p>
+</div>
 </div>
 
 </div>
 
 </section>
 
-<section class="collab">
+<!-- KOLABORASI -->
+<section class="collab fade-up">
 
 <h2>Bergabung Bersama PUSLIB UMKM</h2>
 <p>Perluas jaringan usaha dan literasi bisnis Anda.</p>
@@ -441,7 +460,8 @@ opacity:0.8;
 
 </section>
 
-<footer>
+<!-- FOOTER -->
+<footer class="fade-up">
 
 <div class="footer-grid">
 
