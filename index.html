@@ -272,6 +272,32 @@ scroll-behavior:smooth;
     padding:20px;
     }
 
+  .feature-card h3 a{
+  color:#0f172a;
+  text-decoration:none;
+  position:relative;
+}
+
+/* garis bawah animasi */
+.feature-card h3 a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-4px;
+  width:0;
+  height:2px;
+  background:#AE8625;
+  transition:0.3s;
+}
+
+.feature-card h3 a:hover::after{
+  width:100%;
+}
+
+.feature-card h3 a:hover{
+  color:#AE8625;
+}
+  
 /* KOLABORASI */
   .collab{
   background:withe;
@@ -377,11 +403,11 @@ scroll-behavior:smooth;
 <div class="hero-content">
 <h1>Selamat Datang di PUSLIB UMKM</h1>
 <p>Melayani kebutuhan informasi perpustakaan dan pengembangan UMKM secara digital.</p>
-</div>
 
 <div class="hero-box">
   <input type="text" placeholder="Search Books...">
   <button>Search</button>
+</div>
 </div>
 </section>
 
@@ -421,7 +447,7 @@ scroll-behavior:smooth;
 <div class="feature-card">
 <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f">
 <div class="content">
-<h3><li><a href="#">Perpustakaan Digital</a></li></h3>
+<h3><a href="#">Perpustakaan Digital</a></h3>
   <p>Akses buku dan informasi bisnis kapan saja dan dimana saja.</p>
 </div>
 </div>
@@ -429,7 +455,7 @@ scroll-behavior:smooth;
 <div class="feature-card">
 <img src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b">
 <div class="content">
-<h3><li><a href="#">UMKM</a></li></h3>
+<h3><a href="#">UMKM</a></h3>
   <p>Explore dunia UMKM-Mu dengan layanan khusus usaha mikro, kecil dan menengah.</p>
 </div>
 </div>
