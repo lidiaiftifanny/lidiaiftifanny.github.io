@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wander Travel</title>
+<title>PUSLIB UMKM</title>
 
 <style>
 * {
@@ -29,7 +29,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: white;
+    background: navy;
     padding: 15px 25px;
     border-radius: 12px;
 }
@@ -71,6 +71,49 @@ body {
     color: white;
 }
 
+    /* DROPDOWN */
+
+.dropdown{
+position:relative;
+}
+
+.submenu{
+display:none;
+position:absolute;
+top:100%;
+left:0;
+background:white;
+list-style:none;
+padding:0;
+margin:0;
+min-width:180px;
+border-radius:6px;
+box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+.submenu li{
+border-bottom:1px solid #eee;
+}
+
+.submenu li:last-child{
+border-bottom:none;
+}
+
+.submenu a{
+display:block;
+padding:10px 15px;
+color:#333;
+text-decoration:none;
+}
+
+.submenu a:hover{
+background:#f4f6f9;
+}
+
+.dropdown:hover .submenu{
+display:block;
+}
+    
 /* HERO */
 .hero {
     margin-top: 20px;
@@ -260,14 +303,63 @@ body {
 <!-- NAVBAR -->
 <div class="navbar">
     <div class="nav-left">
-        <h2>ADNTR</h2>
-        <ul>
-            <li>Home</li>
-            <li>Destinations</li>
-            <li>Packages</li>
-            <li>Blog</li>
-            <li>About</li>
-        </ul>
+        <h2>PUSLIB UMKM</h2>
+        <nav>
+<ul id="menu">
+
+<li><a href="#">Beranda</a></li>
+
+<li class="dropdown">
+<a href="#">About ▾</a>
+<ul class="submenu">
+<li><a href="profil.html">Tentang Saya</a></li>
+<li><a href="tentang-perpustakaan.html">Tentang Perpustakaan</a></li>
+</ul>
+</li>
+
+<li class="dropdown">
+<a href="#">Perpustakaan Digital ▾</a>
+<ul class="submenu">
+<li><a href="opac.html">OPAC</a></li>
+<li><a href="sirkulasi.html">Layanan Sirkulasi</a></li>
+</ul>
+</li>
+
+<li class="dropdown">
+<a href="#">Literasi Bisnis ▾</a>
+<ul class="submenu">
+<li><a href="#">Panduan Usaha</a></li>
+<li><a href="#">Strategi Bisnis</a></li>
+<li><a href="#">Konten Edukasi</a></li>
+</ul>
+</li>
+
+<li><a href="#">Direktori UMKM</a></li>
+
+<li class="dropdown">
+<a href="#">Data dan Statistik ▾</a>
+<ul class="submenu">
+<li><a href="#">Statistik UMKM</a></li>
+<li><a href="#">Pemetaan UMKM</a></li>
+<li><a href="#">Tren Usaha</a></li>
+<li><a href="#">Unduh Laporan</a></li>
+</ul>
+</li>
+
+<li class="dropdown">
+<a href="#">Kolaborasi ▾</a>
+<ul class="submenu">
+<li><a href="#">Daftarkan Usaha</a></li>
+<li><a href="#">Informasi Kolaborasi</a></li>
+<li><a href="#">Program Pengembangan</a></li>
+</ul>
+</li>
+
+<li><a href="kontak.html">Kontak</a></li>
+<li><a href="login.html" class="login">Login</a></li>
+
+</ul>
+</nav>
     </div>
 
     <div class="nav-right">
