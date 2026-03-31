@@ -1,35 +1,90 @@
 <html>
 <head>
 <title>Formulir_Login</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Georgia, serif;
+  background-color:#f4f6f9;
+}
+
+/* POPUP */
+.popup{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.5);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  visibility:hidden;
+  opacity:0;
+  transition:0.3s;
+}
+
+.popup.active{
+  visibility:visible;
+  opacity:1;
+}
+
+.popup-box{
+  background:white;
+  padding:30px;
+  border-radius:10px;
+  text-align:center;
+  width:300px;
+  animation:fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn{
+  from{transform:translateY(30px); opacity:0;}
+  to{transform:translateY(0); opacity:1;}
+}
+
+.popup-box h3{
+  color:#1b3a57;
+}
+
+.popup-box a{
+  display:inline-block;
+  margin-top:15px;
+  padding:10px 20px;
+  background:#1b3a57;
+  color:white;
+  text-decoration:none;
+  border-radius:6px;
+}
+</style>
+
 </head>
 
-<body style="margin:0; font-family:Georgia, serif; background-color:#f4f6f9;">
+<body>
 
 <!-- CONTAINER -->
 <div style="width:400px; margin:80px auto; background-color:white; padding:30px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1);">
 
 <h2 style="text-align:center; color:#1b3a57;">Login</h2>
 
-<form action="/login" method="post">
+<form id="formLogin">
 
 <table style="width:100%; line-height:2;">
 
 <tr>
-<td><label for="Name">Name:</label></td>
-<td><input type="text" id="Name" name="Name" required 
-style="width:100%; padding:6px;"></td>
+<td><label>Name:</label></td>
+<td><input type="text" required style="width:100%; padding:6px;"></td>
 </tr>
     
 <tr>
-<td><label for="login_email">Email:</label></td>
-<td><input type="email" id="login_email" name="login_email" required 
-style="width:100%; padding:6px;"></td>
+<td><label>Email:</label></td>
+<td><input type="email" required style="width:100%; padding:6px;"></td>
 </tr>
 
 <tr>
-<td><label for="login_password">Password:</label></td>
-<td><input type="password" id="login_password" name="login_password" required 
-style="width:100%; padding:6px;"></td>
+<td><label>Password:</label></td>
+<td><input type="password" required style="width:100%; padding:6px;"></td>
 </tr>
 
 <tr>
@@ -53,6 +108,31 @@ Daftar di Sini
 </form>
 
 </div>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+  <div class="popup-box">
+    <h3>Berhasil 🎉</h3>
+    <p>Selamat Anda berhasil masuk</p>
+    <a href="index.html">Kembali ke Beranda</a>
+  </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+const form = document.getElementById("formLogin");
+const popup = document.getElementById("popup");
+
+form.addEventListener("submit", function(e){
+  e.preventDefault();
+
+  // tampilkan popup
+  popup.classList.add("active");
+
+  // reset form
+  form.reset();
+});
+</script>
 
 </body>
 </html>
