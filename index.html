@@ -123,7 +123,7 @@ scroll-behavior:smooth;
   display:block;
   }
   
-/* HERO */
+/* HERO SECTION */
   .hero{
   height:500px;
   background:url("https://images.unsplash.com/photo-1507842217343-583bb7270b66") center/cover;
@@ -173,6 +173,25 @@ scroll-behavior:smooth;
   cursor:pointer;
   }
 
+/* FLOATING EFFECT */
+.stats-section,
+.features-section,
+.event-section,
+.collab{
+max-width:1100px;
+margin:60px auto;
+border-radius:16px;
+box-shadow:0 15px 40px rgba(0,0,0,0.15);
+transition:0.3s;
+}
+
+.stats-section:hover,
+.features-section:hover,
+.event-section:hover,
+.collab:hover{
+transform:translateY(-8px);
+}
+  
 /* ANIMASI */
   .fade-up{
   opacity:0;
