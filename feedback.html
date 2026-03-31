@@ -4,24 +4,93 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Feedback - Lidia Digital Library</title>
+
+<style>
+body{
+  margin:0;
+  background-color:#0b2239;
+  font-family:Georgia, serif;
+}
+
+/* POPUP */
+.popup{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.5);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  visibility:hidden;
+  opacity:0;
+  transition:0.3s;
+}
+
+.popup.active{
+  visibility:visible;
+  opacity:1;
+}
+
+.popup-box{
+  background:white;
+  padding:30px;
+  border-radius:10px;
+  text-align:center;
+  width:320px;
+  animation:fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn{
+  from{transform:translateY(30px); opacity:0;}
+  to{transform:translateY(0); opacity:1;}
+}
+
+.popup-box h3{
+  color:#2c3e50;
+  margin-bottom:10px;
+}
+
+.popup-box p{
+  font-size:14px;
+  margin-bottom:20px;
+}
+
+/* BUTTON */
+.popup-box a{
+  display:inline-block;
+  background:#2c3e50;
+  color:white;
+  padding:10px 20px;
+  border-radius:6px;
+  text-decoration:none;
+  margin-top:10px;
+}
+
+.popup-box a:hover{
+  background:#1a252f;
+}
+</style>
+
 </head>
 
-<body style="margin:0; background-color:#0b2239; font-family:Georgia, serif;">
+<body>
 
 <br><br>
 
-<!-- KOTAK TENGAH -->
 <div style="width:80%; margin:auto; background-color:#dcdcdc; padding:40px;">
 
-<h2 align="center">Kamu Punya Pertanyaan atau Sedang Butuh Bantuan?<br>
-Kami senang mendengar dari Anda.</h2>
+<h2 align="center">
+Kamu Punya Pertanyaan atau Sedang Butuh Bantuan?<br>
+Kami senang mendengar dari Anda.
+</h2>
 
 <br><br>
 
 <table width="100%" cellpadding="20">
 <tr>
 
-<!-- BAGIAN KIRI -->
 <td width="40%" valign="top" style="background-color:#f2f2f2;">
 <h2 align="center">Informasi Kontak Kami</h2>
 
@@ -31,44 +100,38 @@ Kami senang mendengar dari Anda.</h2>
 <hr>
 
 <h3>Telepon</h3>
-<p>(+62) 82161056858<br>
-Senin–Jum'at<br>
-08.00-16.00 WIB</p>
+<p>(+62) 82161056858<br>Senin–Jum'at<br>08.00-16.00 WIB</p>
 
 <hr>
 
 <h3>Email</h3>
-<p>lidialibraryinfo@gmail.com<br>
-Respon dalam 1x24 jam</p>
+<p>lidialibraryinfo@gmail.com<br>Respon dalam 1x24 jam</p>
 
 <hr>
 
 <h3>Instagram</h3>
-<a href="https://instagram.com/lid_lidit" target="_blank">
-@lid_lidit</a><br>
-DM untuk pertanyaan cepat
+<a href="https://instagram.com/lid_lidit" target="_blank">@lid_lidit</a>
 </td>
 
-<!-- BAGIAN KANAN -->
 <td width="60%" valign="top">
 
 <h2 align="center">Kirim Pesan</h2>
 <p>Isi formulir di bawah dan kami akan segera menghubungi Anda.</p>
 
-<form action="#" method="post">
+<form id="formFeedback">
 
 <label>Nama Depan:</label><br>
-<input type="text" name="nama_depan" size="30"><br><br>
+<input type="text" required><br><br>
 
 <label>Nama Belakang:</label><br>
-<input type="text" name="nama_belakang" size="30"><br><br>
+<input type="text" required><br><br>
 
 <label>Email:</label><br>
-<input type="email" name="email" size="50"><br><br>
+<input type="email" required><br><br>
 
 <label>Subjek:</label><br>
-<select name="subjek">
-  <option>Pilih subjek</option>
+<select required>
+  <option value="">Pilih subjek</option>
   <option>Pertanyaan</option>
   <option>Kerjasama</option>
   <option>Saran</option>
@@ -76,7 +139,7 @@ DM untuk pertanyaan cepat
 <br><br>
 
 <label>Pesan:</label><br>
-<textarea name="pesan" rows="6" cols="50"></textarea>
+<textarea rows="6" required></textarea>
 <br><br>
 
 <input type="submit" value="Kirim Pesan">
@@ -90,7 +153,31 @@ DM untuk pertanyaan cepat
 
 </div>
 
-<br><br>
+<!-- POPUP -->
+<div class="popup" id="popup">
+  <div class="popup-box">
+    <h3>Terima Kasih 🙌</h3>
+    <p>Terimakasih sudah memberikan komentar terbaik anda</p>
+    
+    <a href="index.html">Kembali ke Beranda</a>
+  </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+const form = document.getElementById("formFeedback");
+const popup = document.getElementById("popup");
+
+form.addEventListener("submit", function(e){
+  e.preventDefault();
+
+  // tampilkan popup
+  popup.classList.add("active");
+
+  // reset form
+  form.reset();
+});
+</script>
 
 </body>
 </html>
