@@ -12,7 +12,7 @@
 
 <h2 align="center">Sign Up</h2>
 
-<form action="/Daftar" method="post">
+<form id="formDaftar">
 
 <table width="100%" cellpadding="6">
 
@@ -38,12 +38,12 @@
 
 <tr>
 <td>Password:</td>
-<td><input type="password" name="password" required></td>
+<td><input type="password" id="password" required></td>
 </tr>
 
 <tr>
 <td>Verification:</td>
-<td><input type="password" name="verification_password" required></td>
+<td><input type="password" id="verif" required></td>
 </tr>
 
 <tr>
@@ -67,7 +67,7 @@ style="background-color:#2c3e50;
 
 <br>
 
-<!-- LOGIN BUTTON (Lebih Dekat & Seimbang) -->
+<!-- LOGIN BUTTON -->
 <div align="center">
 
 <span style="font-size:14px;">Sudah punya akun?</span>
@@ -89,6 +89,28 @@ style="background-color:#2c3e50;
 </div>
 
 <br><br>
+
+<!-- SCRIPT INTERAKSI -->
+<script>
+document.getElementById("formDaftar").addEventListener("submit", function(e){
+  e.preventDefault(); // biar tidak reload
+
+  let pass = document.getElementById("password").value;
+  let verif = document.getElementById("verif").value;
+
+  // validasi password
+  if(pass !== verif){
+    alert("Password tidak sama! Silakan cek kembali.");
+    return;
+  }
+
+  // notifikasi berhasil
+  alert("Selamat anda sudah mempunyai akun!\n\nSilahkan klik login di bawah ini.");
+
+  // optional: reset form
+  document.getElementById("formDaftar").reset();
+});
+</script>
 
 </body>
 </html>
