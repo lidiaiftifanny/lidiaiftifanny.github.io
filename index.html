@@ -229,6 +229,7 @@ transform:translateY(-8px);
   .stats-section{
     background:white;
     padding:60px 20px;
+    text-align:center;
   }
   
   .home-stats{
@@ -401,24 +402,79 @@ transform:translateY(-8px);
   }
 
 /* FOOTER */
-  footer{
+.footer{
   background:#0f172a;
-  color:white;
-  padding:50px 20px;
-  }
-  
-  .footer-grid{
-  display:flex;
-  justify-content:space-around;
-  flex-wrap:wrap;
-  gap:30px;
-  }
-  
-  .copyright{
-  text-align:center;
-  margin-top:20px;
-  }
+  color:#e5e7eb;
+  padding:60px 20px 30px;
+}
 
+/* GRID */
+.footer-container{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:30px;
+}
+
+/* KOLOM */
+.footer-col h3{
+  color:#AE8625;
+  margin-bottom:15px;
+}
+
+.footer-col p{
+  font-size:14px;
+  line-height:1.6;
+  margin:5px 0;
+}
+
+/* ICON SOSIAL */
+.social-icons{
+  margin-top:15px;
+}
+
+.social-icons i{
+  margin-right:10px;
+  font-size:18px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.social-icons i:hover{
+  color:#AE8625;
+}
+
+/* FEEDBACK BUTTON */
+.feedback-cta{
+  display:inline-block;
+  margin-top:10px;
+  padding:10px 15px;
+  background:#AE8625;
+  color:#0f172a;
+  text-decoration:none;
+  border-radius:6px;
+  font-size:14px;
+  transition:0.3s;
+}
+
+.feedback-cta:hover{
+  background:#d4a437;
+}
+
+/* GARIS */
+.footer hr{
+  margin:30px 0;
+  border:0;
+  border-top:1px solid rgba(255,255,255,0.1);
+}
+
+/* BAGIAN BAWAH */
+.footer-bottom{
+  text-align:center;
+  font-size:13px;
+  color:#aaa;
+}
 </style>
 </head>
 
@@ -599,16 +655,13 @@ transform:translateY(-8px);
 <button>Daftar Sekarang</button>
 </section>
 
-<!-- FOOTER -->
-</footer>
-
 <footer class="footer">
   <div class="footer-container">
 
     <div class="footer-col">
       <h3>Puslib UMKM</h3>
       <p>
-        Perpustakaan akan menjadi tempat ternyaman bagi Anda untuk mengexplore berbagai kebutuhan informasi tentang usaha UMKM Anda
+        Perpustakaan akan menjadi tempat ternyaman bagi Anda untuk mengexplore berbagai kebutuhan informasi UMKM.
       </p>
       <div class="social-icons">
         <i class="fa-brands fa-instagram"></i>
@@ -632,18 +685,12 @@ transform:translateY(-8px);
     </div>
 
     <div class="footer-col">
-  <h3>Feedback</h3>
+      <h3>Feedback</h3>
 
-  <a class="feedback-cta" href="feedback.html" target="_blank" rel="noopener">
-    <span class="fb-icon"><i class="fa-solid fa-comment-dots"></i></span>
-    <span class="fb-text">
-      <strong>Berikan Feedback</strong>
-      <small>Klik untuk isi formulir</small>
-    </span>
-    <span class="fb-arrow"><i class="fa-solid fa-arrow-right"></i></span>
-  </a>
-
-</div>
+      <a class="feedback-cta" href="feedback.html">
+        <span>Berikan Feedback →</span>
+      </a>
+    </div>
 
   </div>
 
@@ -655,24 +702,3 @@ transform:translateY(-8px);
   </div>
 </footer>
   
-<script>
-
-// animasi scroll
-const allSections = document.querySelectorAll(".fade-up");
-
-const observer = new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("show");
-}
-});
-});
-
-allSections.forEach(el=>{
-observer.observe(el);
-});
-
-</script>
-
-</body>
-</html>
