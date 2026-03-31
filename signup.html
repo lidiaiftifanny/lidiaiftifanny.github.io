@@ -1,13 +1,82 @@
 <html>
 <head>
 <title>Formulir Pendaftaran Anggota</title>
+
+<style>
+body{
+  margin:0;
+  background-color:#0b2239;
+  font-family:Segoe UI, sans-serif;
+}
+
+/* POPUP OVERLAY */
+.popup{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.5);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  visibility:hidden;
+  opacity:0;
+  transition:0.3s;
+}
+
+.popup.active{
+  visibility:visible;
+  opacity:1;
+}
+
+/* BOX */
+.popup-box{
+  background:white;
+  padding:25px;
+  border-radius:10px;
+  text-align:center;
+  width:300px;
+  animation:fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn{
+  from{transform:translateY(30px); opacity:0;}
+  to{transform:translateY(0); opacity:1;}
+}
+
+.popup-box h3{
+  margin-bottom:10px;
+  color:#2c3e50;
+}
+
+.popup-box p{
+  font-size:14px;
+  margin-bottom:20px;
+}
+
+/* BUTTON */
+.popup-box button{
+  background:#2c3e50;
+  color:white;
+  border:none;
+  padding:8px 20px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.popup-box button:hover{
+  background:#1a252f;
+}
+</style>
+
 </head>
 
-<body style="margin:0; background-color:#0b2239; font-family:Segoe UI, sans-serif;">
+<body>
 
 <br><br>
 
-<!-- KOTAK TENGAH -->
+<!-- FORM -->
 <div style="width:400px; margin:auto; background-color:#dcdcdc; padding:30px; border-radius:10px;">
 
 <h2 align="center">Sign Up</h2>
@@ -16,48 +85,19 @@
 
 <table width="100%" cellpadding="6">
 
-<tr>
-<td>First Name:</td>
-<td><input type="text" name="first_name" required></td>
-</tr>
+<tr><td>First Name:</td><td><input type="text" required></td></tr>
+<tr><td>Last Name:</td><td><input type="text" required></td></tr>
+<tr><td>Email:</td><td><input type="email" required></td></tr>
+<tr><td>No. Handphone:</td><td><input type="text" required></td></tr>
 
-<tr>
-<td>Last Name:</td>
-<td><input type="text" name="last_name" required></td>
-</tr>
-
-<tr>
-<td>Email:</td>
-<td><input type="email" name="email" required></td>
-</tr>
-
-<tr>
-<td>No. Handphone:</td>
-<td><input type="text" name="handphone" required></td>
-</tr>
-
-<tr>
-<td>Password:</td>
-<td><input type="password" id="password" required></td>
-</tr>
-
-<tr>
-<td>Verification:</td>
-<td><input type="password" id="verif" required></td>
-</tr>
+<tr><td>Password:</td><td><input type="password" id="password" required></td></tr>
+<tr><td>Verification:</td><td><input type="password" id="verif" required></td></tr>
 
 <tr>
 <td colspan="2" align="center">
 <br>
-
 <input type="submit" value="Daftar"
-style="background-color:#2c3e50;
-       color:white;
-       padding:8px 20px;
-       border:none;
-       border-radius:6px;
-       cursor:pointer;">
-       
+style="background-color:#2c3e50; color:white; padding:8px 20px; border:none; border-radius:6px; cursor:pointer;">
 </td>
 </tr>
 
@@ -67,49 +107,54 @@ style="background-color:#2c3e50;
 
 <br>
 
-<!-- LOGIN BUTTON -->
 <div align="center">
-
 <span style="font-size:14px;">Sudah punya akun?</span>
 <br><br>
 
 <a href="login.html"
-   style="background-color:#f4d03f;
-          color:black;
-          padding:8px 20px;
-          border-radius:6px;
-          text-decoration:none;
-          font-weight:bold;
-          display:inline-block;">
-   Login
+style="background-color:#f4d03f; color:black; padding:8px 20px; border-radius:6px; text-decoration:none; font-weight:bold;">
+Login
 </a>
 
 </div>
 
 </div>
 
-<br><br>
+<!-- POPUP -->
+<div class="popup" id="popup">
+  <div class="popup-box">
+    <h3>Berhasil 🎉</h3>
+    <p>Selamat anda sudah mempunyai akun!<br>Silahkan klik login di bawah ini.</p>
+    <button onclick="tutupPopup()">OK</button>
+  </div>
+</div>
 
-<!-- SCRIPT INTERAKSI -->
+<!-- SCRIPT -->
 <script>
-document.getElementById("formDaftar").addEventListener("submit", function(e){
-  e.preventDefault(); // biar tidak reload
+const form = document.getElementById("formDaftar");
+const popup = document.getElementById("popup");
+
+form.addEventListener("submit", function(e){
+  e.preventDefault();
 
   let pass = document.getElementById("password").value;
   let verif = document.getElementById("verif").value;
 
-  // validasi password
   if(pass !== verif){
-    alert("Password tidak sama! Silakan cek kembali.");
+    alert("Password tidak sama!");
     return;
   }
 
-  // notifikasi berhasil
-  alert("Selamat anda sudah mempunyai akun!\n\nSilahkan klik login di bawah ini.");
+  // tampilkan popup
+  popup.classList.add("active");
 
-  // optional: reset form
-  document.getElementById("formDaftar").reset();
+  // reset form
+  form.reset();
 });
+
+function tutupPopup(){
+  popup.classList.remove("active");
+}
 </script>
 
 </body>
