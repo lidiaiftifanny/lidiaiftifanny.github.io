@@ -151,11 +151,12 @@ nav a:hover::after{
 }
 
 .hero h1{
-  font-size:50px;
+  font-size:40px;
   margin-bottom:15px;
 }
 
 .hero p{
+  font-size:20px
   max-width:600px;
   margin:auto;
 }
@@ -166,17 +167,22 @@ nav a:hover::after{
   display:flex;
   justify-content:center;
   margin-top:30px;
+  position:relative;
+  z-index:3;
+  background:white;
+  padding:8px;
+  border-radius:50px;
+  display:inline-flex;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
 }
 
 .search-box input{
   padding:16px 22px;
   width:450px;
   border:none;
-  border-radius:40px;
+  border-radius:50px;
   outline:none;
   font-size:16px;
-  background:#ffffff;
-  box-shadow:0 0 0 4px rgba(174,134,37,0.3);
 }
 
 .search-box button{
@@ -184,15 +190,20 @@ nav a:hover::after{
   border:none;
   border-radius:40px;
   background:#AE8625;
-  color:#0f172a;
+  color:white;
   border-radius:0 30px 30px 0;
   cursor:pointer;
+  font-weight:bold;
   transition:scale(1.05);
+}
+
+.search-box button:hover{
+  background:#d4a437;
 }
   
 /* 6. GENERAL SECTION */
 .section{
-  padding:70px 40px;
+  padding:40px 40px;
   text-align:center;
 }
 
@@ -214,7 +225,7 @@ nav a:hover::after{
 /* 8. STATISTICS SECTION */
 .stats-section{
   background:white;
-  padding:70px 40px;
+  padding:40px 40px;
   max-width:1100px;
   margin:60px auto;
   border-radius:16px;
@@ -247,7 +258,7 @@ nav a:hover::after{
 .features-section{
   background:#0f172a;
   color:white;
-  padding:70px 40px;
+  padding:40px 40px;
   max-width:1100px;
   margin:60px auto;
   border-radius:16px;
@@ -301,7 +312,7 @@ nav a:hover::after{
 /* 10. EVENT SECTION */
 .event-section{
   background:#f8fafc;
-  padding:70px 40px;
+  padding:40px 40px;
   max-width:1100px;
   margin:60px auto;
   border-radius:16px;
@@ -359,7 +370,7 @@ nav a:hover::after{
 .collab{
   background:white;
   text-align:center;
-  padding:70px 30px;
+  padding:40px 30px;
   max-width:1100px;
   margin:60px auto;
   border-radius:16px;
