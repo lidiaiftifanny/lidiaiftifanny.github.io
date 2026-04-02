@@ -166,8 +166,6 @@ nav a:hover::after{
 
 /* 5. COMPONENT (SEARCH, BUTTON) */
 .search-box{
-  display:flex;
-  justify-content:center;
   margin-top:30px;
   position:relative;
   z-index:3;
@@ -178,7 +176,7 @@ nav a:hover::after{
   box-shadow:0 10px 30px rgba(0,0,0,0.3);
 }
 
-.search-box input{
+  .search-box input{
   padding:16px 22px;
   width:450px;
   border:none;
@@ -190,18 +188,17 @@ nav a:hover::after{
 .search-box button{
   padding:16px 25px;
   border:none;
-  border-radius:40px;
   background:#AE8625;
   color:black;
   border-radius:0 30px 30px 0;
   cursor:pointer;
   font-weight:bold;
-  transition:scale(1.05);
 }
 
 .search-box button:hover{
   background:#d4a437;
 }
+
   
 /* 6. GENERAL SECTION */
 .section{
@@ -214,15 +211,6 @@ nav a:hover::after{
   text-align:center;
   font-weight:600;
 }
-  
-/* 7. CARD & GRID SYSTEM */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:25px;
-  margin-top:30px;
-}
-
 
 /* 8. STATISTICS SECTION */
 .stats-section{
@@ -359,7 +347,7 @@ nav a:hover::after{
   font-weight:bold;
 }
 
-.event-btn{
+.event-button{
   display:inline-block;
   margin-top:30px;
   padding:12px 25px;
@@ -382,8 +370,8 @@ nav a:hover::after{
 
 .colab-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
+  grid-template-columns:repeat(5,minmax(180px,1fr));
+  gap:20px;
   margin-top:0px auto;
 }
 
@@ -410,7 +398,7 @@ nav a:hover::after{
   text-align:left;
 }
 
-.colab-btn{
+.colab-button{
   display:inline-block;
   margin-top:30px;
   padding:12px 25px;
@@ -420,13 +408,6 @@ nav a:hover::after{
   border-radius:8px;
 }
 
-/* HOVER EFFECT */
-.umkm-link:hover .event-card{
-  transform:translateY(-8px) scale(1.02);
-  transition:0.3s;
-}
-
-/* RATING BINTANG */
 .rating{
   margin-top:10px;
   font-size:14px;
