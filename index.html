@@ -371,24 +371,73 @@ nav a:hover::after{
 
 
 /* 11. COLLAB SECTION */
-.collab{
-  background:white;
-  text-align:center;
-  padding:40px 30px;
+.colab-section{
+  background:#f8fafc;
+  padding:40px 40px;
   max-width:1100px;
   margin:60px auto;
   border-radius:16px;
   box-shadow:0 15px 40px rgba(0,0,0,0.15);
 }
 
-.collab button{
-  margin-top:20px;
+.colab-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+  margin-top:0px auto;
+}
+
+.colab-card{
+  background:white;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  transition:0.3s;
+}
+
+.colab-card:hover{
+  transform:translateY(-8px);
+}
+
+.colab-card img{
+  width:100%;
+  height:150px;
+  object-fit:cover;
+}
+
+.colab-content{
+  padding:15px;
+  text-align:left;
+}
+
+.colab-btn{
+  display:inline-block;
+  margin-top:30px;
   padding:12px 25px;
   background:#AE8625;
-  border:none;
+  color:#0f172a;
+  text-decoration:none;
   border-radius:8px;
 }
 
+/* HOVER EFFECT */
+.umkm-link:hover .event-card{
+  transform:translateY(-8px) scale(1.02);
+  transition:0.3s;
+}
+
+/* RATING BINTANG */
+.rating{
+  margin-top:10px;
+  font-size:14px;
+  color:#fbbf24;
+  font-weight:500;
+}
+
+.rating span{
+  color:#555;
+  margin-left:5px;
+}
 
 /* 12. EFFECT & ANIMATION */
 .stats-section:hover,
@@ -636,9 +685,67 @@ nav a:hover::after{
   
 <!-- KOLAB -->
 <section class="collab fade-up">
-<h2>Bergabung Bersama Kami</h2>
-<p>Perluas jaringan UMKM Anda sekarang.</p>
-<button>Daftar Sekarang</button>
+  <div class="section">
+    <h2>UMKM Terpopuler</h2>
+    <p>Temukan UMKM terbaik dan paling diminati saat ini.</p>
+
+    <div class="event-grid">
+
+      <!-- CARD 1 -->
+      <a href="detail-umkm.html" class="umkm-link">
+        <div class="event-card">
+          <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092">
+          <div class="event-content">
+            <h3>Kuliner Nusantara</h3>
+            <p>Makanan tradisional dengan cita rasa khas daerah.</p>
+            <div class="rating">⭐⭐⭐⭐⭐ <span>(4.9)</span></div>
+          </div>
+        </div>
+      </a>
+
+      <!-- CARD 2 -->
+      <a href="detail-umkm.html" class="umkm-link">
+        <div class="event-card">
+          <img src="https://images.unsplash.com/photo-1521335629791-ce4aec67dd53">
+          <div class="event-content">
+            <h3>Fashion Lokal</h3>
+            <p>Produk pakaian kreatif dengan desain modern.</p>
+            <div class="rating">⭐⭐⭐⭐☆ <span>(4.7)</span></div>
+          </div>
+        </div>
+      </a>
+
+      <!-- CARD 3 -->
+      <a href="detail-umkm.html" class="umkm-link">
+        <div class="event-card">
+          <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
+          <div class="event-content">
+            <h3>Kerajinan Tangan</h3>
+            <p>Produk handmade berkualitas dari pengrajin lokal.</p>
+            <div class="rating">⭐⭐⭐⭐⭐ <span>(4.8)</span></div>
+          </div>
+        </div>
+      </a>
+
+      <!-- CARD 4 -->
+      <a href="detail-umkm.html" class="umkm-link">
+        <div class="event-card">
+          <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d">
+          <div class="event-content">
+            <h3>Digital Produk</h3>
+            <p>Jasa dan produk digital untuk bisnis modern.</p>
+            <div class="rating">⭐⭐⭐⭐☆ <span>(4.6)</span></div>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- AJAKAN -->
+    <p style="margin-top:30px;">Perluas jaringan UMKM Anda sekarang.</p>
+    <button>Daftar Sekarang</button>
+
+  </div>
 </section>
 
 <footer class="footer">
