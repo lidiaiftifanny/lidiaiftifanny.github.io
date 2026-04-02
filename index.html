@@ -15,7 +15,6 @@ body{
   scroll-behavior:smooth;
 }
 
-
 /* 2. LAYOUT HEADER */
 header{
   display:flex;
@@ -230,7 +229,6 @@ nav a:hover::after{
   max-width:1100px;
   margin:60px auto;
   border-radius:16px;
-  box-shadow:0 15px 40px rgba(0,0,0,0.15);
 }
 
 .home-stats{
@@ -329,7 +327,7 @@ nav a:hover::after{
 }
 
 .event-card{
-  background:white;
+  background:#0f172a;
   border-radius:12px;
   overflow:hidden;
   box-shadow:0 10px 25px rgba(0,0,0,0.08);
@@ -349,6 +347,7 @@ nav a:hover::after{
 .event-content{
   padding:15px;
   text-align:left;
+  color:white;
 }
 
 .date{
@@ -385,7 +384,6 @@ nav a:hover::after{
   box-shadow:0 15px 40px rgba(0,0,0,0.15);
 }
 
-/* layout 2 kolom */
 .colab-container{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -393,7 +391,7 @@ nav a:hover::after{
   align-items:center;
 }
 
-/* kiri (teks) */
+/* kiri */
 .colab-text h2{
   margin-bottom:10px;
 }
@@ -402,7 +400,6 @@ nav a:hover::after{
   margin-bottom:20px;
 }
 
-/* tombol */
 .colab-button{
   display:inline-block;
   padding:12px 25px;
@@ -419,26 +416,23 @@ nav a:hover::after{
   transform:translateY(-2px);
 }
 
-/* kanan (slider) */
+/* kanan */
 .slider{
   overflow:hidden;
   width:100%;
 }
 
-/* track geser */
 .slide-track{
   display:flex;
   width:max-content;
   animation:scroll 15s linear infinite;
 }
 
-/* animasi geser */
 @keyframes scroll{
   0%{ transform:translateX(0); }
   100%{ transform:translateX(-50%); }
 }
 
-/* card */
 .colab-card{
   min-width:250px;
   margin-right:20px;
@@ -482,7 +476,6 @@ nav a:hover::after{
   opacity:1;
   transform:translateY(0);
 }
-
 
 /* 13. FOOTER */
 .footer{
@@ -618,26 +611,25 @@ nav a:hover::after{
 <div class="home-stats">
 
 <div class="stat-card">
-<img src="https://cdn-icons-png.flaticon.com/512/29/29302.png">
+<img src="https://tse1.mm.bing.net/th/id/OIP.BDBLMLh64O1G8Ngx_EZUyQHaHa?pid=Api&P=0&h=180">
 <h2>90k+</h2>
 <p>Koleksi Digital</p>
 </div>
 
 <div class="stat-card">
-<img src="https://cdn-icons-png.flaticon.com/512/847/847969.png">
+<img src="https://media.istockphoto.com/id/2159889945/id/vektor/anggota-e-lib…lam.jpg?s=612x612&w=is&k=20&c=BdNNlaqTE3m_MMApWerBkR2c1LLuR3HJMz3859N4StY=">
 <h2>23k+</h2>
-<p>Anggota</p>
+<p>Anggota Perpustakaan</p>
 </div>
 
 <div class="stat-card">
-<img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+<img src="https://png.pngtree.com/png-vector/20220726/ourlarge/pngtree-busines…l-presentation-icon-presentation-symbol-icon-vector-png-image_38129628.png">
 <h2>10k+</h2>
 <p>UMKM Bergabung</p>
 </div>
 
 </div>
 </section>
-
 
 <!-- FITUR -->
 <section class="features-section fade-up">
@@ -713,14 +705,10 @@ nav a:hover::after{
 
     <!-- KIRI -->
     <div class="colab-text">
-      <h2>Kolaborasi UMKM</h2>
-      <p>
-        Bergabunglah bersama kami untuk mengembangkan UMKM lokal 
-        dan memperluas jaringan bisnis Anda.
-      </p>
-
-      <h3>UMKM Terpopuler 🔥</h3>
-
+      <h2>UMKM Terpopuler</h2>
+      <p>Update Informasi terbaru kami tentang UMKM terpopuler di bulan April</p>
+      <p>Bergabunglah bersama kami untuk mengembangkan UMKM lokal dan memperluas jaringan bisnis Anda.</p>
+    
       <a href="#" class="colab-button">
         Gabung Sekarang
       </a>
@@ -744,7 +732,7 @@ nav a:hover::after{
           <img src="https://images.unsplash.com/photo-1521335629791-ce4aec67dd53">
           <div class="colab-content">
             <h4>Fashion Lokal</h4>
-            <div class="rating">⭐⭐⭐⭐☆ (4.7)</div>
+            <div class="rating">⭐⭐⭐⭐⭐☆ (4.8)</div>
           </div>
         </div>
 
@@ -762,6 +750,15 @@ nav a:hover::after{
           <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092">
           <div class="colab-content">
             <h4>Kuliner Nusantara</h4>
+            <div class="rating">⭐⭐⭐⭐⭐ (4.9)</div>
+          </div>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="colab-card">
+          <img src="https://awsimages.detik.net.id/community/media/visual/2023/04/12/risol-mayo_43.jpeg?w=700&q=90">
+          <div class="colab-content">
+            <h4>Risolku Mayo</h4>
             <div class="rating">⭐⭐⭐⭐⭐ (4.9)</div>
           </div>
         </div>
