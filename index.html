@@ -157,7 +157,7 @@ nav a:hover::after{
 }
 
 .hero p{
-  font-size:20px
+  font-size:20px;
   max-width:600px;
   margin:auto;
 }
@@ -194,11 +194,12 @@ nav a:hover::after{
   border-radius:0 30px 30px 0; 
   cursor:pointer; 
   font-weight:bold; 
-  transition:scale(1.05); 
+  transition: transform 0.3s ease, background 0.3s ease; 
 }
 
 .search-box button:hover{
   background:#d4a437;
+  transform:scale(1.05);
 }
 
   
@@ -244,7 +245,7 @@ nav a:hover::after{
   padding:30px;
   border-radius:12px;
   color:white;
-  box-shadow:0 10px 25px rgba(0,0,0,0.8);
+  box-shadow:0 10px 25px rgba(0,0,0,0.18);
 }
 
 .stat-card img{
@@ -265,7 +266,8 @@ nav a:hover::after{
 }
 
 .feature-card{
-  width:400px;
+  width:100%px;
+  max-width:400px;
   margin:20px auto;
   background:white;
   color:#0f172a;
@@ -323,7 +325,7 @@ nav a:hover::after{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:25px;
-  margin-top:0px auto;
+  margin:0px auto;
 }
 
 .event-card{
@@ -461,7 +463,7 @@ nav a:hover::after{
 .stats-section:hover,
 .features-section:hover,
 .event-section:hover,
-.collab:hover{
+.colab-section:hover{
   transform:translateY(-8px);
   transition:0.3s;
 }
@@ -596,9 +598,9 @@ nav a:hover::after{
 <h1>Selamat Datang di PUSLIB UMKM</h1>
 <p>Melayani kebutuhan informasi perpustakaan dan pengembangan UMKM secara digital.</p>
 
-<div class="hero-box">
-  <input type="text" placeholder="Search Books...">
-  <button>Search</button>
+<div class="search-box">
+  <input type="text" placeholder="Cari Buku, Artikel, atau Data UMKM?">
+  <button type="sumbit">Search</button>
 </div>
 </div>
 </section>
@@ -628,6 +630,7 @@ nav a:hover::after{
 <p>UMKM Bergabung</p>
 </div>
 
+</div>
 </div>
 </section>
 
@@ -822,15 +825,14 @@ nav a:hover::after{
 const sections = document.querySelectorAll('.fade-up');
 
 // buat observer
-const observer = new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
       entry.target.classList.add('show');
+      observer.unobserve(entry.target);
     }
   });
-},{
-  threshold: 0.2 // muncul saat 20% terlihat
-});
+}, { threshold: 0.2 });
 
 // jalankan observer
 sections.forEach(section=>{
