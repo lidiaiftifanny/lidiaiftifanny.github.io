@@ -4,11 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PUSLIB UMKM</title>
+<link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
 
 <style>
-/* =========================
-   1. RESET & GLOBAL
-========================= */
+/* 1. RESET & GLOBAL */
 *{
   box-sizing:border-box;
   margin:0;
@@ -41,9 +40,7 @@ p, a, button, input, li, span{
   font-family:'Plus Jakarta Sans', sans-serif;
 }
 
-/* =========================
-   2. HEADER
-========================= */
+/* 2. HEADER */
 header{
   display:flex;
   justify-content:space-between;
@@ -114,9 +111,7 @@ nav a:hover::after{
   color:#0f172a;
 }
 
-/* =========================
-   3. DROPDOWN
-========================= */
+/* 3. DROPDOWN */
 .dropdown{
   position:relative;
 }
@@ -159,9 +154,7 @@ nav a:hover::after{
   display:block;
 }
 
-/* =========================
-   4. HERO
-========================= */
+/* 4. HERO */
 .hero{
   min-height:500px;
   background-image:url("Toko online dan produk lokal.png");
@@ -206,9 +199,7 @@ nav a:hover::after{
   color:rgba(255,255,255,0.92);
 }
 
-/* =========================
-   5. SEARCH BOX
-========================= */
+/* 5. SEARCH BOX */
 .search-box{
   display:inline-flex;
   align-items:center;
@@ -254,9 +245,7 @@ nav a:hover::after{
   transform:translateY(-1px);
 }
 
-/* =========================
-   6. GENERAL SECTION
-========================= */
+/* 6. GENERAL SECTION */
 .section{
   padding:40px;
   text-align:center;
@@ -273,9 +262,7 @@ nav a:hover::after{
   line-height:1.7;
 }
 
-/* =========================
-   7. STATS SECTION
-========================= */
+/* 7. STATS SECTION */
 .stats-section{
   background:white;
   padding:40px;
@@ -316,9 +303,7 @@ nav a:hover::after{
   color:#e5e7eb;
 }
 
-/* =========================
-   8. FEATURES SECTION
-========================= */
+/* 8. FEATURES SECTION */
 .features-section{
   background:#0f172a;
   color:white;
@@ -392,9 +377,7 @@ nav a:hover::after{
   color:#475569;
 }
 
-/* =========================
-   9. EVENT SECTION
-========================= */
+/* 9. EVENT SECTION */
 .event-section{
   background:#f8fafc;
   padding:40px;
@@ -471,9 +454,7 @@ nav a:hover::after{
   box-shadow:0 8px 18px rgba(0,0,0,0.2);
 }
 
-/* =========================
-   10. COLLAB SECTION
-========================= */
+/* 10. COLLAB SECTION */
 .colab-section{
   background:#f8fafc;
   padding:40px;
@@ -563,9 +544,7 @@ nav a:hover::after{
   font-weight:600;
 }
 
-/* =========================
-   11. HOVER SECTION
-========================= */
+/* 11. HOVER SECTION */
 .stats-section:hover,
 .features-section:hover,
 .event-section:hover,
@@ -573,9 +552,7 @@ nav a:hover::after{
   transform:translateY(-6px);
 }
 
-/* =========================
-   12. SCROLL ANIMATION
-========================= */
+/* 12. SCROLL ANIMATION */
 .fade-up{
   opacity:0;
   transform:translateY(40px);
@@ -587,9 +564,7 @@ nav a:hover::after{
   transform:translateY(0);
 }
 
-/* =========================
-   13. FOOTER
-========================= */
+/* 13. FOOTER */
 .footer{
   background:#0f172a;
   color:#e5e7eb;
@@ -659,9 +634,7 @@ nav a:hover::after{
   color:#94a3b8;
 }
 
-/* =========================
-   14. RESPONSIVE
-========================= */
+/* 14. RESPONSIVE */
 @media (max-width: 992px){
   header{
     flex-direction:column;
@@ -868,45 +841,32 @@ nav a:hover::after{
 </section>
 
 <!-- EVENT PERPUSTAKAAN -->
-<section class="event-section fade-up" id="event">
-  <div class="section">
-    <h2>Event Perpustakaan</h2>
-    <p>Ikuti berbagai kegiatan menarik untuk pengembangan literasi dan UMKM</p>
-
-    <div class="event-grid">
-
-      <div class="event-card">
-        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
-        <div class="event-content">
-          <h3>Workshop Digital Marketing</h3>
-          <p>Pelatihan strategi pemasaran digital untuk UMKM pemula.</p>
-          <span class="date">12 April 2026</span>
-        </div>
-      </div>
-
-      <div class="event-card">
-        <img src="https://images.unsplash.com/photo-1515169067868-5387ec356754">
-        <div class="event-content">
-          <h3>Seminar Literasi Keuangan</h3>
-          <p>Belajar mengelola keuangan usaha secara efektif.</p>
-          <span class="date">20 April 2026</span>
-        </div>
-      </div>
-
-      <div class="event-card">
-        <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
-        <div class="event-content">
-          <h3>Pelatihan Branding UMKM</h3>
-          <p>Membangun identitas brand yang kuat dan menarik.</p>
-          <span class="date">28 April 2026</span>
-        </div>
-      </div>
-
-    </div>
-
-    <a href="#event" class="event-button">Selengkapnya</a>
+<div class="event-card">
+  <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
+  <div class="event-content">
+    <h3><a href="daftar-event.html?event=workshop-digital-marketing">Workshop Digital Marketing</a></h3>
+    <p>Pelatihan strategi pemasaran digital untuk UMKM pemula.</p>
+    <span class="date">12 April 2026</span>
   </div>
-</section>
+</div>
+
+<div class="event-card">
+  <img src="https://images.unsplash.com/photo-1515169067868-5387ec356754">
+  <div class="event-content">
+    <h3><a href="daftar-event.html?event=seminar-literasi-keuangan">Seminar Literasi Keuangan</a></h3>
+    <p>Belajar mengelola keuangan usaha secara efektif.</p>
+    <span class="date">20 April 2026</span>
+  </div>
+</div>
+
+<div class="event-card">
+  <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
+  <div class="event-content">
+    <h3><a href="daftar-event.html?event=pelatihan-branding-umkm">Pelatihan Branding UMKM</a></h3>
+    <p>Membangun identitas brand yang kuat dan menarik.</p>
+    <span class="date">28 April 2026</span>
+  </div>
+</div>
   
 <!-- KOLAB -->
 <section class="colab-section">
