@@ -1,1 +1,731 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UMKM Populer - PUSLIB UMKM</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Plus Jakarta Sans', sans-serif;
+      background:#e5e7eb;
+      color:#0f172a;
+      line-height:1.6;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    h1,h2,h3,h4,.logo{
+      font-family:'Cormorant Garamond', serif;
+    }
+
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:#0f172a;
+      color:white;
+      padding:15px 40px;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      box-shadow:0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:700;
+      color:#AE8625;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:20px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    nav a{
+      color:white;
+      font-size:14px;
+      font-weight:500;
+      transition:color 0.3s ease;
+    }
+
+    nav a:hover{
+      color:#AE8625;
+    }
+
+    .hero{
+      background:
+        linear-gradient(rgba(15,23,42,0.76), rgba(15,23,42,0.76)),
+        url("https://images.unsplash.com/photo-1556745757-8d76bdb6984b");
+      background-size:cover;
+      background-position:center;
+      color:white;
+      text-align:center;
+      padding:95px 20px 80px;
+    }
+
+    .hero h1{
+      font-size:58px;
+      margin-bottom:14px;
+    }
+
+    .hero p{
+      max-width:780px;
+      margin:0 auto;
+      font-size:17px;
+      color:rgba(255,255,255,0.92);
+    }
+
+    .container{
+      max-width:1180px;
+      margin:55px auto;
+      padding:0 20px;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:35px;
+    }
+
+    .section-title h2{
+      font-size:44px;
+      margin-bottom:10px;
+    }
+
+    .section-title p{
+      font-size:15px;
+      color:#475569;
+      max-width:760px;
+      margin:0 auto;
+    }
+
+    .shop-card{
+      background:white;
+      border-radius:20px;
+      box-shadow:0 14px 35px rgba(0,0,0,0.08);
+      overflow:hidden;
+      margin-bottom:35px;
+    }
+
+    .shop-top{
+      display:grid;
+      grid-template-columns:1fr 1.2fr;
+      gap:0;
+    }
+
+    .shop-top img{
+      width:100%;
+      height:100%;
+      min-height:320px;
+      object-fit:cover;
+      display:block;
+    }
+
+    .shop-info{
+      padding:30px;
+    }
+
+    .shop-info h2{
+      font-size:42px;
+      margin-bottom:10px;
+      color:#0f172a;
+    }
+
+    .rating{
+      color:#f59e0b;
+      font-size:16px;
+      font-weight:700;
+      margin-bottom:12px;
+    }
+
+    .shop-meta{
+      font-size:14px;
+      color:#64748b;
+      margin-bottom:8px;
+    }
+
+    .shop-desc{
+      font-size:15px;
+      color:#475569;
+      margin-top:14px;
+    }
+
+    .wa-button{
+      display:inline-block;
+      margin-top:18px;
+      padding:12px 18px;
+      background:#25D366;
+      color:white;
+      border-radius:10px;
+      font-size:14px;
+      font-weight:700;
+      transition:all 0.3s ease;
+    }
+
+    .wa-button:hover{
+      background:#1ebe5d;
+      transform:translateY(-2px);
+    }
+
+    .shop-bottom{
+      padding:30px;
+      border-top:1px solid #e5e7eb;
+    }
+
+    .sub-title{
+      font-size:34px;
+      margin-bottom:14px;
+      color:#0f172a;
+    }
+
+    .product-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+      gap:20px;
+      margin-bottom:28px;
+    }
+
+    .product-card{
+      background:#f8fafc;
+      border-radius:14px;
+      overflow:hidden;
+      box-shadow:0 8px 20px rgba(0,0,0,0.05);
+    }
+
+    .product-card img{
+      width:100%;
+      height:170px;
+      object-fit:cover;
+    }
+
+    .product-content{
+      padding:16px;
+    }
+
+    .product-content h3{
+      font-size:28px;
+      margin-bottom:8px;
+    }
+
+    .product-content p{
+      font-size:14px;
+      color:#475569;
+    }
+
+    .price{
+      margin-top:8px;
+      color:#AE8625;
+      font-weight:700;
+    }
+
+    .review-list{
+      margin-top:10px;
+      margin-bottom:18px;
+    }
+
+    .review-item{
+      background:#f8fafc;
+      border-radius:12px;
+      padding:12px 14px;
+      margin-bottom:10px;
+      font-size:14px;
+      color:#475569;
+    }
+
+    .review-form{
+      display:grid;
+      gap:12px;
+    }
+
+    .review-form input,
+    .review-form select,
+    .review-form textarea{
+      width:100%;
+      padding:12px 14px;
+      border:1px solid #cbd5e1;
+      border-radius:10px;
+      font-size:14px;
+      font-family:'Plus Jakarta Sans', sans-serif;
+      outline:none;
+    }
+
+    .review-form input:focus,
+    .review-form select:focus,
+    .review-form textarea:focus{
+      border-color:#AE8625;
+      box-shadow:0 0 0 4px rgba(174,134,37,0.10);
+    }
+
+    .review-form button{
+      border:none;
+      background:#0f172a;
+      color:white;
+      padding:12px 16px;
+      border-radius:10px;
+      font-size:14px;
+      font-weight:700;
+      cursor:pointer;
+      transition:all 0.3s ease;
+    }
+
+    .review-form button:hover{
+      background:#AE8625;
+      color:#0f172a;
+    }
+
+    .back-wrap{
+      text-align:center;
+      margin-top:35px;
+    }
+
+    .back-button{
+      display:inline-block;
+      padding:12px 22px;
+      background:#AE8625;
+      color:#0f172a;
+      border-radius:10px;
+      font-weight:700;
+      transition:all 0.3s ease;
+    }
+
+    .back-button:hover{
+      background:#d4a437;
+      transform:translateY(-2px);
+    }
+
+    footer{
+      margin-top:60px;
+      background:#0f172a;
+      color:#cbd5e1;
+      text-align:center;
+      padding:28px 20px;
+      font-size:13px;
+    }
+
+    @media (max-width: 992px){
+      header{
+        flex-direction:column;
+        gap:14px;
+        padding:15px 20px;
+      }
+
+      nav ul{
+        justify-content:center;
+      }
+
+      .shop-top{
+        grid-template-columns:1fr;
+      }
+
+      .hero h1{
+        font-size:44px;
+      }
+    }
+
+    @media (max-width: 768px){
+      .hero{
+        padding:70px 20px 55px;
+      }
+
+      .hero h1{
+        font-size:36px;
+      }
+
+      .hero p{
+        font-size:15px;
+      }
+
+      .shop-info h2{
+        font-size:34px;
+      }
+
+      .sub-title,
+      .section-title h2{
+        font-size:30px;
+      }
+
+      .container{
+        padding:0 16px;
+      }
+
+      .shop-info,
+      .shop-bottom{
+        padding:22px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">PUSLIB UMKM</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="index.html#event">Event</a></li>
+        <li><a href="tentang-perpustakaan.html">Tentang Perpustakaan</a></li>
+        <li><a href="konten-edukasi.html">Konten Edukasi</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>UMKM Populer</h1>
+    <p>
+      Jelajahi UMKM terpopuler pilihan kami. Temukan deskripsi usaha, produk unggulan,
+      harga, ulasan pelanggan, dan nomor WhatsApp untuk pemesanan langsung.
+    </p>
+  </section>
+
+  <div class="container">
+    <div class="section-title">
+      <h2>Daftar UMKM Populer</h2>
+      <p>
+        Halaman ini menampilkan beberapa UMKM unggulan yang dapat dijadikan referensi
+        belanja, kolaborasi, maupun inspirasi usaha.
+      </p>
+    </div>
+
+    <section class="shop-card" id="kuliner-nusantara">
+      <div class="shop-top">
+        <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" alt="Kuliner Nusantara">
+        <div class="shop-info">
+          <h2>Kuliner Nusantara</h2>
+          <div class="rating">⭐⭐⭐⭐⭐ (4.9)</div>
+          <div class="shop-meta">Kategori: Kuliner</div>
+          <div class="shop-meta">Lokasi: Medan, Sumatera Utara</div>
+          <div class="shop-meta">Jam Operasional: 09.00 - 20.00 WIB</div>
+          <p class="shop-desc">
+            Kuliner Nusantara menyediakan aneka makanan khas Indonesia dengan cita rasa autentik,
+            bahan berkualitas, dan kemasan yang rapi. Cocok untuk konsumsi pribadi, acara keluarga,
+            rapat, hingga pesanan snack box dan nasi kotak.
+          </p>
+          <a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20memesan%20produk%20di%20Kuliner%20Nusantara" target="_blank" class="wa-button">
+            Pesan via WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="shop-bottom">
+        <h3 class="sub-title">Produk Unggulan</h3>
+        <div class="product-grid">
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19" alt="Nasi Kotak Premium">
+            <div class="product-content">
+              <h3>Nasi Kotak Premium</h3>
+              <p>Paket nasi lengkap dengan lauk pilihan, sayur, sambal, dan buah.</p>
+              <div class="price">Rp35.000</div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Paket Lauk Nusantara">
+            <div class="product-content">
+              <h3>Paket Lauk Nusantara</h3>
+              <p>Pilihan lauk khas rumahan dengan rasa gurih dan bumbu autentik.</p>
+              <div class="price">Rp50.000</div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="https://awsimages.detik.net.id/community/media/visual/2023/04/12/risol-mayo_43.jpeg?w=700&q=90" alt="Snack Box">
+            <div class="product-content">
+              <h3>Snack Box</h3>
+              <p>Aneka snack gurih dan manis yang cocok untuk rapat maupun acara.</p>
+              <div class="price">Rp20.000</div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="sub-title">Ulasan Pelanggan</h3>
+        <div class="review-list" id="reviews-kuliner">
+          <div class="review-item">⭐⭐⭐⭐⭐ — Makanannya enak, pengiriman cepat, dan kemasannya rapi.</div>
+          <div class="review-item">⭐⭐⭐⭐⭐ — Cocok untuk acara kantor, porsinya pas dan rasanya konsisten.</div>
+        </div>
+
+        <form class="review-form" onsubmit="addReview(event, 'kuliner')">
+          <input type="text" id="name-kuliner" placeholder="Nama Anda" required>
+          <select id="rating-kuliner" required>
+            <option value="">Pilih rating</option>
+            <option value="⭐⭐⭐⭐⭐">5 - Sangat puas</option>
+            <option value="⭐⭐⭐⭐">4 - Puas</option>
+            <option value="⭐⭐⭐">3 - Cukup</option>
+            <option value="⭐⭐">2 - Kurang</option>
+            <option value="⭐">1 - Tidak puas</option>
+          </select>
+          <textarea id="comment-kuliner" rows="4" placeholder="Tulis komentar Anda" required></textarea>
+          <button type="submit">Kirim Komentar</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="shop-card" id="fashion-lokal">
+      <div class="shop-top">
+        <img src="https://images.unsplash.com/photo-1521335629791-ce4aec67dd53" alt="Fashion Lokal">
+        <div class="shop-info">
+          <h2>Fashion Lokal</h2>
+          <div class="rating">⭐⭐⭐⭐⭐ (4.8)</div>
+          <div class="shop-meta">Kategori: Fashion</div>
+          <div class="shop-meta">Lokasi: Medan, Sumatera Utara</div>
+          <div class="shop-meta">Jam Operasional: 10.00 - 21.00 WIB</div>
+          <p class="shop-desc">
+            Fashion Lokal menghadirkan pakaian wanita dengan model modern, bahan nyaman,
+            dan kualitas jahitan yang rapi. Koleksi yang ditawarkan cocok untuk penggunaan
+            harian, semi formal, maupun acara santai.
+          </p>
+          <a href="https://wa.me/6282234567891?text=Halo%20saya%20ingin%20memesan%20produk%20di%20Fashion%20Lokal" target="_blank" class="wa-button">
+            Pesan via WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="shop-bottom">
+        <h3 class="sub-title">Produk Unggulan</h3>
+        <div class="product-grid">
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b" alt="Blouse Linen">
+            <div class="product-content">
+              <h3>Blouse Linen</h3>
+              <p>Atasan wanita dengan bahan adem, ringan, dan nyaman dipakai.</p>
+              <div class="price">Rp89.000</div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c" alt="Dress Casual">
+            <div class="product-content">
+              <h3>Dress Casual</h3>
+              <p>Dress simpel dan elegan untuk aktivitas harian dan acara santai.</p>
+              <div class="price">Rp135.000</div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b" alt="Outer Wanita">
+            <div class="product-content">
+              <h3>Outer Wanita</h3>
+              <p>Outer stylish untuk melengkapi penampilan agar lebih modern.</p>
+              <div class="price">Rp120.000</div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="sub-title">Ulasan Pelanggan</h3>
+        <div class="review-list" id="reviews-fashion">
+          <div class="review-item">⭐⭐⭐⭐⭐ — Bahannya bagus dan sangat nyaman dipakai.</div>
+          <div class="review-item">⭐⭐⭐⭐ — Modelnya cantik dan cocok untuk dipakai sehari-hari.</div>
+        </div>
+
+        <form class="review-form" onsubmit="addReview(event, 'fashion')">
+          <input type="text" id="name-fashion" placeholder="Nama Anda" required>
+          <select id="rating-fashion" required>
+            <option value="">Pilih rating</option>
+            <option value="⭐⭐⭐⭐⭐">5 - Sangat puas</option>
+            <option value="⭐⭐⭐⭐">4 - Puas</option>
+            <option value="⭐⭐⭐">3 - Cukup</option>
+            <option value="⭐⭐">2 - Kurang</option>
+            <option value="⭐">1 - Tidak puas</option>
+          </select>
+          <textarea id="comment-fashion" rows="4" placeholder="Tulis komentar Anda" required></textarea>
+          <button type="submit">Kirim Komentar</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="shop-card" id="kerajinan-tangan">
+      <div class="shop-top">
+        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f" alt="Kerajinan Tangan">
+        <div class="shop-info">
+          <h2>Kerajinan Tangan</h2>
+          <div class="rating">⭐⭐⭐⭐⭐ (4.8)</div>
+          <div class="shop-meta">Kategori: Kerajinan</div>
+          <div class="shop-meta">Lokasi: Medan, Sumatera Utara</div>
+          <div class="shop-meta">Jam Operasional: 08.30 - 18.00 WIB</div>
+          <p class="shop-desc">
+            Kerajinan Tangan menawarkan produk handmade unik dengan sentuhan lokal yang estetik.
+            Cocok untuk dekorasi rumah, souvenir, hadiah, dan produk kreatif bernilai seni tinggi.
+          </p>
+          <a href="https://wa.me/6283234567892?text=Halo%20saya%20ingin%20memesan%20produk%20di%20Kerajinan%20Tangan" target="_blank" class="wa-button">
+            Pesan via WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="shop-bottom">
+        <h3 class="sub-title">Produk Unggulan</h3>
+        <div class="product-grid">
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1517705008128-361805f42e86" alt="Vas Anyaman">
+            <div class="product-content">
+              <h3>Vas Anyaman</h3>
+              <p>Vas dekoratif handmade dengan desain natural dan elegan.</p>
+              <div class="price">Rp45.000</div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85" alt="Hiasan Dinding">
+            <div class="product-content">
+              <h3>Hiasan Dinding</h3>
+              <p>Hiasan rumah dengan sentuhan artistik untuk dekorasi ruangan.</p>
+              <div class="price">Rp75.000</div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f" alt="Souvenir Handmade">
+            <div class="product-content">
+              <h3>Souvenir Handmade</h3>
+              <p>Souvenir unik buatan tangan yang cocok untuk hadiah dan acara.</p>
+              <div class="price">Rp25.000</div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="sub-title">Ulasan Pelanggan</h3>
+        <div class="review-list" id="reviews-kerajinan">
+          <div class="review-item">⭐⭐⭐⭐⭐ — Produknya unik, rapi, dan cocok untuk hadiah.</div>
+          <div class="review-item">⭐⭐⭐⭐ — Kemasannya bagus dan hasil kerajinannya detail.</div>
+        </div>
+
+        <form class="review-form" onsubmit="addReview(event, 'kerajinan')">
+          <input type="text" id="name-kerajinan" placeholder="Nama Anda" required>
+          <select id="rating-kerajinan" required>
+            <option value="">Pilih rating</option>
+            <option value="⭐⭐⭐⭐⭐">5 - Sangat puas</option>
+            <option value="⭐⭐⭐⭐">4 - Puas</option>
+            <option value="⭐⭐⭐">3 - Cukup</option>
+            <option value="⭐⭐">2 - Kurang</option>
+            <option value="⭐">1 - Tidak puas</option>
+          </select>
+          <textarea id="comment-kerajinan" rows="4" placeholder="Tulis komentar Anda" required></textarea>
+          <button type="submit">Kirim Komentar</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="shop-card" id="risolku-mayo">
+      <div class="shop-top">
+        <img src="https://awsimages.detik.net.id/community/media/visual/2023/04/12/risol-mayo_43.jpeg?w=700&q=90" alt="Risolku Mayo">
+        <div class="shop-info">
+          <h2>Risolku Mayo</h2>
+          <div class="rating">⭐⭐⭐⭐⭐ (4.9)</div>
+          <div class="shop-meta">Kategori: Snack</div>
+          <div class="shop-meta">Lokasi: Medan, Sumatera Utara</div>
+          <div class="shop-meta">Jam Operasional: 09.00 - 19.00 WIB</div>
+          <p class="shop-desc">
+            Risolku Mayo menyediakan risol mayo homemade dengan isian melimpah, rasa gurih,
+            dan tekstur renyah. Cocok untuk camilan, hampers, snack box, dan pesanan acara.
+          </p>
+          <a href="https://wa.me/6285234567893?text=Halo%20saya%20ingin%20memesan%20produk%20di%20Risolku%20Mayo" target="_blank" class="wa-button">
+            Pesan via WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="shop-bottom">
+        <h3 class="sub-title">Produk Unggulan</h3>
+        <div class="product-grid">
+          <div class="product-card">
+            <img src="https://awsimages.detik.net.id/community/media/visual/2023/04/12/risol-mayo_43.jpeg?w=700&q=90" alt="Risol Mayo Original">
+            <div class="product-content">
+              <h3>Risol Mayo Original</h3>
+              <p>Risol mayo dengan isian asap sapi, telur, dan saus mayo lembut.</p>
+              <div class="price">Rp5.000 / pcs</div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1547592180-85f173990554" alt="Risol Box">
+            <div class="product-content">
+              <h3>Risol Box</h3>
+              <p>Paket risol dalam box untuk acara keluarga, kantor, dan hampers.</p>
+              <div class="price">Rp45.000</div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff" alt="Snack Paket">
+            <div class="product-content">
+              <h3>Paket Snack</h3>
+              <p>Kombinasi risol dan snack pilihan untuk rapat dan berbagai acara.</p>
+              <div class="price">Rp25.000</div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="sub-title">Ulasan Pelanggan</h3>
+        <div class="review-list" id="reviews-risol">
+          <div class="review-item">⭐⭐⭐⭐⭐ — Risolnya creamy, isiannya banyak, dan enak banget.</div>
+          <div class="review-item">⭐⭐⭐⭐⭐ — Cocok untuk acara, datang tepat waktu dan masih hangat.</div>
+        </div>
+
+        <form class="review-form" onsubmit="addReview(event, 'risol')">
+          <input type="text" id="name-risol" placeholder="Nama Anda" required>
+          <select id="rating-risol" required>
+            <option value="">Pilih rating</option>
+            <option value="⭐⭐⭐⭐⭐">5 - Sangat puas</option>
+            <option value="⭐⭐⭐⭐">4 - Puas</option>
+            <option value="⭐⭐⭐">3 - Cukup</option>
+            <option value="⭐⭐">2 - Kurang</option>
+            <option value="⭐">1 - Tidak puas</option>
+          </select>
+          <textarea id="comment-risol" rows="4" placeholder="Tulis komentar Anda" required></textarea>
+          <button type="submit">Kirim Komentar</button>
+        </form>
+      </div>
+    </section>
+
+    <div class="back-wrap">
+      <a href="index.html" class="back-button">Kembali ke Beranda</a>
+    </div>
+  </div>
+
+  <footer>
+    © 2026 PUSLIB UMKM — UMKM Populer
+  </footer>
+
+  <script>
+    function addReview(event, store){
+      event.preventDefault();
+
+      const name = document.getElementById(`name-${store}`).value.trim();
+      const rating = document.getElementById(`rating-${store}`).value;
+      const comment = document.getElementById(`comment-${store}`).value.trim();
+      const reviewList = document.getElementById(`reviews-${store}`);
+
+      if(name === "" || rating === "" || comment === ""){
+        alert("Silakan lengkapi nama, rating, dan komentar.");
+        return;
+      }
+
+      const newReview = document.createElement("div");
+      newReview.classList.add("review-item");
+      newReview.textContent = `${rating} — ${name}: ${comment}`;
+      reviewList.prepend(newReview);
+
+      document.getElementById(`name-${store}`).value = "";
+      document.getElementById(`rating-${store}`).value = "";
+      document.getElementById(`comment-${store}`).value = "";
+    }
+  </script>
+
+</body>
+</html>
