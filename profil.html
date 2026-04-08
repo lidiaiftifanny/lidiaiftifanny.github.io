@@ -21,21 +21,73 @@
       background:#0d1b2a;
       color:#0f172a;
       line-height:1.7;
-      padding:40px 20px;
     }
 
     a{
-      color:#AE8625;
       text-decoration:none;
     }
 
-    a:hover{
-      text-decoration:underline;
-    }
-
-    h1,h2,h3{
+    h1,h2,h3,.logo{
       font-family:'Cormorant Garamond', serif;
       letter-spacing:0.3px;
+    }
+
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:#0f172a;
+      color:white;
+      padding:15px 40px;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      box-shadow:0 6px 20px rgba(0,0,0,0.2);
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:700;
+      color:#AE8625;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:20px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    nav a{
+      color:white;
+      font-size:14px;
+      font-weight:500;
+      position:relative;
+      transition:color 0.3s ease;
+    }
+
+    nav a:hover{
+      color:#AE8625;
+    }
+
+    nav a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-5px;
+      width:0;
+      height:2px;
+      background:#AE8625;
+      transition:width 0.3s ease;
+    }
+
+    nav a:hover::after{
+      width:100%;
+    }
+
+    .page-wrap{
+      padding:40px 20px;
     }
 
     .cv-container{
@@ -149,6 +201,16 @@
     }
 
     @media (max-width: 768px){
+      header{
+        flex-direction:column;
+        gap:14px;
+        padding:15px 20px;
+      }
+
+      nav ul{
+        justify-content:center;
+      }
+
       .cv-header h1{
         font-size:40px;
       }
@@ -177,11 +239,15 @@
         width:180px;
         height:230px;
       }
+
+      .page-wrap{
+        padding:25px 15px;
+      }
     }
   </style>
 </head>
 <body>
-  
+
   <header>
     <div class="logo">PUSLIB UMKM</div>
     <nav>
@@ -190,76 +256,77 @@
         <li><a href="profil.html">Tentang Saya</a></li>
         <li><a href="profil-perpustakaan.html">Tentang Perpustakaan</a></li>
         <li><a href="kontak.html">Kontak</a></li>
-        <li><a href="login.html" class="login">Login</a></li>
       </ul>
     </nav>
   </header>
-  
-  <div class="cv-container">
 
-    <div class="cv-header">
-      <h1>Curriculum Vitae</h1>
-      <p>Profil Singkat dan Riwayat Pendidikan</p>
-    </div>
+  <div class="page-wrap">
+    <div class="cv-container">
 
-    <div class="cv-profile">
-      <img src="Foto Lidia.jpeg" alt="Foto Lidia Iftifanny">
-      <h2>Lidia Iftifanny</h2>
-      <p>S-1 Perpustakaan dan Sains Informasi</p>
-    </div>
+      <div class="cv-header">
+        <h1>Curriculum Vitae</h1>
+        <p>Profil Singkat dan Riwayat Pendidikan</p>
+      </div>
 
-    <div class="cv-body">
+      <div class="cv-profile">
+        <img src="Foto Lidia.jpeg" alt="Foto Lidia Iftifanny">
+        <h2>Lidia Iftifanny</h2>
+        <p>S-1 Perpustakaan dan Sains Informasi</p>
+      </div>
 
-      <div class="section">
-        <h3>Data Pribadi</h3>
-        <div class="info-grid">
-          <div class="info-item"><b>Tempat/Tanggal Lahir:</b><br>Medan, 07 Desember 2004</div>
-          <div class="info-item"><b>Alamat:</b><br>Jl. Setia Budi Gg. HA. Idris No.153C Medan</div>
-          <div class="info-item"><b>Email:</b><br>lidiaiftifanny07@gmail.com</div>
-          <div class="info-item"><b>No. HP/WA:</b><br>082161056858</div>
-          <div class="info-item"><b>Instagram:</b><br><a href="https://instagram.com/lid_lidit" target="_blank">@lid_lidit</a></div>
+      <div class="cv-body">
+
+        <div class="section">
+          <h3>Data Pribadi</h3>
+          <div class="info-grid">
+            <div class="info-item"><b>Tempat/Tanggal Lahir:</b><br>Medan, 07 Desember 2004</div>
+            <div class="info-item"><b>Alamat:</b><br>Jl. Setia Budi Gg. HA. Idris No.153C Medan</div>
+            <div class="info-item"><b>Email:</b><br>lidiaiftifanny07@gmail.com</div>
+            <div class="info-item"><b>No. HP/WA:</b><br>082161056858</div>
+            <div class="info-item"><b>Instagram:</b><br><a href="https://instagram.com/lid_lidit" target="_blank">@lid_lidit</a></div>
+          </div>
         </div>
-      </div>
 
-      <div class="section">
-        <h3>Pendidikan</h3>
-        <div class="timeline">
-          <p><b>2023 – Sekarang</b><br>Perpustakaan dan Sains Informasi, Universitas Sumatera Utara</p>
-          <p><b>2020 – 2023</b><br>MAN 2 Model Medan</p>
+        <div class="section">
+          <h3>Pendidikan</h3>
+          <div class="timeline">
+            <p><b>2023 – Sekarang</b><br>Perpustakaan dan Sains Informasi, Universitas Sumatera Utara</p>
+            <p><b>2020 – 2023</b><br>MAN 2 Model Medan</p>
+          </div>
         </div>
+
+        <div class="section">
+          <h3>Pengalaman Organisasi</h3>
+          <ul class="list">
+            <li>Sekretaris Bidang UKM LPTQ USU</li>
+            <li>Sekretaris Seleksi MTQMN Se-Universitas Sumatera Utara</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h3>Pengalaman Pekerjaan</h3>
+          <ul class="list">
+            <li>Karyawan Toko Sepatu</li>
+            <li>Casual Event H&amp;CO</li>
+            <li>Casual Bazar D'Juara Risol</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h3>Keahlian</h3>
+          <ul class="list">
+            <li>Microsoft Office Word</li>
+            <li>HTML Dasar</li>
+          </ul>
+        </div>
+
       </div>
 
-      <div class="section">
-        <h3>Pengalaman Organisasi</h3>
-        <ul class="list">
-          <li>Sekretaris Bidang UKM LPTQ USU</li>
-          <li>Sekretaris Seleksi MTQMN Se-Universitas Sumatera Utara</li>
-        </ul>
-      </div>
-
-      <div class="section">
-        <h3>Pengalaman Pekerjaan</h3>
-        <ul class="list">
-          <li>Karyawan Toko Sepatu</li>
-          <li>Casual Event H&amp;CO</li>
-          <li>Casual Bazar D'Juara Risol</li>
-        </ul>
-      </div>
-
-      <div class="section">
-        <h3>Keahlian</h3>
-        <ul class="list">
-          <li>Microsoft Office Word</li>
-          <li>HTML Dasar</li>
-        </ul>
+      <div class="footer">
+        © 2026 Website Lidia | Medan
       </div>
 
     </div>
-
-    <div class="footer">
-      © 2026 Website Lidia | Medan
-    </div>
-
   </div>
 
 </body>
