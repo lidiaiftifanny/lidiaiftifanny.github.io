@@ -1,84 +1,253 @@
-<html>
+<!DOCTYPE html>
+<html lang="id">
 <head>
-  <title>Curriculum Vitae - Lidia</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curriculum Vitae - Lidia Iftifanny</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Plus Jakarta Sans', sans-serif;
+      background:#0d1b2a;
+      color:#0f172a;
+      line-height:1.7;
+      padding:40px 20px;
+    }
+
+    a{
+      color:#AE8625;
+      text-decoration:none;
+    }
+
+    a:hover{
+      text-decoration:underline;
+    }
+
+    h1,h2,h3{
+      font-family:'Cormorant Garamond', serif;
+      letter-spacing:0.3px;
+    }
+
+    .cv-container{
+      max-width:900px;
+      margin:auto;
+      background:#e0e1dd;
+      border-radius:20px;
+      box-shadow:0 18px 40px rgba(0,0,0,0.25);
+      overflow:hidden;
+    }
+
+    .cv-header{
+      background:#0f172a;
+      color:white;
+      text-align:center;
+      padding:40px 25px;
+    }
+
+    .cv-header h1{
+      font-size:54px;
+      margin-bottom:10px;
+      color:#AE8625;
+    }
+
+    .cv-header p{
+      font-size:16px;
+      color:#e5e7eb;
+    }
+
+    .cv-profile{
+      text-align:center;
+      padding:35px 25px 10px;
+    }
+
+    .cv-profile img{
+      width:220px;
+      height:280px;
+      object-fit:cover;
+      border-radius:16px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.18);
+      margin:0 auto 18px;
+      display:block;
+    }
+
+    .cv-profile h2{
+      font-size:42px;
+      margin-bottom:6px;
+      color:#0f172a;
+    }
+
+    .cv-profile p{
+      font-size:16px;
+      color:#475569;
+    }
+
+    .cv-body{
+      padding:20px 35px 40px;
+    }
+
+    .section{
+      margin-top:28px;
+      background:rgba(255,255,255,0.45);
+      padding:24px;
+      border-radius:16px;
+    }
+
+    .section h3{
+      font-size:34px;
+      color:#0f172a;
+      margin-bottom:14px;
+      border-left:5px solid #AE8625;
+      padding-left:12px;
+    }
+
+    .info-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px 24px;
+    }
+
+    .info-item{
+      font-size:15px;
+      color:#334155;
+    }
+
+    .info-item b{
+      color:#0f172a;
+    }
+
+    .timeline p{
+      margin-bottom:10px;
+      font-size:15px;
+      color:#334155;
+    }
+
+    .list{
+      padding-left:20px;
+    }
+
+    .list li{
+      margin-bottom:8px;
+      color:#334155;
+      font-size:15px;
+    }
+
+    .footer{
+      text-align:center;
+      padding:20px 25px 30px;
+      color:#64748b;
+      font-size:13px;
+    }
+
+    @media (max-width: 768px){
+      .cv-header h1{
+        font-size:40px;
+      }
+
+      .cv-profile h2{
+        font-size:34px;
+      }
+
+      .section h3{
+        font-size:28px;
+      }
+
+      .info-grid{
+        grid-template-columns:1fr;
+      }
+
+      .cv-body{
+        padding:20px 20px 30px;
+      }
+
+      .section{
+        padding:18px;
+      }
+
+      .cv-profile img{
+        width:180px;
+        height:230px;
+      }
+    }
+  </style>
 </head>
+<body>
 
-<body bgcolor="#0d1b2a">
+  <div class="cv-container">
 
-<br><br>
+    <div class="cv-header">
+      <h1>Curriculum Vitae</h1>
+      <p>Profil Singkat dan Riwayat Pendidikan</p>
+    </div>
 
-<!-- Kotak Utama -->
-<table align="center" width="700" bgcolor="#e0e1dd" cellpadding="25">
-<tr>
-<td>
+    <div class="cv-profile">
+      <img src="Foto Lidia.jpeg" alt="Foto Lidia Iftifanny">
+      <h2>Lidia Iftifanny</h2>
+      <p>S-1 Perpustakaan dan Sains Informasi</p>
+    </div>
 
-<!-- Judul -->
-<h1 align="center">Curriculum Vitae</h1>
+    <div class="cv-body">
 
-<center>
-  <img src="Foto Lidia.jpeg" width="350" style="border-radius:10px;">
-  <h2>Lidia Iftifanny</h2>
-  <p><i>S-1 Perpustakaan dan Sains Informasi</i></p>
-</center>
+      <div class="section">
+        <h3>Data Pribadi</h3>
+        <div class="info-grid">
+          <div class="info-item"><b>Tempat/Tanggal Lahir:</b><br>Medan, 07 Desember 2004</div>
+          <div class="info-item"><b>Alamat:</b><br>Jl. Setia Budi Gg. HA. Idris No.153C Medan</div>
+          <div class="info-item"><b>Email:</b><br>lidiaiftifanny07@gmail.com</div>
+          <div class="info-item"><b>No. HP/WA:</b><br>082161056858</div>
+          <div class="info-item"><b>Instagram:</b><br><a href="https://instagram.com/lid_lidit" target="_blank">@lid_lidit</a></div>
+        </div>
+      </div>
 
-<hr>
+      <div class="section">
+        <h3>Pendidikan</h3>
+        <div class="timeline">
+          <p><b>2023 – Sekarang</b><br>Perpustakaan dan Sains Informasi, Universitas Sumatera Utara</p>
+          <p><b>2020 – 2023</b><br>MAN 2 Model Medan</p>
+        </div>
+      </div>
 
-<h3>Data Pribadi</h3>
-<p>
-<b>Tempat/Tanggal Lahir:</b> Medan, 07 Desember 2004<br>
-<b>Alamat:</b> Jl. Setia Budi Gg. HA. Idris No.153C Medan<br>
-<b>Email:</b> lidiaiftifanny07@gmail.com<br>
-<b>No. HP/WA:</b> 082161056858<br>
-<b>Instagram:</b> 
-<a href="https://instagram.com/lid_lidit" target="_blank">
-@lid_lidit
-</a>
-</p>
+      <div class="section">
+        <h3>Pengalaman Organisasi</h3>
+        <ul class="list">
+          <li>Sekretaris Bidang UKM LPTQ USU</li>
+          <li>Sekretaris Seleksi MTQMN Se-Universitas Sumatera Utara</li>
+        </ul>
+      </div>
 
-<hr>
+      <div class="section">
+        <h3>Pengalaman Pekerjaan</h3>
+        <ul class="list">
+          <li>Karyawan Toko Sepatu</li>
+          <li>Casual Event H&amp;CO</li>
+          <li>Casual Bazar D'Juara Risol</li>
+        </ul>
+      </div>
 
-<h3>Pendidikan</h3>
-<p>
-2023–Sekarang : Perpustakaan dan Sains Informasi Universitas Sumatera Utara<br>
-2020–2023 : MAN 2 Model Medan
-</p>
+      <div class="section">
+        <h3>Keahlian</h3>
+        <ul class="list">
+          <li>Microsoft Office Word</li>
+          <li>HTML Dasar</li>
+        </ul>
+      </div>
 
-<hr>
+    </div>
 
-<h3>Pengalaman</h3>
+    <div class="footer">
+      © 2026 Website Lidia | Medan
+    </div>
 
-<b>Organisasi</b>
-<ul>
-  <li>Sekretaris Bidang UKM LPTQ USU</li>
-  <li>Sekretaris Seleksi MTQMN Se-Universitas Sumatera Utara</li>
-</ul>
-
-<b>Pekerjaan</b>
-<ul>
-  <li>Karyawan Toko Sepatu</li>
-  <li>Casual Event H&CO</li>
-  <li>Casual Bazar D'Juara Risol</li>
-</ul>
-
-<hr>
-
-<h3>Keahlian</h3>
-<ul>
-  <li>Microsoft Office Word</li>
-  <li>HTML Dasar</li>
-</ul>
-
-<br>
-
-<center>
-  <small>© 2026 Website Lidia | Medan</small>
-</center>
-
-</td>
-</tr>
-</table>
-
-<br><br>
+  </div>
 
 </body>
 </html>
