@@ -1,1 +1,353 @@
-event perpustakaan
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pendaftaran Event - PUSLIB UMKM</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    body{
+      font-family:'Plus Jakarta Sans', sans-serif;
+      background:#e5e7eb;
+      color:#0f172a;
+      line-height:1.6;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    h1,h2,h3{
+      font-family:'Cormorant Garamond', serif;
+    }
+
+    header{
+      background:#0f172a;
+      color:white;
+      padding:18px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo{
+      font-family:'Cormorant Garamond', serif;
+      font-size:28px;
+      font-weight:700;
+      color:#AE8625;
+    }
+
+    .back-link{
+      color:white;
+      font-size:14px;
+      font-weight:500;
+    }
+
+    .back-link:hover{
+      color:#AE8625;
+    }
+
+    .container{
+      max-width:1100px;
+      margin:50px auto;
+      padding:0 20px;
+    }
+
+    .register-wrapper{
+      display:grid;
+      grid-template-columns:1fr 1.2fr;
+      gap:30px;
+      align-items:start;
+    }
+
+    .event-info,
+    .register-form{
+      background:white;
+      border-radius:18px;
+      box-shadow:0 12px 35px rgba(0,0,0,0.08);
+      overflow:hidden;
+    }
+
+    .event-info img{
+      width:100%;
+      height:260px;
+      object-fit:cover;
+      display:block;
+    }
+
+    .event-info-content{
+      padding:28px;
+    }
+
+    .event-info-content h1{
+      font-size:42px;
+      margin-bottom:10px;
+      color:#0f172a;
+    }
+
+    .event-date{
+      display:inline-block;
+      margin-bottom:16px;
+      color:#AE8625;
+      font-weight:700;
+      font-size:15px;
+    }
+
+    .event-desc{
+      color:#475569;
+      font-size:15px;
+    }
+
+    .register-form{
+      padding:30px;
+    }
+
+    .register-form h2{
+      font-size:38px;
+      margin-bottom:8px;
+      color:#0f172a;
+    }
+
+    .register-form p{
+      font-size:14px;
+      color:#64748b;
+      margin-bottom:22px;
+    }
+
+    .form-group{
+      margin-bottom:18px;
+    }
+
+    label{
+      display:block;
+      margin-bottom:8px;
+      font-weight:600;
+      font-size:14px;
+      color:#0f172a;
+    }
+
+    input,
+    select,
+    textarea{
+      width:100%;
+      padding:14px 16px;
+      border:1px solid #cbd5e1;
+      border-radius:12px;
+      font-size:14px;
+      font-family:'Plus Jakarta Sans', sans-serif;
+      outline:none;
+      transition:border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus{
+      border-color:#AE8625;
+      box-shadow:0 0 0 4px rgba(174,134,37,0.12);
+    }
+
+    textarea{
+      resize:vertical;
+      min-height:110px;
+    }
+
+    .submit-btn{
+      width:100%;
+      border:none;
+      background:#AE8625;
+      color:#0f172a;
+      padding:14px 18px;
+      border-radius:12px;
+      font-size:15px;
+      font-weight:700;
+      cursor:pointer;
+      transition:all 0.3s ease;
+    }
+
+    .submit-btn:hover{
+      background:#d4a437;
+      transform:translateY(-2px);
+    }
+
+    .success-message{
+      display:none;
+      margin-top:18px;
+      padding:14px 16px;
+      border-radius:12px;
+      background:#ecfdf5;
+      color:#065f46;
+      font-size:14px;
+      font-weight:600;
+    }
+
+    footer{
+      text-align:center;
+      padding:30px 20px;
+      color:#64748b;
+      font-size:13px;
+    }
+
+    @media (max-width: 900px){
+      .register-wrapper{
+        grid-template-columns:1fr;
+      }
+
+      .event-info-content h1,
+      .register-form h2{
+        font-size:32px;
+      }
+    }
+
+    @media (max-width: 600px){
+      header{
+        padding:16px 20px;
+        flex-direction:column;
+        gap:10px;
+      }
+
+      .event-info-content h1,
+      .register-form h2{
+        font-size:28px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">PUSLIB UMKM</div>
+    <a href="index.html#event" class="back-link">← Kembali ke Event</a>
+  </header>
+
+  <div class="container">
+    <div class="register-wrapper">
+
+      <div class="event-info">
+        <img id="eventImage" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="Event">
+        <div class="event-info-content">
+          <h1 id="eventTitle">Pendaftaran Event</h1>
+          <span class="event-date" id="eventDate">Tanggal event akan tampil di sini</span>
+          <p class="event-desc" id="eventDesc">
+            Silakan isi formulir pendaftaran untuk mengikuti event pilihan Anda.
+          </p>
+        </div>
+      </div>
+
+      <div class="register-form">
+        <h2>Daftar Sekarang</h2>
+        <p>Lengkapi data berikut untuk mendaftar ke event.</p>
+
+        <form id="eventForm">
+          <div class="form-group">
+            <label for="nama">Nama Lengkap</label>
+            <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Aktif</label>
+            <input type="email" id="email" name="email" placeholder="Masukkan email aktif" required>
+          </div>
+
+          <div class="form-group">
+            <label for="telepon">Nomor WhatsApp</label>
+            <input type="tel" id="telepon" name="telepon" placeholder="Masukkan nomor WhatsApp" required>
+          </div>
+
+          <div class="form-group">
+            <label for="instansi">Instansi / Usaha</label>
+            <input type="text" id="instansi" name="instansi" placeholder="Contoh: UMKM Maju Jaya">
+          </div>
+
+          <div class="form-group">
+            <label for="event">Event Dipilih</label>
+            <input type="text" id="event" name="event" readonly>
+          </div>
+
+          <div class="form-group">
+            <label for="pesan">Pesan / Catatan</label>
+            <textarea id="pesan" name="pesan" placeholder="Tulis pesan atau pertanyaan jika ada"></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Kirim Pendaftaran</button>
+
+          <div class="success-message" id="successMessage">
+            Pendaftaran berhasil dikirim. Terima kasih sudah mendaftar.
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    © 2026 PUSLIB UMKM — Form Pendaftaran Event
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const eventName = params.get("event");
+
+    const eventInput = document.getElementById("event");
+    const eventTitle = document.getElementById("eventTitle");
+    const eventDate = document.getElementById("eventDate");
+    const eventDesc = document.getElementById("eventDesc");
+    const eventImage = document.getElementById("eventImage");
+
+    const eventData = {
+      "Workshop Digital Marketing": {
+        date: "12 April 2026",
+        desc: "Pelatihan strategi pemasaran digital untuk UMKM pemula agar lebih percaya diri memasarkan produk secara online.",
+        image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+      },
+      "Seminar Literasi Keuangan": {
+        date: "20 April 2026",
+        desc: "Belajar mengelola keuangan usaha secara efektif, mulai dari pencatatan hingga perencanaan perkembangan usaha.",
+        image: "https://images.unsplash.com/photo-1515169067868-5387ec356754"
+      },
+      "Pelatihan Branding UMKM": {
+        date: "28 April 2026",
+        desc: "Membangun identitas brand yang kuat dan menarik agar produk UMKM lebih dikenal dan dipercaya pelanggan.",
+        image: "https://images.unsplash.com/photo-1492724441997-5dc865305da7"
+      }
+    };
+
+    if (eventName && eventData[eventName]) {
+      eventInput.value = eventName;
+      eventTitle.textContent = eventName;
+      eventDate.textContent = eventData[eventName].date;
+      eventDesc.textContent = eventData[eventName].desc;
+      eventImage.src = eventData[eventName].image;
+    } else {
+      eventInput.value = "Event belum dipilih";
+      eventTitle.textContent = "Pendaftaran Event";
+      eventDate.textContent = "Silakan pilih event dari halaman utama";
+      eventDesc.textContent = "Form ini digunakan untuk mendaftar event PUSLIB UMKM.";
+    }
+
+    const form = document.getElementById("eventForm");
+    const successMessage = document.getElementById("successMessage");
+
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+
+      successMessage.style.display = "block";
+      form.reset();
+
+      if (eventName) {
+        eventInput.value = eventName;
+      }
+    });
+  </script>
+
+</body>
+</html>
