@@ -3,9 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;
+  700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <title>PUSLIB UMKM</title>
 <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
 
+  
 <style>
 /* 1. RESET & GLOBAL */
 *{
@@ -498,6 +503,30 @@ nav a:hover::after{
   transform:translateY(-2px);
 }
 
+.colab-desc{
+  font-size:14px;
+  color:#475569;
+  margin-top:8px;
+  line-height:1.6;
+}
+
+.detail-button{
+  display:inline-block;
+  margin-top:12px;
+  padding:10px 14px;
+  background:#AE8625;
+  color:#0f172a;
+  border-radius:10px;
+  font-size:14px;
+  font-weight:600;
+  transition:all 0.3s ease;
+}
+
+.detail-button:hover{
+  background:#d4a437;
+  transform:translateY(-2px);
+}
+  
 .slider{
   overflow:hidden;
   width:100%;
@@ -712,10 +741,6 @@ nav a:hover::after{
 <div class="logo">PUSLIB UMKM</div>
 <nav>
 <ul id="menu">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;
-  700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <li><a href="#">Beranda</a></li>
 
 <li class="dropdown">
@@ -868,7 +893,7 @@ nav a:hover::after{
         <div class="event-card">
           <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7" alt="Pelatihan Branding UMKM">
           <div class="event-content">
-            <h3><a href="event.html?event=Pelatihan%20Branding2%20UMKM">Pelatihan Branding UMKM</a></h3>
+            <h3><a href="event.html?event=Pelatihan%20Branding%20UMKM">Pelatihan Branding UMKM</a></h3>
             <p>Membangun identitas brand yang kuat dan menarik.</p>
             <span class="date">28 April 2026</span>
           </div>
@@ -892,59 +917,71 @@ nav a:hover::after{
       <a href="#" class="colab-button">
         Gabung Sekarang
       </a>
+
+      <a href="umkm-populer" class="colab-button">
+        Lihat UMKM Populer
+      </a>
     </div>
 
     <!-- KANAN (SLIDER) -->
     <div class="slider">
       <div class="slide-track">
 
-        <!-- CARD 1 -->
-        <div class="colab-card">
-          <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092">
-          <div class="colab-content">
-            <h4>Kuliner Nusantara</h4>
-            <div class="rating">⭐⭐⭐⭐⭐ (4.9)</div>
-          </div>
-        </div>
+        <div class="slider">
+  <div class="slide-track">
 
-        <!-- CARD 2 -->
-        <div class="colab-card">
-          <img src="https://images.unsplash.com/photo-1521335629791-ce4aec67dd53">
-          <div class="colab-content">
-            <h4>Fashion Lokal</h4>
-            <div class="rating">⭐⭐⭐⭐⭐☆ (4.8)</div>
-          </div>
-        </div>
-
-        <!-- CARD 3 -->
-        <div class="colab-card">
-          <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
-          <div class="colab-content">
-            <h4>Kerajinan Tangan</h4>
-            <div class="rating">⭐⭐⭐⭐⭐ (4.8)</div>
-          </div>
-        </div>
-
-        <!-- CARD 4 -->
-        <div class="colab-card">
-          <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092">
-          <div class="colab-content">
-            <h4>Kuliner Nusantara</h4>
-            <div class="rating">⭐⭐⭐⭐⭐ (4.9)</div>
-          </div>
-        </div>
-
-        <!-- CARD 5 -->
-        <div class="colab-card">
-          <img src="https://awsimages.detik.net.id/community/media/visual/2023/04/12/risol-mayo_43.jpeg?w=700&q=90">
-          <div class="colab-content">
-            <h4>Risolku Mayo</h4>
-            <div class="rating">⭐⭐⭐⭐⭐ (4.9)</div>
-          </div>
-        </div>
-
+    <div class="colab-card">
+      <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" alt="Kuliner Nusantara">
+      <div class="colab-content">
+        <h4>Kuliner Nusantara</h4>
+        <div class="rating">⭐⭐⭐⭐⭐ (4.9)</div>
+        <p class="colab-desc">Aneka makanan khas Nusantara dengan rasa autentik dan kemasan rapi.</p>
+        <a href="umkm-populer.html#kuliner-nusantara" class="detail-button">Lihat Detail</a>
       </div>
     </div>
+
+    <div class="colab-card">
+      <img src="https://images.unsplash.com/photo-1521335629791-ce4aec67dd53" alt="Fashion Lokal">
+      <div class="colab-content">
+        <h4>Fashion Lokal</h4>
+        <div class="rating">⭐⭐⭐⭐⭐ (4.8)</div>
+        <p class="colab-desc">Produk fashion lokal dengan model modern dan bahan nyaman dipakai.</p>
+        <a href="umkm-populer.html#fashion-lokal" class="detail-button">Lihat Detail</a>
+      </div>
+    </div>
+
+    <div class="colab-card">
+      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f" alt="Kerajinan Tangan">
+      <div class="colab-content">
+        <h4>Kerajinan Tangan</h4>
+        <div class="rating">⭐⭐⭐⭐⭐ (4.8)</div>
+        <p class="colab-desc">Kerajinan unik buatan lokal yang cocok untuk hadiah dan dekorasi rumah.</p>
+        <a href="umkm-populer.html#kerajinan-tangan" class="detail-button">Lihat Detail</a>
+      </div>
+    </div>
+
+    <div class="colab-card">
+      <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" alt="Kuliner Nusantara">
+      <div class="colab-content">
+        <h4>Kuliner Nusantara</h4>
+        <div class="rating">⭐⭐⭐⭐⭐ (4.9)</div>
+        <p class="colab-desc">Menu rumahan dan snack box favorit untuk berbagai acara.</p>
+        <a href="umkm-populer.html#kuliner-nusantara" class="detail-button">Lihat Detail</a>
+      </div>
+    </div>
+
+    <div class="colab-card">
+      <img src="https://awsimages.detik.net.id/community/media/visual/2023/04/12/risol-mayo_43.jpeg?w=700&q=90" alt="Risolku Mayo">
+      <div class="colab-content">
+        <h4>Risolku Mayo</h4>
+        <div class="rating">⭐⭐⭐⭐⭐ (4.9)</div>
+        <p class="colab-desc">Risol mayo homemade dengan isian melimpah dan rasa gurih lezat.</p>
+        <a href="umkm-populer.html#risolku-mayo" class="detail-button">Lihat Detail</a>
+      </div>
+    </div>
+
+  </div>
+</div>
 
   </div>
 </section>
