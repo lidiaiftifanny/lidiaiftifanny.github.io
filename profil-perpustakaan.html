@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tentang Perpustakaan - PUSLIB UMKM</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Plus Jakarta Sans', sans-serif;
+      background:#e5e7eb;
+      color:#0f172a;
+      line-height:1.6;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    h1,h2,h3,.logo{
+      font-family:'Cormorant Garamond', serif;
+    }
+
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:#0f172a;
+      color:white;
+      padding:15px 40px;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      box-shadow:0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:700;
+      color:#AE8625;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:20px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    nav a{
+      color:white;
+      font-size:14px;
+      font-weight:500;
+      transition:color 0.3s ease;
+    }
+
+    nav a:hover{
+      color:#AE8625;
+    }
+
+    .login{
+      background:#AE8625;
+      color:#0f172a;
+      padding:8px 14px;
+      border-radius:8px;
+      font-weight:600;
+    }
+
+    .login:hover{
+      background:#d4a437;
+      color:#0f172a;
+    }
+
+    .hero{
+      background:
+        linear-gradient(rgba(15,23,42,0.72), rgba(15,23,42,0.72)),
+        url("https://images.unsplash.com/photo-1521587760476-6c12a4b040da");
+      background-size:cover;
+      background-position:center;
+      color:white;
+      text-align:center;
+      padding:90px 20px 80px;
+    }
+
+    .hero h1{
+      font-size:58px;
+      margin-bottom:14px;
+    }
+
+    .hero p{
+      max-width:780px;
+      margin:0 auto;
+      font-size:17px;
+      color:rgba(255,255,255,0.92);
+    }
+
+    .container{
+      max-width:1150px;
+      margin:55px auto;
+      padding:0 20px;
+    }
+
+    .section-card{
+      background:white;
+      border-radius:18px;
+      padding:35px;
+      box-shadow:0 12px 30px rgba(0,0,0,0.08);
+      margin-bottom:30px;
+    }
+
+    .section-card h2{
+      font-size:42px;
+      color:#0f172a;
+      margin-bottom:14px;
+    }
+
+    .section-card p{
+      font-size:15px;
+      color:#475569;
+      margin-bottom:14px;
+    }
+
+    .highlight-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
+      gap:22px;
+      margin-top:20px;
+    }
+
+    .highlight-box{
+      background:#f8fafc;
+      border-left:5px solid #AE8625;
+      border-radius:14px;
+      padding:22px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.05);
+    }
+
+    .highlight-box h3{
+      font-size:30px;
+      margin-bottom:10px;
+      color:#0f172a;
+    }
+
+    .highlight-box p{
+      font-size:14px;
+      color:#475569;
+      margin:0;
+    }
+
+    .vision-mission{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:25px;
+      margin-top:20px;
+    }
+
+    .vm-box{
+      background:#0f172a;
+      color:white;
+      border-radius:16px;
+      padding:28px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.12);
+    }
+
+    .vm-box h3{
+      font-size:34px;
+      color:#AE8625;
+      margin-bottom:12px;
+    }
+
+    .vm-box p,
+    .vm-box li{
+      font-size:14px;
+      color:#e2e8f0;
+    }
+
+    .vm-box ul{
+      padding-left:18px;
+    }
+
+    .vm-box li{
+      margin-bottom:10px;
+    }
+
+    .services-list{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+      gap:22px;
+      margin-top:20px;
+    }
+
+    .service-item{
+      background:#f8fafc;
+      border-radius:14px;
+      padding:24px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.05);
+      transition:transform 0.3s ease;
+    }
+
+    .service-item:hover{
+      transform:translateY(-5px);
+    }
+
+    .service-item h3{
+      font-size:28px;
+      margin-bottom:10px;
+      color:#0f172a;
+    }
+
+    .service-item p{
+      font-size:14px;
+      color:#475569;
+      margin:0;
+    }
+
+    .closing-box{
+      background:#0f172a;
+      color:white;
+      text-align:center;
+      padding:38px 25px;
+      border-radius:18px;
+      box-shadow:0 12px 30px rgba(0,0,0,0.12);
+    }
+
+    .closing-box h2{
+      font-size:42px;
+      color:#AE8625;
+      margin-bottom:12px;
+    }
+
+    .closing-box p{
+      max-width:780px;
+      margin:0 auto;
+      color:#e2e8f0;
+      font-size:15px;
+    }
+
+    footer{
+      margin-top:60px;
+      background:#0f172a;
+      color:#cbd5e1;
+      text-align:center;
+      padding:28px 20px;
+      font-size:13px;
+    }
+
+    @media (max-width: 992px){
+      header{
+        flex-direction:column;
+        gap:14px;
+        padding:15px 20px;
+      }
+
+      nav ul{
+        justify-content:center;
+      }
+
+      .hero h1{
+        font-size:46px;
+      }
+
+      .vision-mission{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width: 768px){
+      .hero{
+        padding:70px 20px 55px;
+      }
+
+      .hero h1{
+        font-size:38px;
+      }
+
+      .hero p{
+        font-size:15px;
+      }
+
+      .section-card h2,
+      .closing-box h2{
+        font-size:34px;
+      }
+
+      .highlight-box h3,
+      .service-item h3,
+      .vm-box h3{
+        font-size:28px;
+      }
+
+      .container{
+        padding:0 16px;
+      }
+
+      .section-card{
+        padding:25px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">PUSLIB UMKM</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="profil.html">Tentang Saya</a></li>
+        <li><a href="tentang-perpustakaan.html">Tentang Perpustakaan</a></li>
+        <li><a href="konten-edukasi.html">Konten Edukasi</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+        <li><a href="login.html" class="login">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Tentang Perpustakaan</h1>
+    <p>
+      PUSLIB UMKM hadir sebagai perpustakaan digital yang mendukung kebutuhan informasi,
+      pembelajaran, dan pengembangan usaha mikro, kecil, dan menengah melalui layanan yang modern,
+      mudah diakses, dan bermanfaat bagi masyarakat.
+    </p>
+  </section>
+
+  <div class="container">
+
+    <section class="section-card">
+      <h2>Profil Singkat</h2>
+      <p>
+        PUSLIB UMKM adalah perpustakaan digital yang dirancang untuk menjadi pusat informasi dan
+        edukasi bagi pelaku UMKM, mahasiswa, peneliti, serta masyarakat umum yang ingin memperluas
+        wawasan di bidang usaha, kewirausahaan, dan literasi bisnis.
+      </p>
+      <p>
+        Melalui platform ini, pengunjung dapat mengakses berbagai informasi seperti koleksi digital,
+        referensi bisnis, video edukasi, event perpustakaan, serta data pendukung yang relevan
+        dengan perkembangan UMKM di era digital.
+      </p>
+
+      <div class="highlight-grid">
+        <div class="highlight-box">
+          <h3>Modern</h3>
+          <p>Perpustakaan dikembangkan dengan pendekatan digital agar layanan lebih mudah diakses kapan saja.</p>
+        </div>
+
+        <div class="highlight-box">
+          <h3>Edukatif</h3>
+          <p>Menyediakan sumber informasi yang mendukung pembelajaran, pelatihan, dan pengembangan usaha.</p>
+        </div>
+
+        <div class="highlight-box">
+          <h3>Inovatif</h3>
+          <p>Mendorong pemanfaatan teknologi informasi untuk meningkatkan kualitas layanan perpustakaan.</p>
+        </div>
+
+        <div class="highlight-box">
+          <h3>Inklusif</h3>
+          <p>Hadir untuk semua kalangan, baik pelaku UMKM, akademisi, maupun masyarakat luas.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card">
+      <h2>Visi dan Misi</h2>
+
+      <div class="vision-mission">
+        <div class="vm-box">
+          <h3>Visi</h3>
+          <p>
+            Menjadi pusat informasi dan literasi digital yang unggul dalam mendukung pengembangan
+            UMKM, pembelajaran masyarakat, dan kemajuan ekonomi kreatif berbasis pengetahuan.
+          </p>
+        </div>
+
+        <div class="vm-box">
+          <h3>Misi</h3>
+          <ul>
+            <li>Menyediakan akses informasi digital yang relevan, mudah, dan terpercaya.</li>
+            <li>Mendorong budaya literasi, belajar mandiri, dan pengembangan usaha berbasis informasi.</li>
+            <li>Menghadirkan layanan perpustakaan yang inovatif dan responsif terhadap kebutuhan pengguna.</li>
+            <li>Mendukung pelaku UMKM melalui sumber belajar, konten edukasi, dan kegiatan pengembangan.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card">
+      <h2>Layanan Perpustakaan</h2>
+
+      <div class="services-list">
+        <div class="service-item">
+          <h3>Koleksi Digital</h3>
+          <p>
+            Menyediakan buku, artikel, dan referensi digital yang dapat dimanfaatkan untuk belajar
+            dan pengembangan wawasan bisnis.
+          </p>
+        </div>
+
+        <div class="service-item">
+          <h3>Konten Edukasi</h3>
+          <p>
+            Menampilkan video pembelajaran, materi praktis, dan sumber inspirasi seputar UMKM,
+            kewirausahaan, branding, serta pemasaran digital.
+          </p>
+        </div>
+
+        <div class="service-item">
+          <h3>Event dan Pelatihan</h3>
+          <p>
+            Menghadirkan seminar, workshop, dan pelatihan yang membantu pengguna meningkatkan
+            kemampuan serta keterampilan usaha.
+          </p>
+        </div>
+
+        <div class="service-item">
+          <h3>Informasi UMKM</h3>
+          <p>
+            Menyediakan informasi pendukung tentang perkembangan UMKM, strategi bisnis,
+            dan peluang kolaborasi.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card">
+      <h2>Peran Perpustakaan bagi UMKM</h2>
+      <p>
+        Perpustakaan tidak hanya berfungsi sebagai tempat penyimpanan informasi, tetapi juga sebagai
+        ruang belajar dan pengembangan kapasitas. Dalam konteks UMKM, perpustakaan berperan penting
+        dalam menyediakan akses pengetahuan yang membantu pelaku usaha memahami strategi pemasaran,
+        branding, pengelolaan keuangan, inovasi produk, hingga pemanfaatan teknologi digital.
+      </p>
+      <p>
+        Dengan adanya PUSLIB UMKM, diharapkan masyarakat dapat lebih mudah memperoleh referensi yang
+        berguna untuk meningkatkan kualitas usaha dan memperluas wawasan bisnis secara berkelanjutan.
+      </p>
+    </section>
+
+    <section class="closing-box">
+      <h2>PUSLIB UMKM</h2>
+      <p>
+        Menjadi ruang belajar digital yang nyaman, bermanfaat, dan inspiratif untuk mendukung
+        literasi informasi serta kemajuan UMKM Indonesia.
+      </p>
+    </section>
+
+  </div>
+
+  <footer>
+    © 2026 PUSLIB UMKM — Tentang Perpustakaan
+  </footer>
+
+</body>
+</html>
