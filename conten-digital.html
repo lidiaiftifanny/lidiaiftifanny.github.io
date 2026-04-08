@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Konten Edukasi - PUSLIB UMKM</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Plus Jakarta Sans', sans-serif;
+      background:#e5e7eb;
+      color:#0f172a;
+      line-height:1.6;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    h1,h2,h3,.logo{
+      font-family:'Cormorant Garamond', serif;
+    }
+
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:#0f172a;
+      color:white;
+      padding:15px 40px;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      box-shadow:0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:700;
+      color:#AE8625;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:20px;
+      align-items:center;
+    }
+
+    nav a{
+      color:white;
+      font-size:14px;
+      font-weight:500;
+      transition:color 0.3s ease;
+    }
+
+    nav a:hover{
+      color:#AE8625;
+    }
+
+    .login{
+      background:#AE8625;
+      color:#0f172a;
+      padding:8px 14px;
+      border-radius:8px;
+      font-weight:600;
+    }
+
+    .login:hover{
+      background:#d4a437;
+      color:#0f172a;
+    }
+
+    .hero{
+      background:linear-gradient(rgba(15,23,42,0.75), rgba(15,23,42,0.75)),
+      url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3");
+      background-size:cover;
+      background-position:center;
+      color:white;
+      text-align:center;
+      padding:90px 20px 70px;
+    }
+
+    .hero h1{
+      font-size:58px;
+      margin-bottom:14px;
+    }
+
+    .hero p{
+      max-width:780px;
+      margin:0 auto;
+      font-size:17px;
+      color:rgba(255,255,255,0.92);
+    }
+
+    .container{
+      max-width:1200px;
+      margin:50px auto;
+      padding:0 20px;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:35px;
+    }
+
+    .section-title h2{
+      font-size:44px;
+      color:#0f172a;
+      margin-bottom:10px;
+    }
+
+    .section-title p{
+      color:#475569;
+      font-size:15px;
+      max-width:750px;
+      margin:0 auto;
+    }
+
+    .filter-buttons{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:12px;
+      margin-bottom:35px;
+    }
+
+    .filter-btn{
+      border:none;
+      background:white;
+      color:#0f172a;
+      padding:12px 18px;
+      border-radius:999px;
+      cursor:pointer;
+      font-weight:600;
+      box-shadow:0 6px 16px rgba(0,0,0,0.08);
+      transition:all 0.3s ease;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active{
+      background:#AE8625;
+      color:#0f172a;
+      transform:translateY(-2px);
+    }
+
+    .video-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+      gap:25px;
+    }
+
+    .video-card{
+      background:white;
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+      transition:transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .video-card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 16px 35px rgba(0,0,0,0.12);
+    }
+
+    .video-frame{
+      position:relative;
+      width:100%;
+      padding-bottom:56.25%;
+      height:0;
+      overflow:hidden;
+      background:#000;
+    }
+
+    .video-frame iframe{
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      border:none;
+    }
+
+    .video-content{
+      padding:22px;
+    }
+
+    .video-tag{
+      display:inline-block;
+      background:#f8fafc;
+      color:#AE8625;
+      font-size:13px;
+      font-weight:700;
+      padding:6px 10px;
+      border-radius:999px;
+      margin-bottom:12px;
+    }
+
+    .video-content h3{
+      font-size:32px;
+      line-height:1.2;
+      margin-bottom:10px;
+      color:#0f172a;
+    }
+
+    .video-content p{
+      font-size:14px;
+      color:#475569;
+      margin-bottom:16px;
+    }
+
+    .video-link{
+      display:inline-block;
+      background:#0f172a;
+      color:white;
+      padding:10px 16px;
+      border-radius:10px;
+      font-size:14px;
+      font-weight:600;
+      transition:all 0.3s ease;
+    }
+
+    .video-link:hover{
+      background:#AE8625;
+      color:#0f172a;
+    }
+
+    .info-box{
+      margin-top:55px;
+      background:#0f172a;
+      color:white;
+      border-radius:18px;
+      padding:35px;
+      text-align:center;
+      box-shadow:0 12px 30px rgba(0,0,0,0.12);
+    }
+
+    .info-box h2{
+      font-size:40px;
+      margin-bottom:12px;
+      color:#AE8625;
+    }
+
+    .info-box p{
+      max-width:760px;
+      margin:0 auto;
+      color:#e2e8f0;
+      font-size:15px;
+    }
+
+    footer{
+      margin-top:60px;
+      background:#0f172a;
+      color:#cbd5e1;
+      text-align:center;
+      padding:28px 20px;
+      font-size:13px;
+    }
+
+    @media (max-width: 992px){
+      header{
+        flex-direction:column;
+        gap:14px;
+        padding:15px 20px;
+      }
+
+      nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .hero h1{
+        font-size:46px;
+      }
+    }
+
+    @media (max-width: 768px){
+      .hero{
+        padding:70px 20px 55px;
+      }
+
+      .hero h1{
+        font-size:38px;
+      }
+
+      .hero p{
+        font-size:15px;
+      }
+
+      .section-title h2,
+      .info-box h2{
+        font-size:34px;
+      }
+
+      .video-content h3{
+        font-size:26px;
+      }
+
+      .container{
+        padding:0 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">PUSLIB UMKM</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="index.html">About</a></li>
+        <li><a href="index.html">Perpustakaan Digital</a></li>
+        <li><a href="index.html">Literasi Bisnis</a></li>
+        <li><a href="index.html">Direktori UMKM</a></li>
+        <li><a href="index.html">Data dan Statistik</a></li>
+        <li><a href="index.html">Kolaborasi</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+        <li><a href="login.html" class="login">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Konten Edukasi UMKM & Bisnis</h1>
+    <p>
+      Temukan koleksi video edukatif seputar UMKM, strategi bisnis, pemasaran digital,
+      branding, dan pengelolaan usaha untuk membantu perkembangan bisnis Anda.
+    </p>
+  </section>
+
+  <div class="container">
+    <div class="section-title">
+      <h2>Koleksi Video Pilihan</h2>
+      <p>
+        Pilih kategori video yang ingin Anda pelajari. Halaman ini dirancang untuk menampilkan
+        video YouTube secara rapi, modern, dan mudah diakses oleh pengunjung website.
+      </p>
+    </div>
+
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-filter="all">Semua</button>
+      <button class="filter-btn" data-filter="umkm">UMKM</button>
+      <button class="filter-btn" data-filter="marketing">Marketing</button>
+      <button class="filter-btn" data-filter="branding">Branding</button>
+      <button class="filter-btn" data-filter="keuangan">Keuangan</button>
+    </div>
+
+    <div class="video-grid">
+
+      <div class="video-card" data-category="umkm">
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" title="Video UMKM 1" allowfullscreen></iframe>
+        </div>
+        <div class="video-content">
+          <span class="video-tag">UMKM</span>
+          <h3>Belajar Dasar Pengembangan UMKM</h3>
+          <p>Video edukasi untuk memahami dasar pengembangan usaha mikro, kecil, dan menengah secara lebih terarah.</p>
+          <a href="https://www.youtube.com/watch?v=tgbNymZ7vqY" target="_blank" class="video-link">Tonton di YouTube</a>
+        </div>
+      </div>
+
+      <div class="video-card" data-category="marketing">
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/ysz5S6PUM-U" title="Video Marketing" allowfullscreen></iframe>
+        </div>
+        <div class="video-content">
+          <span class="video-tag">Marketing</span>
+          <h3>Strategi Digital Marketing untuk Bisnis</h3>
+          <p>Pelajari strategi pemasaran digital yang dapat membantu bisnis lebih dikenal dan menjangkau pelanggan lebih luas.</p>
+          <a href="https://www.youtube.com/watch?v=ysz5S6PUM-U" target="_blank" class="video-link">Tonton di YouTube</a>
+        </div>
+      </div>
+
+      <div class="video-card" data-category="branding">
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/jNQXAC9IVRw" title="Video Branding" allowfullscreen></iframe>
+        </div>
+        <div class="video-content">
+          <span class="video-tag">Branding</span>
+          <h3>Membangun Branding Usaha yang Kuat</h3>
+          <p>Pahami cara membangun identitas brand yang menarik agar usaha lebih mudah diingat pelanggan.</p>
+          <a href="https://www.youtube.com/watch?v=jNQXAC9IVRw" target="_blank" class="video-link">Tonton di YouTube</a>
+        </div>
+      </div>
+
+      <div class="video-card" data-category="keuangan">
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" title="Video Keuangan" allowfullscreen></iframe>
+        </div>
+        <div class="video-content">
+          <span class="video-tag">Keuangan</span>
+          <h3>Manajemen Keuangan untuk Usaha</h3>
+          <p>Video ini membantu pelaku usaha memahami pencatatan keuangan dan pengelolaan arus kas secara sederhana.</p>
+          <a href="https://www.youtube.com/watch?v=ScMzIvxBSi4" target="_blank" class="video-link">Tonton di YouTube</a>
+        </div>
+      </div>
+
+      <div class="video-card" data-category="umkm">
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/M7lc1UVf-VE" title="Video UMKM 2" allowfullscreen></iframe>
+        </div>
+        <div class="video-content">
+          <span class="video-tag">UMKM</span>
+          <h3>Tips Memulai Usaha dari Nol</h3>
+          <p>Pelajari langkah awal membangun usaha mulai dari ide, target pasar, hingga cara memulai secara bertahap.</p>
+          <a href="https://www.youtube.com/watch?v=M7lc1UVf-VE" target="_blank" class="video-link">Tonton di YouTube</a>
+        </div>
+      </div>
+
+      <div class="video-card" data-category="marketing">
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/E7wJTI-1dvQ" title="Video Bisnis" allowfullscreen></iframe>
+        </div>
+        <div class="video-content">
+          <span class="video-tag">Marketing</span>
+          <h3>Konten Promosi untuk Menarik Pelanggan</h3>
+          <p>Video pembelajaran untuk memahami pembuatan konten promosi yang lebih efektif dan menarik perhatian audiens.</p>
+          <a href="https://www.youtube.com/watch?v=E7wJTI-1dvQ" target="_blank" class="video-link">Tonton di YouTube</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="info-box">
+      <h2>Tambah Video Baru dengan Mudah</h2>
+      <p>
+        Untuk menambah video baru, cukup duplikat satu card video lalu ganti link iframe YouTube,
+        judul video, deskripsi, kategori, dan link tombol YouTube sesuai kebutuhan.
+      </p>
+    </div>
+  </div>
+
+  <footer>
+    © 2026 PUSLIB UMKM — Konten Edukasi Video UMKM & Bisnis
+  </footer>
+
+  <script>
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const videoCards = document.querySelectorAll('.video-card');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const filter = button.getAttribute('data-filter');
+
+        videoCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+
+          if (filter === 'all' || category === filter) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
