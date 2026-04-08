@@ -115,6 +115,34 @@
       margin:0 auto;
     }
 
+    .filter-buttons{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:12px;
+      margin-bottom:35px;
+    }
+
+    .filter-btn{
+      border:none;
+      background:white;
+      color:#0f172a;
+      padding:12px 18px;
+      border-radius:999px;
+      cursor:pointer;
+      font-weight:600;
+      box-shadow:0 6px 16px rgba(0,0,0,0.08);
+      transition:all 0.3s ease;
+      font-family:'Plus Jakarta Sans', sans-serif;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active{
+      background:#AE8625;
+      color:#0f172a;
+      transform:translateY(-2px);
+    }
+
     .shop-card{
       background:white;
       border-radius:20px;
@@ -282,6 +310,7 @@
       font-weight:700;
       cursor:pointer;
       transition:all 0.3s ease;
+      font-family:'Plus Jakarta Sans', sans-serif;
     }
 
     .review-form button:hover{
@@ -378,7 +407,6 @@
     <nav>
       <ul>
         <li><a href="index.html">Beranda</a></li>
-        <li><a href="index.html#event">Event</a></li>
         <li><a href="tentang-perpustakaan.html">Tentang Perpustakaan</a></li>
         <li><a href="konten-edukasi.html">Konten Edukasi</a></li>
         <li><a href="kontak.html">Kontak</a></li>
@@ -389,27 +417,34 @@
   <section class="hero">
     <h1>UMKM Populer</h1>
     <p>
-      Jelajahi UMKM terpopuler pilihan kami. Temukan deskripsi usaha, produk unggulan,
+      Jelajahi UMKM pilihan kami. Temukan deskripsi usaha, produk unggulan,
       harga, ulasan pelanggan, dan nomor WhatsApp untuk pemesanan langsung.
     </p>
   </section>
 
   <div class="container">
     <div class="section-title">
-      <h2>Daftar UMKM Populer</h2>
+      <h2>Daftar UMKM Pilihan</h2>
       <p>
-        Halaman ini menampilkan beberapa UMKM unggulan yang dapat dijadikan referensi
-        belanja, kolaborasi, maupun inspirasi usaha.
+        Halaman ini dikelompokkan menjadi dua bagian, yaitu UMKM yang sedang populer saat ini
+        dan UMKM populer dalam satu periode tahunan.
       </p>
     </div>
 
-    <section class="shop-card" id="kuliner-nusantara">
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-filter="sekarang">UMKM Populer Sekarang</button>
+      <button class="filter-btn" data-filter="periode">UMKM Populer 1 Periode (1 Tahun)</button>
+    </div>
+
+    <!-- UMKM POPULER SEKARANG -->
+    <section class="shop-card" id="kuliner-nusantara" data-group="sekarang">
       <div class="shop-top">
         <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" alt="Kuliner Nusantara">
         <div class="shop-info">
           <h2>Kuliner Nusantara</h2>
           <div class="rating">⭐⭐⭐⭐⭐ (4.9)</div>
           <div class="shop-meta">Kategori: Kuliner</div>
+          <div class="shop-meta">Status: Populer Sekarang</div>
           <div class="shop-meta">Lokasi: Medan, Sumatera Utara</div>
           <div class="shop-meta">Jam Operasional: 09.00 - 20.00 WIB</div>
           <p class="shop-desc">
@@ -476,13 +511,14 @@
       </div>
     </section>
 
-    <section class="shop-card" id="fashion-lokal">
+    <section class="shop-card" id="fashion-lokal" data-group="sekarang">
       <div class="shop-top">
         <img src="https://images.unsplash.com/photo-1521335629791-ce4aec67dd53" alt="Fashion Lokal">
         <div class="shop-info">
           <h2>Fashion Lokal</h2>
           <div class="rating">⭐⭐⭐⭐⭐ (4.8)</div>
           <div class="shop-meta">Kategori: Fashion</div>
+          <div class="shop-meta">Status: Populer Sekarang</div>
           <div class="shop-meta">Lokasi: Medan, Sumatera Utara</div>
           <div class="shop-meta">Jam Operasional: 10.00 - 21.00 WIB</div>
           <p class="shop-desc">
@@ -549,13 +585,14 @@
       </div>
     </section>
 
-    <section class="shop-card" id="kerajinan-tangan">
+    <section class="shop-card" id="kerajinan-tangan" data-group="sekarang">
       <div class="shop-top">
         <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f" alt="Kerajinan Tangan">
         <div class="shop-info">
           <h2>Kerajinan Tangan</h2>
           <div class="rating">⭐⭐⭐⭐⭐ (4.8)</div>
           <div class="shop-meta">Kategori: Kerajinan</div>
+          <div class="shop-meta">Status: Populer Sekarang</div>
           <div class="shop-meta">Lokasi: Medan, Sumatera Utara</div>
           <div class="shop-meta">Jam Operasional: 08.30 - 18.00 WIB</div>
           <p class="shop-desc">
@@ -621,13 +658,14 @@
       </div>
     </section>
 
-    <section class="shop-card" id="risolku-mayo">
+    <section class="shop-card" id="risolku-mayo" data-group="sekarang">
       <div class="shop-top">
         <img src="https://awsimages.detik.net.id/community/media/visual/2023/04/12/risol-mayo_43.jpeg?w=700&q=90" alt="Risolku Mayo">
         <div class="shop-info">
           <h2>Risolku Mayo</h2>
           <div class="rating">⭐⭐⭐⭐⭐ (4.9)</div>
           <div class="shop-meta">Kategori: Snack</div>
+          <div class="shop-meta">Status: Populer Sekarang</div>
           <div class="shop-meta">Lokasi: Medan, Sumatera Utara</div>
           <div class="shop-meta">Jam Operasional: 09.00 - 19.00 WIB</div>
           <p class="shop-desc">
@@ -693,6 +731,227 @@
       </div>
     </section>
 
+    <!-- UMKM POPULER 1 PERIODE -->
+    <section class="shop-card" id="kopi-lokal" data-group="periode" style="display:none;">
+      <div class="shop-top">
+        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="Kopi Lokal">
+        <div class="shop-info">
+          <h2>Kopi Lokal</h2>
+          <div class="rating">⭐⭐⭐⭐⭐ (4.7)</div>
+          <div class="shop-meta">Kategori: Minuman</div>
+          <div class="shop-meta">Periode Populer: Januari - Maret 2026</div>
+          <div class="shop-meta">Lokasi: Medan, Sumatera Utara</div>
+          <div class="shop-meta">Jam Operasional: 08.00 - 22.00 WIB</div>
+          <p class="shop-desc">
+            Kopi Lokal merupakan UMKM minuman yang pernah menjadi favorit pelanggan
+            dalam satu periode tahunan karena kualitas biji kopi, cita rasa khas,
+            dan konsep penyajian yang modern.
+          </p>
+          <a href="https://wa.me/6281111111111?text=Halo%20saya%20ingin%20bertanya%20tentang%20produk%20Kopi%20Lokal" target="_blank" class="wa-button">
+            Hubungi via WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="shop-bottom">
+        <h3 class="sub-title">Produk Unggulan</h3>
+        <div class="product-grid">
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085" alt="Es Kopi Susu">
+            <div class="product-content">
+              <h3>Es Kopi Susu</h3>
+              <p>Minuman kopi susu creamy dengan rasa seimbang dan aroma khas.</p>
+              <div class="price">Rp18.000</div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348" alt="Americano">
+            <div class="product-content">
+              <h3>Americano</h3>
+              <p>Kopi hitam dengan cita rasa kuat untuk penikmat kopi autentik.</p>
+              <div class="price">Rp15.000</div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735" alt="Kopi Literan">
+            <div class="product-content">
+              <h3>Kopi Literan</h3>
+              <p>Paket kopi ukuran besar untuk dinikmati bersama keluarga.</p>
+              <div class="price">Rp65.000</div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="sub-title">Ulasan Pelanggan</h3>
+        <div class="review-list" id="reviews-kopi">
+          <div class="review-item">⭐⭐⭐⭐⭐ — Rasanya enak dan konsisten, cocok untuk penikmat kopi.</div>
+          <div class="review-item">⭐⭐⭐⭐ — Tempat nyaman dan pelayanannya ramah.</div>
+        </div>
+
+        <form class="review-form" onsubmit="addReview(event, 'kopi')">
+          <input type="text" id="name-kopi" placeholder="Nama Anda" required>
+          <select id="rating-kopi" required>
+            <option value="">Pilih rating</option>
+            <option value="⭐⭐⭐⭐⭐">5 - Sangat puas</option>
+            <option value="⭐⭐⭐⭐">4 - Puas</option>
+            <option value="⭐⭐⭐">3 - Cukup</option>
+            <option value="⭐⭐">2 - Kurang</option>
+            <option value="⭐">1 - Tidak puas</option>
+          </select>
+          <textarea id="comment-kopi" rows="4" placeholder="Tulis komentar Anda" required></textarea>
+          <button type="submit">Kirim Komentar</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="shop-card" id="souvenir-kreatif" data-group="periode" style="display:none;">
+      <div class="shop-top">
+        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f" alt="Souvenir Kreatif">
+        <div class="shop-info">
+          <h2>Souvenir Kreatif</h2>
+          <div class="rating">⭐⭐⭐⭐⭐ (4.6)</div>
+          <div class="shop-meta">Kategori: Kerajinan</div>
+          <div class="shop-meta">Periode Populer: April - Juni 2026</div>
+          <div class="shop-meta">Lokasi: Medan, Sumatera Utara</div>
+          <div class="shop-meta">Jam Operasional: 09.00 - 18.00 WIB</div>
+          <p class="shop-desc">
+            Souvenir Kreatif dikenal sebagai UMKM yang pernah populer dalam satu periode
+            karena desain produknya unik, estetik, dan cocok untuk hadiah serta acara spesial.
+          </p>
+          <a href="https://wa.me/6281222222222?text=Halo%20saya%20ingin%20bertanya%20tentang%20produk%20Souvenir%20Kreatif" target="_blank" class="wa-button">
+            Hubungi via WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="shop-bottom">
+        <h3 class="sub-title">Produk Unggulan</h3>
+        <div class="product-grid">
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1517705008128-361805f42e86" alt="Gift Box Handmade">
+            <div class="product-content">
+              <h3>Gift Box Handmade</h3>
+              <p>Paket souvenir cantik untuk hadiah ulang tahun dan acara spesial.</p>
+              <div class="price">Rp55.000</div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85" alt="Dekorasi Mini">
+            <div class="product-content">
+              <h3>Dekorasi Mini</h3>
+              <p>Dekorasi handmade berukuran kecil yang cocok untuk meja kerja.</p>
+              <div class="price">Rp35.000</div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f" alt="Paket Souvenir">
+            <div class="product-content">
+              <h3>Paket Souvenir</h3>
+              <p>Souvenir custom untuk acara sekolah, kantor, dan keluarga.</p>
+              <div class="price">Rp28.000</div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="sub-title">Ulasan Pelanggan</h3>
+        <div class="review-list" id="reviews-souvenir">
+          <div class="review-item">⭐⭐⭐⭐⭐ — Desainnya cantik dan cocok untuk hadiah.</div>
+          <div class="review-item">⭐⭐⭐⭐ — Produknya rapi dan pengemasan aman.</div>
+        </div>
+
+        <form class="review-form" onsubmit="addReview(event, 'souvenir')">
+          <input type="text" id="name-souvenir" placeholder="Nama Anda" required>
+          <select id="rating-souvenir" required>
+            <option value="">Pilih rating</option>
+            <option value="⭐⭐⭐⭐⭐">5 - Sangat puas</option>
+            <option value="⭐⭐⭐⭐">4 - Puas</option>
+            <option value="⭐⭐⭐">3 - Cukup</option>
+            <option value="⭐⭐">2 - Kurang</option>
+            <option value="⭐">1 - Tidak puas</option>
+          </select>
+          <textarea id="comment-souvenir" rows="4" placeholder="Tulis komentar Anda" required></textarea>
+          <button type="submit">Kirim Komentar</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="shop-card" id="busana-harian" data-group="periode" style="display:none;">
+      <div class="shop-top">
+        <img src="https://images.unsplash.com/photo-1521335629791-ce4aec67dd53" alt="Busana Harian">
+        <div class="shop-info">
+          <h2>Busana Harian</h2>
+          <div class="rating">⭐⭐⭐⭐⭐ (4.7)</div>
+          <div class="shop-meta">Kategori: Fashion</div>
+          <div class="shop-meta">Periode Populer: Juli - Desember 2026</div>
+          <div class="shop-meta">Lokasi: Medan, Sumatera Utara</div>
+          <div class="shop-meta">Jam Operasional: 09.00 - 21.00 WIB</div>
+          <p class="shop-desc">
+            Busana Harian adalah UMKM fashion yang pernah populer dalam satu periode tahunan
+            karena koleksinya sederhana, nyaman, dan diminati banyak kalangan.
+          </p>
+          <a href="https://wa.me/6281333333333?text=Halo%20saya%20ingin%20bertanya%20tentang%20produk%20Busana%20Harian" target="_blank" class="wa-button">
+            Hubungi via WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="shop-bottom">
+        <h3 class="sub-title">Produk Unggulan</h3>
+        <div class="product-grid">
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b" alt="Tunik Santai">
+            <div class="product-content">
+              <h3>Tunik Santai</h3>
+              <p>Pakaian santai dengan bahan lembut dan nyaman untuk aktivitas harian.</p>
+              <div class="price">Rp95.000</div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c" alt="Dress Simple">
+            <div class="product-content">
+              <h3>Dress Simple</h3>
+              <p>Dress ringan dengan desain sederhana namun tetap elegan.</p>
+              <div class="price">Rp125.000</div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b" alt="Cardigan Casual">
+            <div class="product-content">
+              <h3>Cardigan Casual</h3>
+              <p>Outer ringan untuk melengkapi gaya sehari-hari.</p>
+              <div class="price">Rp110.000</div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="sub-title">Ulasan Pelanggan</h3>
+        <div class="review-list" id="reviews-busana">
+          <div class="review-item">⭐⭐⭐⭐⭐ — Bahannya adem dan modelnya cocok untuk dipakai sehari-hari.</div>
+          <div class="review-item">⭐⭐⭐⭐ — Jahitannya rapi dan ukurannya pas.</div>
+        </div>
+
+        <form class="review-form" onsubmit="addReview(event, 'busana')">
+          <input type="text" id="name-busana" placeholder="Nama Anda" required>
+          <select id="rating-busana" required>
+            <option value="">Pilih rating</option>
+            <option value="⭐⭐⭐⭐⭐">5 - Sangat puas</option>
+            <option value="⭐⭐⭐⭐">4 - Puas</option>
+            <option value="⭐⭐⭐">3 - Cukup</option>
+            <option value="⭐⭐">2 - Kurang</option>
+            <option value="⭐">1 - Tidak puas</option>
+          </select>
+          <textarea id="comment-busana" rows="4" placeholder="Tulis komentar Anda" required></textarea>
+          <button type="submit">Kirim Komentar</button>
+        </form>
+      </div>
+    </section>
+
     <div class="back-wrap">
       <a href="index.html" class="back-button">Kembali ke Beranda</a>
     </div>
@@ -725,6 +984,33 @@
       document.getElementById(`rating-${store}`).value = "";
       document.getElementById(`comment-${store}`).value = "";
     }
+
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const shopCards = document.querySelectorAll('.shop-card');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const filter = button.getAttribute('data-filter');
+
+        shopCards.forEach(card => {
+          const group = card.getAttribute('data-group');
+
+          if (group === filter) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    });
   </script>
 
 </body>
